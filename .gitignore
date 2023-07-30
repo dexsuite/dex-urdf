@@ -2,6 +2,7 @@ build
 .vscode
 .pyc
 .ktx
+.blend
 cmake-build-debug
 /cmake-build-debug/
 /.ccls-cache/
@@ -14,4 +15,3 @@ imgui.ini
 .DS_Store
 /.idea
 /log
-.blend
