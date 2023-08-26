@@ -26,8 +26,8 @@
     </collision>
   </link>
 
-  <link name="palm">
-  </link>
+  <!--  virtual link-->
+  <link name="palm"/>
   <joint name="palm_joint" type="fixed">
     <parent link="base_link"/>
     <child link="palm"/>
@@ -35,13 +35,7 @@
   </joint>
 
   <!--  virtual link-->
-  <link name="wrist">
-    <inertial>
-      <mass value="0.01"/>
-      <origin rpy="0 0 0" xyz="0 0 0"/>
-      <inertia ixx="1e-6" ixy="0" ixz="0" iyy="1e-6" iyz="0" izz="1e-6"/>
-    </inertial>
-  </link>
+  <link name="wrist"/>
   <joint name="wrist_joint" type="fixed">
     <origin rpy="0 0 0" xyz="0 0 -0.03"/>
     <parent link="palm"/>
@@ -422,7 +416,7 @@
     </inertial>
     <visual>
       <geometry>
-         <mesh filename="meshes/visual/link_12.0_left.obj" />
+        <mesh filename="meshes/visual/link_12.0_left.obj"/>
       </geometry>
       <origin rpy="3.14159 0 0" xyz="0 0 0"/>
     </visual>
@@ -438,7 +432,7 @@
     <limit effort="10" lower="0.263" upper="1.396" velocity="0"/>
     <parent link="base_link"/>
     <child link="link_12.0"/>
-    <origin xyz="-0.0182 -0.019333 -0.045987" rpy="0 -1.65806278845 1.5707963259" />
+    <origin xyz="-0.0182 -0.019333 -0.045987" rpy="0 -1.65806278845 1.5707963259"/>
   </joint>
   <link name="link_13.0">
     <inertial>

@@ -2,7 +2,7 @@ build
 .vscode
 .pyc
 .ktx
-.blend
+*.blend
 cmake-build-debug
 /cmake-build-debug/
 /.ccls-cache/
