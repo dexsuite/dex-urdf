@@ -196,10 +196,10 @@
   </link>
   <joint name="ee_fixed_joint" type="fixed">
     <parent link="palm"/>
-    <child link="manipulator"/>
-    <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.05"/>
+    <child link="ee_link"/>
+    <origin rpy="0.0 0.0 -1.57079" xyz="0.0 0.0 0.0"/>
   </joint>
-  <link name="manipulator"/>
+  <link name="ee_link"/>
   <joint name="WRJ1" type="revolute">
     <parent link="wrist"/>
     <child link="palm"/>
