@@ -1,9 +1,0 @@
-yourdfpy /home/chengzhe/dexsuite/DClaw_urdf/DClaw.urdf --animate --collision
-
-
-
-coacd -i /home/chengzhe/dexsuite/DClaw_urdf/other/DClaw_finger_tip.stl -o /home/chengzhe/dexsuite/DClaw_urdf/other/DClaw_finger_tip_C.stl
-
-
-
-viz_urdf -u DClaw.urdf
