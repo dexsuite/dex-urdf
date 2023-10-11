@@ -1,0 +1,101 @@
+<mujoco model="ability_hand">
+  <compiler angle="radian" meshdir="./" autolimits="true"/>
+  <default/>
+  <asset>
+    <mesh name="wristmesh" file="wristmesh.STL"/>
+    <mesh name="FB_palm_ref" file="FB_palm_ref.STL"/>
+    <mesh name="palm_hull" file="palm_hull.STL"/>
+    <mesh name="idx-F1" file="idx-F1.STL"/>
+    <mesh name="idx-F1-hull" file="idx-F1-hull.STL"/>
+    <mesh name="idx-F2" file="idx-F2.STL"/>
+    <mesh name="idx-F2-hull" file="idx-F2-hull.STL"/>
+    <mesh name="thumb-F1" file="thumb-F1.STL"/>
+    <mesh name="thumb-F1-hull" file="thumb-F1-hull.STL"/>
+    <mesh name="thumb-F2" file="thumb-F2.STL"/>
+    <mesh name="thumb-F2-hull" file="thumb-F2-hull.STL"/>
+  </asset>
+  
+  <!--   A red floor for the hand to fall on -->
+  <worldbody>
+    <light diffuse=".5 .5 .5" pos="0 0 3" dir="0 0 -1"/>
+    <geom type="plane" size="1 1 0.1" rgba=".9 0 0 1"/>
+  </worldbody>
+  
+  <worldbody>
+    <body name="base" pos="0 0 0.1" gravcomp="0">
+      <inertial pos="0.00861632 0.00238111 0.0202366" quat="0.708112 -0.237177 -0.181781 0.63975" mass="0.6" diaginertia="0.00107598 0.00107535 0.000893814"/>
+      <joint name="floating_base" type="free"/>
+      <geom name="wrist_mesh" type="mesh" contype="0" conaffinity="0" group="1" density="0" mesh="wristmesh"/>
+      <geom name="palm_mesh" pos="0.0240477 0.00378125 0.0323296" quat="0.0442297 0.00061027 0.999021 2.70192e-05" type="mesh" contype="0" conaffinity="0" group="1" density="0" mesh="FB_palm_ref"/>
+      <geom name="palm_hull" pos="0.0240477 0.00378125 0.0323296" quat="0.0442297 0.00061027 0.999021 2.70192e-05" type="mesh" mesh="palm_hull"/>
+      <body name="index_L1" pos="0.0279216 -0.00927034 0.0958706" quat="-0.714459 -0.129917 0.685906 0.0469401" gravcomp="0">
+        <inertial pos="0.0224191 -0.000157982 -1.31987e-05" quat="-0.00406251 0.706621 0.00934715 0.707518" mass="0.00635888" diaginertia="3.81765e-06 3.69601e-06 2.96432e-07"/>
+        <joint name="index_q1" pos="0 0 0" axis="0 0 1" range="0 2.0944" damping="0.001" frictionloss="0.001"/>
+        <geom name="index_mesh_1" pos="0.0384727 0.0032577 0" quat="0.999108 0 0 0.0422244" type="mesh" contype="0" conaffinity="0" group="1" density="0" mesh="idx-F1"/>
+        <geom name="index_hull_1" pos="0.0384727 0.0032577 0" quat="0.999108 0 0 0.0422244" type="mesh" mesh="idx-F1-hull"/>
+        <body name="index_L2" pos="0.0384727 0.0032577 0" quat="0.999108 0 0 0.0422244" gravcomp="0">
+          <inertial pos="0.0133682 -0.00875392 -2.886e-05" quat="-0.161363 0.673074 0.216775 0.688434" mass="0.00645" diaginertia="2.64645e-06 2.63553e-06 1.71391e-07"/>
+          <joint name="index_q2" pos="0 0 0" axis="0 0 1" range="0 2.6586" damping="0.001" frictionloss="0.001"/>
+          <geom name="index_mesh_2" pos="0.0091241 0 0" type="mesh" contype="0" conaffinity="0" group="1" density="0" mesh="idx-F2"/>
+          <geom name="index_hull_2" pos="0.0091241 0 0" type="mesh" mesh="idx-F2-hull"/>
+        </body>
+      </body>
+      <body name="middle_L1" pos="0.00841718 -0.0115172 0.0990634" quat="-0.698395 -0.103508 0.704562 0.0715738" gravcomp="0">
+        <inertial pos="0.0224191 -0.000157982 -1.31987e-05" quat="-0.00406251 0.706621 0.00934715 0.707518" mass="0.00635888" diaginertia="3.81765e-06 3.69601e-06 2.96432e-07"/>
+        <joint name="middle_q1" pos="0 0 0" axis="0 0 1" range="0 2.0944" damping="0.001" frictionloss="0.001"/>
+        <geom name="middle_mesh_1" pos="0.0384727 0.0032577 0" quat="0.999108 0 0 0.0422244" type="mesh" contype="0" conaffinity="0" group="1" density="0" mesh="idx-F1"/>
+        <geom name="middle_hull_1" pos="0.0384727 0.0032577 0" quat="0.999108 0 0 0.0422244" type="mesh" mesh="idx-F1-hull"/>
+        <body name="middle_L2" pos="0.0384727 0.0032577 0" quat="0.999108 0 0 0.0422244" gravcomp="0">
+          <inertial pos="0.0133682 -0.00875392 -2.886e-05" quat="-0.161363 0.673074 0.216775 0.688434" mass="0.00645" diaginertia="2.64645e-06 2.63553e-06 1.71391e-07"/>
+          <joint name="middle_q2" pos="0 0 0" axis="0 0 1" range="0 2.6586" damping="0.001" frictionloss="0.001"/>
+          <geom name="middle_mesh_2" pos="0.0091241 0 0" type="mesh" contype="0" conaffinity="0" group="1" density="0" mesh="idx-F2"/>
+          <geom name="middle_hull_2" pos="0.0091241 0 0" type="mesh" mesh="idx-F2-hull"/>
+        </body>
+      </body>
+      <body name="ring_L1" pos="-0.0117529 -0.0103946 0.0967038" quat="-0.681173 -0.0769649 0.721351 0.0986547" gravcomp="0">
+        <inertial pos="0.0224191 -0.000157982 -1.31987e-05" quat="-0.00406251 0.706621 0.00934715 0.707518" mass="0.00635888" diaginertia="3.81765e-06 3.69601e-06 2.96432e-07"/>
+        <joint name="ring_q1" pos="0 0 0" axis="0 0 1" range="0 2.0944" damping="0.001" frictionloss="0.001"/>
+        <geom name="ring_mesh_1" pos="0.0384727 0.0032577 0" quat="0.999108 0 0 0.0422244" type="mesh" contype="0" conaffinity="0" group="1" density="0" mesh="idx-F1"/>
+        <geom name="ring_hull_1" pos="0.0384727 0.0032577 0" quat="0.999108 0 0 0.0422244" type="mesh" mesh="idx-F1-hull"/>
+        <body name="ring_L2" pos="0.0384727 0.0032577 0" quat="0.999108 0 0 0.0422244" gravcomp="0">
+          <inertial pos="0.0133682 -0.00875392 -2.886e-05" quat="-0.161363 0.673074 0.216775 0.688434" mass="0.00645" diaginertia="2.64645e-06 2.63553e-06 1.71391e-07"/>
+          <joint name="ring_q2" pos="0 0 0" axis="0 0 1" range="0 2.6586" damping="0.001" frictionloss="0.001"/>
+          <geom name="ring_mesh_2" pos="0.0091241 0 0" type="mesh" contype="0" conaffinity="0" group="1" density="0" mesh="idx-F2"/>
+          <geom name="ring_hull_2" pos="0.0091241 0 0" type="mesh" mesh="idx-F2-hull"/>
+        </body>
+      </body>
+      <body name="pinky_L1" pos="-0.0308633 -0.00716283 0.0907346" quat="-0.681748 -0.0544096 0.719226 0.122363" gravcomp="0">
+        <inertial pos="0.0224191 -0.000157982 -1.31987e-05" quat="-0.00406251 0.706621 0.00934715 0.707518" mass="0.00635888" diaginertia="3.81765e-06 3.69601e-06 2.96432e-07"/>
+        <joint name="pinky_q1" pos="0 0 0" axis="0 0 1" range="0 2.0944" damping="0.001" frictionloss="0.001"/>
+        <geom name="pinky_mesh_1" pos="0.0384727 0.0032577 0" quat="0.999108 0 0 0.0422244" type="mesh" contype="0" conaffinity="0" group="1" density="0" mesh="idx-F1"/>
+        <geom name="pinky_hull_1" pos="0.0384727 0.0032577 0" quat="0.999108 0 0 0.0422244" type="mesh" mesh="idx-F1-hull"/>
+        <body name="pinky_L2" pos="0.0384727 0.0032577 0" quat="0.999108 0 0 0.0422244" gravcomp="0">
+          <inertial pos="0.0133682 -0.00875392 -2.886e-05" quat="-0.161363 0.673074 0.216775 0.688434" mass="0.00645" diaginertia="2.64645e-06 2.63553e-06 1.71391e-07"/>
+          <joint name="pinky_q2" pos="0 0 0" axis="0 0 1" range="0 2.6586" damping="0.001" frictionloss="0.001"/>
+          <geom name="pinky_mesh_2" pos="0.0091241 0 0" type="mesh" contype="0" conaffinity="0" group="1" density="0" mesh="idx-F2"/>
+          <geom name="pinky_hull_2" pos="0.0091241 0 0" type="mesh" mesh="idx-F2-hull"/>
+        </body>
+      </body>
+      <body name="thumb_L1" pos="0.0240477 0.00378125 0.0323296" quat="-0.00419696 0.994514 -0.0947972 0.0440301" gravcomp="0">
+        <inertial pos="0.014606 -0.00189085 -0.00311554" quat="0.306728 0.531258 0.293089 0.733336" mass="0.00268342" diaginertia="8.14795e-07 7.42718e-07 1.14409e-07"/>
+        <joint name="thumb_q1" pos="0 0 0" axis="0 0 1" range="-2.0944 0" damping="0.001" frictionloss="0.001"/>
+        <geom name="thumb_mesh_1" pos="0.0278284 0 -0.0147507" quat="-0.608761 0.793353 0 0" type="mesh" contype="0" conaffinity="0" group="1" density="0" mesh="thumb-F1"/>
+        <geom name="thumb_hull_1" pos="0.0278284 0 -0.0147507" quat="-0.608761 0.793353 0 0" type="mesh" mesh="thumb-F1-hull"/>
+        <body name="thumb_L2" pos="0.0278284 0 -0.0147507" quat="-0.608761 0.793353 0 0" gravcomp="0">
+          <inertial pos="0.0300205 0.00559476 -0.00415044" quat="0.00721249 0.656735 -0.223684 0.720148" mass="0.0055" diaginertia="1.80207e-05 1.70892e-05 2.87855e-06"/>
+          <joint name="thumb_q2" pos="0 0 0" axis="0 0 1" range="0 2.0944" damping="0.001" frictionloss="0.001"/>
+          <geom name="thumb_mesh_2" pos="0.0651867 0.0233402 -0.00393483" quat="3.21978e-07 0.985259 0.171069 5.59046e-08" type="mesh" contype="0" conaffinity="0" group="1" density="0" mesh="thumb-F2"/>
+          <geom name="thumb_hull_2" pos="0.0651867 0.0233402 -0.00393483" quat="3.21978e-07 0.985259 0.171069 5.59046e-08" type="mesh" mesh="thumb-F2-hull"/>
+        </body>
+      </body>
+    </body>
+  </worldbody>
+  <actuator>
+	<position name="index_actuator" joint="index_q1"/>
+	<position name="middle_actuator" joint="middle_q1"/>
+	<position name="ring_actuator" joint="ring_q1"/>
+	<position name="pinky_actuator" joint="pinky_q1"/>
+	<position name="thumbflexor_actuator" joint="thumb_q1"/>
+	<position name="thumbrotator_actuator" joint="thumb_q2"/>
+  </actuator>
+</mujoco>

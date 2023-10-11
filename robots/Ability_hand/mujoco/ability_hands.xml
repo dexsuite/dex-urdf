@@ -1,0 +1,138 @@
+<mujoco model="ability_hands">
+  <compiler angle="radian" meshdir="./" autolimits="true"/>
+  <default/>
+  <asset>
+    <mesh name="palm_hull_mir" file="palm_hull_mir.STL"/>
+	<mesh name="palm_hull" file="palm_hull.STL"/>
+    <mesh name="idx-F1-hull" file="idx-F1-hull.STL"/>
+    <mesh name="idx-F2-hull" file="idx-F2-hull.STL"/>
+	<mesh name="thumb-F1-hull" file="thumb-F1-hull.STL"/>
+    <mesh name="thumb-F1-MIR-hull" file="thumb-F1-MIR-hull.STL"/>
+    <mesh name="thumb-F2-hull" file="thumb-F2-hull.STL"/>
+  </asset>
+
+
+<!--   A red floor for the hand to fall on -->
+  <worldbody>
+    <light diffuse=".5 .5 .5" pos="0 0 3" dir="0 0 -1"/>
+    <geom type="plane" size="1 1 0.1" rgba=".9 0 0 1"/>
+  </worldbody>
+
+  <worldbody>
+    <body name="right_base" pos="0 0 1.05" euler="-0.5 0 3.1415" gravcomp="0">
+      <inertial pos="0.0224191 -0.000157982 -1.31987e-05" quat="0.850371 -0.0113901 -0.220517 0.47761" mass="0.4" diaginertia="0.000893087 0.000893087 0.000893087"/>
+      <joint name="right_floating_base" type="free"/>
+      <geom name="right_palm_hull" type="mesh" mesh="palm_hull_mir"/>
+      <body name="right_index_L1" pos="0.00949 -0.01304 -0.06295" quat="0.744129 -0.128113 0.653556 -0.0521858" gravcomp="0">
+        <inertial pos="0.0224191 -0.000157982 -1.31987e-05" quat="-0.00406251 0.706621 0.00934715 0.707518" mass="0.00635888" diaginertia="3.81765e-06 3.69601e-06 2.96432e-07"/>
+        <joint name="right_index_q1" pos="0 0 0" axis="0 0 1" range="0 2.0944" damping="0.001" frictionloss="0.001"/>
+        <geom name="right_index_hull_1" pos="0.0384727 0.0032577 0" quat="0.999108 0 0 0.0422244" type="mesh" mesh="idx-F1-hull"/>
+        <body name="right_index_L2" pos="0.0384727 0.0032577 0" quat="0.999108 0 0 0.0422244" gravcomp="0">
+          <inertial pos="0.0133682 -0.00875392 -2.886e-05" quat="-0.161363 0.673074 0.216775 0.688434" mass="0.00645" diaginertia="2.64645e-06 2.63553e-06 1.71391e-07"/>
+          <joint name="right_index_q2" pos="0 0 0" axis="0 0 1" range="0 2.6586" damping="0.001" frictionloss="0.001"/>
+          <geom name="right_index_mesh_2" pos="0.0091241 0 0" type="mesh" mesh="idx-F2-hull"/>
+        </body>
+      </body>
+      <body name="right_middle_L1" pos="-0.00965319 -0.0153103 -0.0678539" quat="0.728921 -0.100652 0.672921 -0.0756367" gravcomp="0">
+        <inertial pos="0.0224191 -0.000157982 -1.31987e-05" quat="-0.00406251 0.706621 0.00934715 0.707518" mass="0.00635888" diaginertia="3.81765e-06 3.69601e-06 2.96432e-07"/>
+        <joint name="right_middle_q1" pos="0 0 0" axis="0 0 1" range="0 2.0944" damping="0.001" frictionloss="0.001"/>
+        <geom name="right_middle_hull_1" pos="0.0384727 0.0032577 0" quat="0.999108 0 0 0.0422244" type="mesh" mesh="idx-F1-hull"/>
+        <body name="right_middle_L2" pos="0.0384727 0.0032577 0" quat="0.999108 0 0 0.0422244" gravcomp="0">
+          <inertial pos="0.0133682 -0.00875392 -2.886e-05" quat="-0.161363 0.673074 0.216775 0.688434" mass="0.00645" diaginertia="2.64645e-06 2.63553e-06 1.71391e-07"/>
+          <joint name="right_middle_q2" pos="0 0 0" axis="0 0 1" range="0 2.6586" damping="0.001" frictionloss="0.001"/>
+          <geom name="right_middle_hull_2" pos="0.0091241 0 0" type="mesh" mesh="idx-F2-hull"/>
+        </body>
+      </body>
+      <body name="right_ring_L1" pos="-0.0299543 -0.0142125 -0.0672861" quat="0.712473 -0.072948 0.690473 -0.101527" gravcomp="0">
+        <inertial pos="0.0224191 -0.000157982 -1.31987e-05" quat="-0.00406251 0.706621 0.00934715 0.707518" mass="0.00635888" diaginertia="3.81765e-06 3.69601e-06 2.96432e-07"/>
+        <joint name="right_ring_q1" pos="0 0 0" axis="0 0 1" range="0 2.0944" damping="0.001" frictionloss="0.001"/>
+        <geom name="right_ring_hull_1" pos="0.0384727 0.0032577 0" quat="0.999108 0 0 0.0422244" type="mesh" mesh="idx-F1-hull"/>
+        <body name="right_ring_L2" pos="0.0384727 0.0032577 0" quat="0.999108 0 0 0.0422244" gravcomp="0">
+          <inertial pos="0.0133682 -0.00875392 -2.886e-05" quat="-0.161363 0.673074 0.216775 0.688434" mass="0.00645" diaginertia="2.64645e-06 2.63553e-06 1.71391e-07"/>
+          <joint name="right_ring_q2" pos="0 0 0" axis="0 0 1" range="0 2.6586" damping="0.001" frictionloss="0.001"/>
+          <geom name="right_ring_hull_2" pos="0.0091241 0 0" type="mesh" mesh="idx-F2-hull"/>
+        </body>
+      </body>
+      <body name="right_pinky_L1" pos="-0.0495213 -0.0110046 -0.0630291" quat="0.712968 -0.0493647 0.688339 -0.124214" gravcomp="0">
+        <inertial pos="0.0224191 -0.000157982 -1.31987e-05" quat="-0.00406251 0.706621 0.00934715 0.707518" mass="0.00635888" diaginertia="3.81765e-06 3.69601e-06 2.96432e-07"/>
+        <joint name="right_pinky_q1" pos="0 0 0" axis="0 0 1" range="0 2.0944" damping="0.001" frictionloss="0.001"/>
+        <geom name="right_pinky_hull_1" pos="0.0384727 0.0032577 0" quat="0.999108 0 0 0.0422244" type="mesh" contype="0" conaffinity="0" group="1" density="0" mesh="idx-F1-hull"/>
+        <body name="right_pinky_L2" pos="0.0384727 0.0032577 0" quat="0.999108 0 0 0.0422244" gravcomp="0">
+          <inertial pos="0.0133682 -0.00875392 -2.886e-05" quat="-0.161363 0.673074 0.216775 0.688434" mass="0.00645" diaginertia="2.64645e-06 2.63553e-06 1.71391e-07"/>
+          <joint name="right_pinky_q2" pos="0 0 0" axis="0 0 1" range="0 2.6586" damping="0.001" frictionloss="0.001"/>
+          <geom name="right_pinky_hull_2" pos="0.0091241 0 0" type="mesh" mesh="idx-F2-hull"/>
+        </body>
+      </body>
+      <body name="right_thumb_L1" pos="0 0 0" quat="0 0.995546 -0.0942819 0" gravcomp="0">
+        <inertial pos="0.014606 -0.00189085 -0.00311554" quat="0.306728 0.531258 0.293089 0.733336" mass="0.00268342" diaginertia="8.14795e-07 7.42718e-07 1.14409e-07"/>
+        <joint name="right_thumb_q1" pos="0 0 0" axis="0 0 1" range="-2.0944 0" damping="0.001" frictionloss="0.001"/>
+        <geom name="right_thumb_hull_1" pos="0.0278284 0 0.0147507" quat="0.608761 0.793353 0 0" type="mesh" mesh="thumb-F1-MIR-hull"/>
+        <body name="right_thumb_L2" pos="0.0278284 0 0.0147507" quat="0.608761 0.793353 0 0" gravcomp="0">
+          <inertial pos="0.0300205 0.00559476 -0.00415044" quat="0.00721249 0.656735 -0.223684 0.720148" mass="0.0055" diaginertia="1.80207e-05 1.70892e-05 2.87855e-06"/>
+          <joint name="right_thumb_q2" pos="0 0 0" axis="0 0 1" range="0 2.0944" damping="0.001" frictionloss="0.001"/>
+          <geom name="right_thumb_hull_2" pos="0.0651867 0.0233402 0.00393483" quat="3.21978e-07 -0.985259 -0.171069 5.59046e-08" type="mesh" mesh="thumb-F2-hull"/>
+        </body>
+      </body>
+    </body>
+  </worldbody>
+  
+  
+  <worldbody>
+    <body name="left_base" pos="0 0 20.5" euler="-0.5 0 3.1415" gravcomp="0">
+      <inertial pos="0.0224191 -0.000157982 -1.31987e-05" quat="0.306728 0.531258 0.293089 0.733336" mass="0.4" diaginertia="8.14795e-07 7.42718e-07 1.14409e-07"/>
+      <joint name="left_floating_base" type="free"/>
+      <geom name="left_palm_hull" type="mesh" mesh="palm_hull"/>
+      <body name="left_index_L1" pos="-0.00949 -0.01304 -0.06295" quat="0.653556 -0.0521858 0.744129 -0.128113" gravcomp="0">
+        <inertial pos="0.0224191 -0.000157982 -1.31987e-05" quat="-0.00406251 0.706621 0.00934715 0.707518" mass="0.00635888" diaginertia="3.81765e-06 3.69601e-06 2.96432e-07"/>
+        <joint name="left_index_q1" pos="0 0 0" axis="0 0 1" range="0 2.0944" damping="0.001" frictionloss="0.001"/>
+        <geom name="left_index_hull_1" pos="0.0384727 0.0032577 0" quat="0.999108 0 0 0.0422244" type="mesh" mesh="idx-F1-hull"/>
+        <body name="left_index_L2" pos="0.0384727 0.0032577 0" quat="0.999108 0 0 0.0422244" gravcomp="0">
+          <inertial pos="0.0133682 -0.00875392 -2.886e-05" quat="-0.161363 0.673074 0.216775 0.688434" mass="0.00645" diaginertia="2.64645e-06 2.63553e-06 1.71391e-07"/>
+          <joint name="left_index_q2" pos="0 0 0" axis="0 0 1" range="0 2.6586" damping="0.001" frictionloss="0.001"/>
+          <geom name="left_index_hull_2" pos="0.0091241 0 0" type="mesh" mesh="idx-F2-hull"/>
+        </body>
+      </body>
+      <body name="left_middle_L1" pos="0.00965319 -0.0153103 -0.0678539" quat="0.672921 -0.0756367 0.728921 -0.100652" gravcomp="0">
+        <inertial pos="0.0224191 -0.000157982 -1.31987e-05" quat="-0.00406251 0.706621 0.00934715 0.707518" mass="0.00635888" diaginertia="3.81765e-06 3.69601e-06 2.96432e-07"/>
+        <joint name="left_middle_q1" pos="0 0 0" axis="0 0 1" range="0 2.0944" damping="0.001" frictionloss="0.001"/>
+        <geom name="left_middle_hull_1" pos="0.0384727 0.0032577 0" quat="0.999108 0 0 0.0422244" type="mesh" mesh="idx-F1-hull"/>
+        <body name="left_middle_L2" pos="0.0384727 0.0032577 0" quat="0.999108 0 0 0.0422244" gravcomp="0">
+          <inertial pos="0.0133682 -0.00875392 -2.886e-05" quat="-0.161363 0.673074 0.216775 0.688434" mass="0.00645" diaginertia="2.64645e-06 2.63553e-06 1.71391e-07"/>
+          <joint name="left_middle_q2" pos="0 0 0" axis="0 0 1" range="0 2.6586" damping="0.001" frictionloss="0.001"/>
+          <geom name="left_middle_hull_2" pos="0.0091241 0 0" type="mesh" mesh="idx-F2-hull"/>
+        </body>
+      </body>
+      <body name="left_ring_L1" pos="0.0299543 -0.0142125 -0.0672861" quat="0.690473 -0.101527 0.712473 -0.072948" gravcomp="0">
+        <inertial pos="0.0224191 -0.000157982 -1.31987e-05" quat="-0.00406251 0.706621 0.00934715 0.707518" mass="0.00635888" diaginertia="3.81765e-06 3.69601e-06 2.96432e-07"/>
+        <joint name="left_ring_q1" pos="0 0 0" axis="0 0 1" range="0 2.0944" damping="0.001" frictionloss="0.001"/>
+        <geom name="left_ring_hull_1" pos="0.0384727 0.0032577 0" quat="0.999108 0 0 0.0422244" type="mesh" mesh="idx-F1-hull"/>
+        <body name="left_ring_L2" pos="0.0384727 0.0032577 0" quat="0.999108 0 0 0.0422244" gravcomp="0">
+          <inertial pos="0.0133682 -0.00875392 -2.886e-05" quat="-0.161363 0.673074 0.216775 0.688434" mass="0.00645" diaginertia="2.64645e-06 2.63553e-06 1.71391e-07"/>
+          <joint name="left_ring_q2" pos="0 0 0" axis="0 0 1" range="0 2.6586" damping="0.001" frictionloss="0.001"/>
+          <geom name="left_ring_hull_2" pos="0.0091241 0 0" type="mesh" mesh="idx-F2-hull"/>
+        </body>
+      </body>
+      <body name="left_pinky_L1" pos="0.0495213 -0.0110046 -0.0630291" quat="0.688339 -0.124214 0.712968 -0.0493647" gravcomp="0">
+        <inertial pos="0.0224191 -0.000157982 -1.31987e-05" quat="-0.00406251 0.706621 0.00934715 0.707518" mass="0.00635888" diaginertia="3.81765e-06 3.69601e-06 2.96432e-07"/>
+        <joint name="left_pinky_q1" pos="0 0 0" axis="0 0 1" range="0 2.0944" damping="0.001" frictionloss="0.001"/>
+        <geom name="left_pinky_hull_1" pos="0.0384727 0.0032577 0" quat="0.999108 0 0 0.0422244" type="mesh" mesh="idx-F1-hull"/>
+        <body name="left_pinky_L2" pos="0.0384727 0.0032577 0" quat="0.999108 0 0 0.0422244" gravcomp="0">
+          <inertial pos="0.0133682 -0.00875392 -2.886e-05" quat="-0.161363 0.673074 0.216775 0.688434" mass="0.00645" diaginertia="2.64645e-06 2.63553e-06 1.71391e-07"/>
+          <joint name="left_pinky_q2" pos="0 0 0" axis="0 0 1" range="0 2.6586" damping="0.001" frictionloss="0.001"/>
+          <geom name="left_pinky_hull_2" pos="0.0091241 0 0" type="mesh" mesh="idx-F2-hull"/>
+        </body>
+      </body>
+      <body name="left_thumb_L1" pos="0 0 0" quat="-0.0942819 0 0 0.995546" gravcomp="0">
+        <inertial pos="0.014606 -0.00189085 -0.00311554" quat="0.306728 0.531258 0.293089 0.733336" mass="0.00268342" diaginertia="8.14795e-07 7.42718e-07 1.14409e-07"/>
+        <joint name="left_thumb_q1" pos="0 0 0" axis="0 0 1" range="-2.0944 0" damping="0.001" frictionloss="0.001"/>
+        <geom name="left_thumb_hull_1" pos="0.0278284 0 -0.0147507" quat="-0.608761 0.793353 0 0" type="mesh" mesh="thumb-F1-hull"/>
+        <body name="left_thumb_L2" pos="0.0278284 0 -0.0147507" quat="-0.608761 0.793353 0 0" gravcomp="0">
+          <inertial pos="0.0300205 0.00559476 -0.00415044" quat="0.00721249 0.656735 -0.223684 0.720148" mass="0.0055" diaginertia="1.80207e-05 1.70892e-05 2.87855e-06"/>
+          <joint name="left_thumb_q2" pos="0 0 0" axis="0 0 1" range="0 2.0944" damping="0.001" frictionloss="0.001"/>
+          <geom name="left_thumb_hull_2" pos="0.0651867 0.0233402 -0.00393483" quat="3.21978e-07 0.985259 0.171069 5.59046e-08" type="mesh" mesh="thumb-F2-hull"/>
+        </body>
+      </body>
+    </body>
+  </worldbody>
+  
+</mujoco>
