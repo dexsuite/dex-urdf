@@ -32,8 +32,8 @@
     </collision>
   </link>
 
-  <link name="palm">
-  </link>
+  <!--  virtual link-->
+  <link name="palm"/>
   <joint name="palm_joint" type="fixed">
     <parent link="base_link"/>
     <child link="palm"/>
@@ -41,13 +41,7 @@
   </joint>
 
   <!--  virtual link-->
-  <link name="wrist">
-    <inertial>
-      <mass value="0.01"/>
-      <origin rpy="0 0 0" xyz="0 0 0"/>
-      <inertia ixx="1e-6" ixy="0" ixz="0" iyy="1e-6" iyz="0" izz="1e-6"/>
-    </inertial>
-  </link>
+  <link name="wrist"/>
   <joint name="wrist_joint" type="fixed">
     <origin rpy="0 0 0" xyz="0 0 -0.03"/>
     <parent link="palm"/>
