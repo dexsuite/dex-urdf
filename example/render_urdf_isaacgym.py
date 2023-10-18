@@ -1,10 +1,9 @@
 # Wheel: https://drive.google.com/uc?id=1CmLNiENlLzTP1PRhc6Oj6Z_XArdSTXiR
-import numpy as np
-import numpy as np
-
-from isaacgym import gymapi
 import argparse
 from pathlib import Path
+
+import numpy as np
+from isaacgym import gymapi
 
 
 def parse_args():
