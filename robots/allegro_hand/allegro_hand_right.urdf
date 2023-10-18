@@ -13,9 +13,15 @@
       <origin rpy="0 0 0" xyz="0 0 0 "/>
     </visual>
     <collision>
-      <origin rpy="0 0 0" xyz="-0.009 0.0 -0.04"/>
+      <origin rpy="0 0 0" xyz="-0.009 0.0 -0.023"/>
       <geometry>
-        <box size="0.0414 0.112 0.0843"/>
+        <box size="0.0414 0.112 0.0448"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin rpy="0 0 0" xyz="-0.009 -0.0253 -0.0667"/>
+      <geometry>
+        <box size="0.0414 0.0538 0.0428"/>
       </geometry>
     </collision>
     <collision>
@@ -159,20 +165,13 @@
   <link name="link_3.0_tip">
     <visual>
       <geometry>
-        <mesh filename="meshes/visual/link_3.0_tip.obj"/>
+        <mesh filename="meshes/visual/link_tip.obj"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <sphere radius="0.012"/>
+      <mesh filename="meshes/collision/link_tip.obj"/>
       </geometry>
-      <origin rpy="0 0 0" xyz="0 0 0.0005"/>
-    </collision>
-    <collision>
-      <geometry>
-        <cylinder radius="0.012" length="0.012"/>
-      </geometry>
-      <origin rpy="0 0 0" xyz="0 0 -0.006"/>
     </collision>
   </link>
   <joint name="joint_3.0_tip" type="fixed">
@@ -286,20 +285,13 @@
   <link name="link_7.0_tip">
     <visual>
       <geometry>
-        <mesh filename="meshes/visual/link_3.0_tip.obj"/>
+        <mesh filename="meshes/visual/link_tip.obj"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <sphere radius="0.012"/>
+        <mesh filename="meshes/collision/link_tip.obj"/>
       </geometry>
-      <origin rpy="0 0 0" xyz="0 0 0.0005"/>
-    </collision>
-    <collision>
-      <geometry>
-        <cylinder radius="0.012" length="0.012"/>
-      </geometry>
-      <origin rpy="0 0 0" xyz="0 0 -0.006"/>
     </collision>
   </link>
   <joint name="joint_7.0_tip" type="fixed">
@@ -413,20 +405,13 @@
   <link name="link_11.0_tip">
     <visual>
       <geometry>
-        <mesh filename="meshes/visual/link_3.0_tip.obj"/>
+        <mesh filename="meshes/visual/link_tip.obj"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <sphere radius="0.012"/>
+        <mesh filename="meshes/collision/link_tip.obj"/>
       </geometry>
-      <origin rpy="0 0 0" xyz="0 0 0.0005"/>
-    </collision>
-    <collision>
-      <geometry>
-        <cylinder radius="0.012" length="0.012"/>
-      </geometry>
-      <origin rpy="0 0 0" xyz="0 0 -0.006"/>
     </collision>
   </link>
   <joint name="joint_11.0_tip" type="fixed">
@@ -541,20 +526,13 @@
   <link name="link_15.0_tip">
     <visual>
       <geometry>
-        <mesh filename="meshes/visual/link_15.0_tip.obj"/>
+        <mesh filename="meshes/visual/link_tip.obj"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <sphere radius="0.012"/>
+        <mesh filename="meshes/collision/link_tip.obj"/>
       </geometry>
-      <origin rpy="0 0 0" xyz="0 0 0.0005"/>
-    </collision>
-    <collision>
-      <geometry>
-        <cylinder radius="0.012" length="0.012"/>
-      </geometry>
-      <origin rpy="0 0 0" xyz="0 0 -0.006"/>
     </collision>
   </link>
   <joint name="joint_15.0_tip" type="fixed">

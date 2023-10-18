@@ -1,8 +1,8 @@
-# Blender 3.6.1 MTL File: 'None'
-# www.blender.org
+# Blender MTL File: 'None'
+# Material Count: 1
 
 newmtl black_metal
-Ns 640.000000
+Ns 639.999995
 Ka 0.500000 0.500000 0.500000
 Kd 0.004025 0.004025 0.004025
 Ks 0.500000 0.500000 0.500000
