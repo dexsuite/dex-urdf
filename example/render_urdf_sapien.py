@@ -119,7 +119,7 @@ def generate_joint_limit_trajectory(robot: sapien.Articulation, loop_steps: int)
     return trajectory.T
 
 
-def visualize_articulation(use_rt, urdf_file, simulate, disable_self_collision, fix_root_link):
+def visualize_urdf(use_rt, urdf_file, simulate, disable_self_collision, fix_root_link):
     # Generate rendering config
     render_config = {}
     if not use_rt:
@@ -183,7 +183,7 @@ def visualize_articulation(use_rt, urdf_file, simulate, disable_self_collision, 
     trajectory = np.array([])
     if simulate:
         for joint in robot.get_active_joints():
-            joint.set_drive_property(100000, 5000, 10000)
+            joint.set_drive_property(10000, 500, 10000)
         trajectory = generate_joint_limit_trajectory(robot, loop_steps=loop_steps)
 
     robot.set_qpos(np.zeros([robot.dof]))
@@ -200,7 +200,6 @@ def visualize_articulation(use_rt, urdf_file, simulate, disable_self_collision, 
             scene.step()
             step += 1
             step = step % loop_steps
-            error = np.mean(np.abs(qpos - robot.get_qpos()))
 
             # Draw the contact information on the viewer
             # We are using the "Reds" colormap to indicate the magnitude of the contact force
@@ -210,7 +209,7 @@ def visualize_articulation(use_rt, urdf_file, simulate, disable_self_collision, 
 
 def main():
     args = parse_args()
-    visualize_articulation(args.use_rt, args.urdf, args.simulate, args.disable_self_collision, args.fix_root_link)
+    visualize_urdf(args.use_rt, args.urdf, args.simulate, args.disable_self_collision, args.fix_root_link)
 
 
 if __name__ == '__main__':
