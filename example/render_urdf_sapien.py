@@ -11,15 +11,22 @@ COLOR_MAP = matplotlib.colormaps["Reds"]
 
 def parse_args():
     parser = argparse.ArgumentParser()
-    parser.add_argument('urdf', type=str, help="Path to the URDF file.")
-    parser.add_argument('-rt', '--use_rt', action='store_true', default=False,
-                        help="Whether to use ray tracing for rendering.")
-    parser.add_argument('-s', '--simulate', action='store_true', default=True,
-                        help="Whether to physically simulate the urdf.")
-    parser.add_argument('-f', '--fix-root-link', action='store_true', default=True,
-                        help="Whether to physically simulate the urdf.")
-    parser.add_argument('--disable-self-collision', action='store_true', default=True,
-                        help="Whether to disable the self collision of the urdf.")
+    parser.add_argument("urdf", type=str, help="Path to the URDF file.")
+    parser.add_argument(
+        "-rt", "--use_rt", action="store_true", default=False, help="Whether to use ray tracing for rendering."
+    )
+    parser.add_argument(
+        "-s", "--simulate", action="store_true", default=True, help="Whether to physically simulate the urdf."
+    )
+    parser.add_argument(
+        "-f", "--fix-root-link", action="store_true", default=True, help="Whether to physically simulate the urdf."
+    )
+    parser.add_argument(
+        "--disable-self-collision",
+        action="store_true",
+        default=True,
+        help="Whether to disable the self collision of the urdf.",
+    )
     return parser.parse_args()
 
 
@@ -34,7 +41,7 @@ class ContactViewer(Viewer):
             self.scene.get_renderer_scene()._internal_scene.remove_node(node)
 
         contact_list = self.fetch_contact()
-        for (pos, normal, color) in contact_list:
+        for pos, normal, color in contact_list:
             self.draw_contact_arrow(pos, normal, color)
 
     def fetch_contact(self):
@@ -212,5 +219,5 @@ def main():
     visualize_urdf(args.use_rt, args.urdf, args.simulate, args.disable_self_collision, args.fix_root_link)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

@@ -8,13 +8,19 @@ from isaacgym import gymapi
 
 def parse_args():
     parser = argparse.ArgumentParser()
-    parser.add_argument('urdf', type=str, help="Path to the URDF file.")
-    parser.add_argument('-s', '--simulate', action='store_true', default=True,
-                        help="Whether to physically simulate the urdf.")
-    parser.add_argument('-f', '--fix-root-link', action='store_true', default=True,
-                        help="Whether to physically simulate the urdf.")
-    parser.add_argument('--disable-self-collision', action='store_true', default=True,
-                        help="Whether to disable the self collision of the urdf.")
+    parser.add_argument("urdf", type=str, help="Path to the URDF file.")
+    parser.add_argument(
+        "-s", "--simulate", action="store_true", default=True, help="Whether to physically simulate the urdf."
+    )
+    parser.add_argument(
+        "-f", "--fix-root-link", action="store_true", default=True, help="Whether to physically simulate the urdf."
+    )
+    parser.add_argument(
+        "--disable-self-collision",
+        action="store_true",
+        default=True,
+        help="Whether to disable the self collision of the urdf.",
+    )
     return parser.parse_args()
 
 
@@ -56,7 +62,7 @@ def visualize_urdf(urdf_file, simulate, disable_self_collision, fix_root_link):
     # create viewer using the default camera properties
     viewer = gym.create_viewer(sim, gymapi.CameraProperties())
     if viewer is None:
-        raise ValueError('*** Failed to create viewer')
+        raise ValueError("*** Failed to create viewer")
 
     # add ground plane
     plane_params = gymapi.PlaneParams()
@@ -138,7 +144,7 @@ def visualize_urdf(urdf_file, simulate, disable_self_collision, fix_root_link):
         gym.draw_viewer(viewer, sim, True)
         gym.sync_frame_time(sim)
 
-    print('Done')
+    print("Done")
 
     gym.destroy_viewer(viewer)
     gym.destroy_sim(sim)
@@ -149,5 +155,5 @@ def main():
     visualize_urdf(args.urdf, args.simulate, args.disable_self_collision, args.fix_root_link)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()
