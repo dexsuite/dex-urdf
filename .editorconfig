@@ -1,7 +1,7 @@
 # top-most EditorConfig file
 root = true
 
-[*.{xml,xsd}]
+[*.{xml,xsd,urdf}]
 max_line_length = off
 end_of_line = lf
 indent_style = space
