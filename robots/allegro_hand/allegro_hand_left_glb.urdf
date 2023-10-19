@@ -164,7 +164,7 @@
     </visual>
     <collision>
       <geometry>
-      <mesh filename="meshes/collision/link_tip.obj"/>
+        <mesh filename="meshes/collision/link_tip.obj"/>
       </geometry>
     </collision>
   </link>

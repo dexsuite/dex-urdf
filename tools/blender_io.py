@@ -14,7 +14,7 @@ if not IS_EXPORT:
 
 else:
     # After modeling the visual material for each mesh in the scene
-    scene = bpy.data.scenes['Scene']
+    scene = bpy.data.scenes["Scene"]
     bpy.context.active_object.select_set(False)
     for name, obj in scene.objects.items():
         obj.select_set(True)
