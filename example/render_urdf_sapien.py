@@ -1,4 +1,5 @@
 import argparse
+from typing import List, Tuple
 
 import matplotlib
 import numpy as np
@@ -35,6 +36,32 @@ class ContactViewer(Viewer):
         super().__init__(renderer, shader_dir, resolutions)
         self.contact_nodes = []
 
+        # Material to highlight contact geom
+        self.contact_collision_mat = self.renderer.create_material()
+        self.contact_collision_mat.base_color = np.array([1, 0, 0, 1])
+
+        self.default_mesh_mat = self.renderer.create_material()
+        self.default_mesh_mat.base_color = np.array([0, 1, 0, 1])
+        self.default_primitive_mat = self.renderer.create_material()
+        self.default_primitive_mat.base_color = np.array([0, 0, 1, 1])
+
+        # Original material dict to recover the original color of object
+        self.highlighted_visual_shape: List[sapien.RenderBody] = []
+        self.highlighted_collision: List[sapien.CollisionShape] = []
+
+        self.debug = []
+
+    def highlight_contacted_geom(self, collision_shape: sapien.CollisionShape):
+        if collision_shape in self.highlighted_collision:
+            return
+        actor = collision_shape.actor
+        collision_index = actor.get_collision_shapes().index(collision_shape)
+        collision_visual_shape = actor.get_collision_visual_bodies()[collision_index]
+        self.highlighted_visual_shape.append(collision_visual_shape)
+        for render_shape in collision_visual_shape.get_render_shapes():
+            render_shape.set_material(self.contact_collision_mat)
+        collision_visual_shape.set_visibility(1)
+
     def draw_contact(self):
         for i in range(len(self.contact_nodes)):
             node = self.contact_nodes.pop()
@@ -43,6 +70,17 @@ class ContactViewer(Viewer):
         contact_list = self.fetch_contact()
         for pos, normal, color in contact_list:
             self.draw_contact_arrow(pos, normal, color)
+
+    def clear_contact(self):
+        for i in range(len(self.highlighted_visual_shape)):
+            shape = self.highlighted_visual_shape.pop()
+            if shape.type == "mesh":
+                mat = self.default_mesh_mat
+            else:
+                mat = self.default_primitive_mat
+            for render_shape in shape.get_render_shapes():
+                render_shape.set_material(mat)
+            shape.set_visibility(0)
 
     def fetch_contact(self):
         min_impulse = 0.1
@@ -57,8 +95,10 @@ class ContactViewer(Viewer):
                     color = np.array(COLOR_MAP(norm_impulse))
                     contact_list.append((point.position, point.normal, color))
                     if not reported:
-                        print(f"Find self collision: {contact.actor0, contact.actor1}")
+                        print(f"Find self collision: {contact.actor0, contact.actor1}, impulse: {impulse}")
                         reported = True
+            self.highlight_contacted_geom(contact.collision_shape0)
+            self.highlight_contacted_geom(contact.collision_shape1)
 
         return contact_list
 
@@ -201,6 +241,7 @@ def visualize_urdf(use_rt, urdf_file, simulate, disable_self_collision, fix_root
         scene.update_render()
         viewer.render()
         if simulate:
+            viewer.clear_contact()
             qpos = trajectory[step]
             robot.set_drive_target(qpos)
             robot.set_qf(robot.compute_passive_force(external=False))
