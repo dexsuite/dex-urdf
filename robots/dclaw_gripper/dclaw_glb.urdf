@@ -36,11 +36,6 @@
     </collision>
   </link>
   <link name="Link1_1">
-    <inertial>
-      <origin xyz="0.0529307363803791 0.0385198768391719 -0.0233325145752905" rpy="0 0 0"/>
-      <mass value="0.0500997884947533"/>
-      <inertia ixx="8.46988226640586E-06" ixy="2.52536845571668E-08" ixz="4.35843902037739E-08" iyy="1.25184344824975E-05" iyz="-4.80451790682091E-07" izz="1.19676234178441E-05"/>
-    </inertial>
     <visual>
       <geometry>
         <mesh filename="meshes/visual/Link1_1.glb"/>
@@ -73,11 +68,6 @@
     <limit lower="-1.32" upper="0.524" effort="10" velocity="100"/>
   </joint>
   <link name="Link2_1">
-    <inertial>
-      <origin xyz="0.042772791416322 0.026589664637582 -0.0163091170217141" rpy="0 0 0"/>
-      <mass value="0.0500997884947319"/>
-      <inertia ixx="1.01771982658268E-05" ixy="-2.01425290149011E-06" ixz="1.19578658191413E-06" iyy="1.15646942625028E-05" iyz="-2.37734720825577E-07" izz="1.12140476384129E-05"/>
-    </inertial>
     <visual>
       <geometry>
         <mesh
@@ -111,11 +101,6 @@
     <limit lower="-1.57" upper="1.57" effort="10" velocity="100"/>
   </joint>
   <link name="Link3_1">
-    <inertial>
-      <origin xyz="0.0442903087940754 -0.000239198916252412 0.00034461478971537" rpy="0 0 0"/>
-      <mass value="0.0260028886170262"/>
-      <inertia ixx="3.47766071448909E-06" ixy="2.11116847505688E-08" ixz="-2.83202987068677E-08" iyy="8.31543259135555E-06" iyz="6.45313369832249E-07" izz="7.56503514497011E-06"/>
-    </inertial>
     <visual>
       <geometry>
         <mesh filename="meshes/visual/Link3_1.glb"/>
@@ -147,11 +132,6 @@
     <limit lower="-1.57" upper="1.57" effort="10" velocity="100"/>
   </joint>
   <link name="Link1_2">
-    <inertial>
-      <origin xyz="0.0529307363804316 0.00765586742462304 -0.00544929173954749" rpy="0 0 0"/>
-      <mass value="0.0500997884944988"/>
-      <inertia ixx="8.46988226640579E-06" ixy="2.52536845466873E-08" ixz="4.35843902172771E-08" iyy="1.25184344824698E-05" iyz="-4.80451790692476E-07" izz="1.19676234178535E-05"/>
-    </inertial>
     <visual>
       <geometry>
         <mesh filename="meshes/visual/Link1_2.glb"/>
@@ -184,11 +164,6 @@
     <limit lower="-0.524" upper="1.35" effort="10" velocity="100"/>
   </joint>
   <link name="Link2_2">
-    <inertial>
-      <origin xyz="0.0427727914164529 0.0265896646374586 -0.016309117021747" rpy="0 0 0"/>
-      <mass value="0.050099788494456"/>
-      <inertia ixx="1.01771982658377E-05" ixy="-2.01425290148224E-06" ixz="1.19578658193044E-06" iyy="1.15646942624709E-05" iyz="-2.37734720827873E-07" izz="1.12140476384109E-05"/>
-    </inertial>
     <visual>
       <geometry>
         <mesh filename="meshes/visual/Link2_2.glb"/>
@@ -221,11 +196,6 @@
     <limit lower="-1.57" upper="1.57" effort="10" velocity="100"/>
   </joint>
   <link name="Link3_2">
-    <inertial>
-      <origin xyz="0.0442903093046455 -0.000239206569714906 0.000344612821146173" rpy="0 0 0"/>
-      <mass value="0.0260028959491832"/>
-      <inertia ixx="3.47766133368847E-06" ixy="2.11100347282574E-08" ixz="-2.83208731773161E-08" iyy="8.3154334525292E-06" iyz="6.45312461662716E-07" izz="7.56503448656785E-06"/>
-    </inertial>
     <visual>
       <geometry>
         <mesh filename="meshes/visual/Link3_2.glb"/>
@@ -257,10 +227,6 @@
     <limit lower="-1.57" upper="1.57" effort="10" velocity="100"/>
   </joint>
   <link name="Link1_3">
-    <inertial>
-      <mass value="0"/>
-      <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
-    </inertial>
     <visual>
       <geometry>
         <mesh filename="meshes/visual/Link1_3.glb"/>
@@ -293,11 +259,6 @@
     <limit lower="-1.35" upper="0.524" effort="10" velocity="100"/>
   </joint>
   <link name="Link2_3">
-    <inertial>
-      <origin xyz="0.0427727914163404 0.0265896646374374 -0.0163091170218451" rpy="0 0 0"/>
-      <mass value="0.0500997884940055"/>
-      <inertia ixx="1.01771982657949E-05" ixy="-2.01425290150859E-06" ixz="1.19578658193342E-06" iyy="1.15646942624502E-05" iyz="-2.37734720844503E-07" izz="1.1214047638349E-05"/>
-    </inertial>
     <visual>
       <geometry>
         <mesh filename="meshes/visual/Link2_3.glb"/>
@@ -330,11 +291,6 @@
     <limit lower="-1.57" upper="1.57" effort="10" velocity="100"/>
   </joint>
   <link name="Link3_3">
-    <inertial>
-      <origin xyz="0.0442903089361738 -0.000239208986878653 0.000344609604304449" rpy="0 0 0"/>
-      <mass value="0.0260028939266903"/>
-      <inertia ixx="3.47766127714631E-06" ixy="2.11094770759259E-08" ixz="-2.83214952644635E-08" iyy="8.31543405300118E-06" iyz="6.45312344442177E-07" izz="7.56503402448085E-06"/>
-    </inertial>
     <visual>
       <geometry>
         <mesh filename="meshes/visual/Link3_3.glb"/>

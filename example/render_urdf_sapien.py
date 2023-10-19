@@ -1,5 +1,5 @@
 import argparse
-from typing import List, Tuple
+from typing import List
 
 import matplotlib
 import numpy as np
@@ -40,6 +40,7 @@ class ContactViewer(Viewer):
         self.contact_collision_mat = self.renderer.create_material()
         self.contact_collision_mat.base_color = np.array([1, 0, 0, 1])
 
+        # Material of the original collision mesh
         self.default_mesh_mat = self.renderer.create_material()
         self.default_mesh_mat.base_color = np.array([0, 1, 0, 1])
         self.default_primitive_mat = self.renderer.create_material()
@@ -90,15 +91,18 @@ class ContactViewer(Viewer):
             reported = False
             for point in contact.points:
                 impulse = np.linalg.norm(point.impulse)
-                if impulse > min_impulse:
+                if impulse > min_impulse and point.separation < -5e-4:
                     norm_impulse = (1 / impulse - 1 / min_impulse) / (1 / max_impulse - 1 / min_impulse)
                     color = np.array(COLOR_MAP(norm_impulse))
                     contact_list.append((point.position, point.normal, color))
                     if not reported:
-                        print(f"Find self collision: {contact.actor0, contact.actor1}, impulse: {impulse}")
+                        print(
+                            f"Find self collision: {contact.actor0, contact.actor1},"
+                            f" impulse: {impulse}, separation: {point.separation}"
+                        )
                         reported = True
-            self.highlight_contacted_geom(contact.collision_shape0)
-            self.highlight_contacted_geom(contact.collision_shape1)
+                    self.highlight_contacted_geom(contact.collision_shape0)
+                    self.highlight_contacted_geom(contact.collision_shape1)
 
         return contact_list
 
