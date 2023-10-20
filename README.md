@@ -4,9 +4,9 @@ This repo provides a collection of high-quality dexterous hand models in URDF fo
 |:------------:|:---------------:|:-----------------:|:------------------:|:------------:|
 | Allegro Hand |        0        |         0         | :white_check_mark: | Left & Right |
 
-[^1] Ray tracing images are rendered in `SAPIEN` using the urdf with `glb` version
-[^2] Rasterization images are rendered in `IsaacGym` using the with the `glb` version
-[^3] Loading checking means the URDF has been tested in the
+[^1]: Ray tracing images are rendered in `SAPIEN` using the urdf with `glb` version
+[^2]: Rasterization images are rendered in `IsaacGym` using the with the `glb` version
+[^3]: Loading checking means the URDF has been tested in the
 following platform: [yourdfpy](https://github.com/clemense/yourdfpy),
 [IsaacGym](https://developer.nvidia.com/isaac-gym),
 [SAPIEN](https://sapien.ucsd.edu/),
@@ -53,7 +53,7 @@ middle finger.
 2. Consistent mesh format. All visual mesh are stored as `.obj` but not `.dae`, since different DAE loader may treat DAE
    differently, resulting inconsistent behavior across different URDF parser. All collision meshes are stored as `.stl`.
 
-## Source files of robot
+## Robot Source
 
 |   Robot Model   |                          Official Website                           |                                                 URDF Source                                                 |                                    CAD Model Source                                    |  License   |
 |:---------------:|:-------------------------------------------------------------------:|:-----------------------------------------------------------------------------------------------------------:|:--------------------------------------------------------------------------------------:|:----------:|
