@@ -31,6 +31,8 @@ package in serval aspects:
 
 <details>
 <summary>Improved visual mesh</summary>
+Consistent mesh format. All visual mesh are stored as `.obj` but not `.dae`,
+since different DAE loader may treat DAE differently, resulting inconsistent behavior across different URDF parser.
 </details>
 
 <details>
@@ -49,10 +51,6 @@ forward, the y-axis the direction from litter finger to thumb, the z-axis is the
 middle finger.
 </details>
 
-1. Consistent hand orientation
-2. Consistent mesh format. All visual mesh are stored as `.obj` but not `.dae`, since different DAE loader may treat DAE
-   differently, resulting inconsistent behavior across different URDF parser. All collision meshes are stored as `.stl`.
-
 ## Robot Source
 
 |   Robot Model   |                          Official Website                           |                                                 URDF Source                                                 |                                    CAD Model Source                                    |  License   |
@@ -69,6 +67,7 @@ middle finger.
 - [ ] Attach hand on robot arm
 - [ ] Manipulated objects for dexterous hands
 - [ ] Add Barrett Hand
+- [ ] PyBullet URDF checking
 - [X] SAPIEN URDF checking
 - [X] IsaacGym URDF checking
 - [X] Self collision checking
