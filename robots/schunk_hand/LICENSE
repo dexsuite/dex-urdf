@@ -672,3 +672,7 @@ may consider it more useful to permit linking proprietary applications with
 the library.  If this is what you want to do, use the GNU Lesser General
 Public License instead of this License.  But first, please read
 <https://www.gnu.org/licenses/why-not-lgpl.html>.
+
+The model files we obtained from the previously mentioned source underwent
+significant modifications before we could use them. These modifications
+included changes to the meshes and the URDF file itself.
