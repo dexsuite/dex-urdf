@@ -14,7 +14,7 @@ from sapien.utils import Viewer
 import ffmpeg
 
 
-# ffmpeg -i input_filename.mp4 -vcodec libwebp -filter:v fps=30 -lossless 1 -loop 0 -preset default -an -vsync 0 -s 1920:1080 output_filename.webp
+# ffmpeg -i input_filename.mp4 -vcodec libwebp -filter:v fps=30 -lossless 1 -loop 0 -preset default -an -vsync 0 -s 1080:1080 output_filename.webp
 
 
 def generate_joint_limit_trajectory(robot: sapien.Articulation, loop_steps: int):
@@ -82,7 +82,7 @@ def render_urdf(urdf_path, use_rt, simulate, disable_self_collision, fix_root_li
     scene.set_environment_map(create_dome_envmap(sky_color=[0.2, 0.2, 0.2], ground_color=[0.2, 0.2, 0.2]))
 
     # Camera
-    cam = scene.add_camera(name="Cheese!", width=1920, height=1080, fovy=1, near=0.1, far=10)
+    cam = scene.add_camera(name="Cheese!", width=1080, height=1080, fovy=1, near=0.1, far=10)
     cam.set_local_pose(sapien.Pose([0.36594, 0.0127696, 0.32213], [0.0260871, 0.386959, 0.0109527, -0.921663]))
 
     # Viewer
@@ -118,7 +118,7 @@ def render_urdf(urdf_path, use_rt, simulate, disable_self_collision, fix_root_li
     # Video recorder
     if record_video:
         Path(output_video_path).parent.mkdir(parents=True, exist_ok=True)
-        writer = cv2.VideoWriter(output_video_path, cv2.VideoWriter_fourcc(*"mp4v"), 30.0, (1920, 1080))
+        writer = cv2.VideoWriter(output_video_path, cv2.VideoWriter_fourcc(*"mp4v"), 30.0, (1080, 1080))
 
     # Rendering
     for qpos in tqdm.tqdm(trajectory):
@@ -151,8 +151,9 @@ def render_urdf(urdf_path, use_rt, simulate, disable_self_collision, fix_root_li
 
     if record_video:
         writer.release()
+        print(f"Video generated: {output_video_path}, now convert it to webp.")
         stream = ffmpeg.input(output_video_path)
-        stream = ffmpeg.filter(stream, "fps", fps=30, round="up").filter("scale", width="1920", height="1080")
+        stream = ffmpeg.filter(stream, "fps", fps=30, round="up").filter("scale", width="1080", height="1080")
         stream = ffmpeg.output(
             stream,
             output_video_path.replace("mp4", "webp"),
