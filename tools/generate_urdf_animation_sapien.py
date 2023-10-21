@@ -14,9 +14,6 @@ from sapien.utils import Viewer
 import ffmpeg
 
 
-# ffmpeg -i input_filename.mp4 -vcodec libwebp -filter:v fps=30 -lossless 1 -loop 0 -preset default -an -vsync 0 -s 1080:1080 output_filename.webp
-
-
 def generate_joint_limit_trajectory(robot: sapien.Articulation, loop_steps: int):
     joint_limits = robot.get_qlimits()
     for index, joint in enumerate(robot.get_active_joints()):
@@ -152,6 +149,9 @@ def render_urdf(urdf_path, use_rt, simulate, disable_self_collision, fix_root_li
     if record_video:
         writer.release()
         print(f"Video generated: {output_video_path}, now convert it to webp.")
+
+        # Convert mp4 to webp
+        # Ref: https://gist.github.com/witmin/1edf926c2886d5c8d9b264d70baf7379
         stream = ffmpeg.input(output_video_path)
         stream = ffmpeg.filter(stream, "fps", fps=30, round="up").filter("scale", width="1080", height="1080")
         stream = ffmpeg.output(
@@ -161,6 +161,7 @@ def render_urdf(urdf_path, use_rt, simulate, disable_self_collision, fix_root_li
             codec="libwebp",
             vsync="0",
             preset="default",
+            loop="0",
         )
         ffmpeg.run(stream, overwrite_output=True, quiet=True)
 
