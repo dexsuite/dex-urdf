@@ -1,9 +1,9 @@
 This repository offers an assortment of high-quality models for dexterous hands and objects. Both of them are in URDF
 format.
 
-| Robot Model  |        Ray-Tracing[^1]        | Rasterization[^2] | Load Checking[^3]  |  Hand Type   |
-|:------------:|:-----------------------------:|:-----------------:|:------------------:|:------------:|
-| Allegro Hand | doc/robot_zoo/allegro_rt.webp |         0         | :white_check_mark: | Left & Right |
+| Robot Model  |          Ray-Tracing[^1]           | Rasterization[^2] | Load Checking[^3]  |  Hand Type   |
+|:------------:|:----------------------------------:|:-----------------:|:------------------:|:------------:|
+| Allegro Hand | ![](doc/robot_zoo/allegro_rt.webp) |         0         | :white_check_mark: | Left & Right |
 
 [^1]: Ray tracing images are rendered in `SAPIEN` using the urdf with `glb` version
 [^2]: Rasterization images are rendered in `IsaacGym` using the with the `glb` version
