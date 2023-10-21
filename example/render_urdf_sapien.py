@@ -20,12 +20,12 @@ def parse_args():
         "-s", "--simulate", action="store_true", default=True, help="Whether to physically simulate the urdf."
     )
     parser.add_argument(
-        "-f", "--fix-root-link", action="store_true", default=True, help="Whether to physically simulate the urdf."
+        "-f", "--fix-root", action="store_true", default=True, help="Whether to physically simulate the urdf."
     )
     parser.add_argument(
         "--disable-self-collision",
         action="store_true",
-        default=True,
+        default=False,
         help="Whether to disable the self collision of the urdf.",
     )
     return parser.parse_args()
@@ -170,7 +170,7 @@ def generate_joint_limit_trajectory(robot: sapien.Articulation, loop_steps: int)
     return trajectory.T
 
 
-def visualize_urdf(use_rt, urdf_file, simulate, disable_self_collision, fix_root_link):
+def visualize_urdf(use_rt, urdf_file, simulate, disable_self_collision, fix_root):
     # Generate rendering config
     render_config = {}
     if not use_rt:
@@ -227,7 +227,7 @@ def visualize_urdf(use_rt, urdf_file, simulate, disable_self_collision, fix_root
     if disable_self_collision and not simulate:
         for link_builder in robot_builder.get_link_builders():
             link_builder.set_collision_groups(1, 1, 17, 0)
-    robot = robot_builder.build(fix_root_link=fix_root_link)
+    robot = robot_builder.build(fix_root_link=fix_root)
 
     # Robot motion
     loop_steps = 600
@@ -242,7 +242,6 @@ def visualize_urdf(use_rt, urdf_file, simulate, disable_self_collision, fix_root
 
     step = 0
     while not viewer.closed:
-        scene.update_render()
         viewer.render()
         if simulate:
             viewer.clear_contact()
@@ -261,7 +260,7 @@ def visualize_urdf(use_rt, urdf_file, simulate, disable_self_collision, fix_root
 
 def main():
     args = parse_args()
-    visualize_urdf(args.use_rt, args.urdf, args.simulate, args.disable_self_collision, args.fix_root_link)
+    visualize_urdf(args.use_rt, args.urdf, args.simulate, args.disable_self_collision, args.fix_root)
 
 
 if __name__ == "__main__":

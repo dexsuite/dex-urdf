@@ -13,12 +13,12 @@ def parse_args():
         "-s", "--simulate", action="store_true", default=True, help="Whether to physically simulate the urdf."
     )
     parser.add_argument(
-        "-f", "--fix-root-link", action="store_true", default=True, help="Whether to physically simulate the urdf."
+        "-f", "--fix-root", action="store_true", default=True, help="Whether to physically simulate the urdf."
     )
     parser.add_argument(
         "--disable-self-collision",
         action="store_true",
-        default=True,
+        default=False,
         help="Whether to disable the self collision of the urdf.",
     )
     return parser.parse_args()
@@ -39,7 +39,7 @@ def generate_joint_limit_trajectory(joint_limits: np.ndarray, loop_steps: int):
     return trajectory.T
 
 
-def visualize_urdf(urdf_file, simulate, disable_self_collision, fix_root_link):
+def visualize_urdf(urdf_file, simulate, disable_self_collision, fix_root):
     # initialize gym
     gym = gymapi.acquire_gym()
 
@@ -83,7 +83,7 @@ def visualize_urdf(urdf_file, simulate, disable_self_collision, fix_root_link):
 
     # Load asset with default control type of position for all joints
     asset_options = gymapi.AssetOptions()
-    asset_options.fix_base_link = fix_root_link
+    asset_options.fix_base_link = fix_root
     asset_options.flip_visual_attachments = False
     asset = gym.load_asset(sim, asset_root, asset_file, asset_options)
     num_dof = gym.get_asset_dof_count(asset)
@@ -152,7 +152,7 @@ def visualize_urdf(urdf_file, simulate, disable_self_collision, fix_root_link):
 
 def main():
     args = parse_args()
-    visualize_urdf(args.urdf, args.simulate, args.disable_self_collision, args.fix_root_link)
+    visualize_urdf(args.urdf, args.simulate, args.disable_self_collision, args.fix_root)
 
 
 if __name__ == "__main__":
