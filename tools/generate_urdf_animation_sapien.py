@@ -1,3 +1,4 @@
+import sapien.core as sapien
 from pathlib import Path
 from typing import Optional
 
@@ -102,6 +103,8 @@ def render_urdf(urdf_path, use_rt, simulate, disable_self_collision, fix_root_li
         for link_builder in robot_builder.get_link_builders():
             link_builder.set_collision_groups(1, 1, 17, 0)
     robot = robot_builder.build(fix_root_link=fix_root_link)
+    if "shadow" in urdf_path:
+        robot.set_pose(sapien.Pose([0, 0, -0.3]))
 
     # Robot motion
     loop_steps = 300
@@ -147,6 +150,8 @@ def render_urdf(urdf_path, use_rt, simulate, disable_self_collision, fix_root_li
             writer.write(rgb[..., ::-1])
 
     if record_video:
+        if not headless:
+            viewer.close()
         writer.release()
         print(f"Video generated: {output_video_path}, now convert it to webp.")
 

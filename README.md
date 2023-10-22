@@ -1,13 +1,13 @@
 This repository offers an assortment of high-quality models for dexterous hands and objects. Both of them are in URDF
 format.
 
-| Robot Model  |          Ray-Tracing[^1]           | Rasterization[^2] | Load Checking[^3]  |  Hand Type   |
-|:------------:|:----------------------------------:|:-----------------:|:------------------:|:------------:|
-| Allegro Hand | ![](doc/gallery/allegro_rt.webp) |         0         | :white_check_mark: | Left & Right |
+| Robot Model  |         Ray-Tracing[^1]          | Rasterization[^2] | 
+|:------------:|:--------------------------------:|:-----------------:|
+| Allegro Hand | ![](doc/gallery/allegro_rt.webp) |         0         |
+| Shadow Hand  | ![](doc/gallery/shadow_rt.webp)  |         0         |
 
 [^1]: Ray tracing images are rendered in `SAPIEN` using the urdf with `glb` version
 [^2]: Rasterization images are rendered in `IsaacGym` using the with the `glb` version
-[^3]: Loading checking means the URDF has been tested in the
 following platform: [yourdfpy](https://github.com/clemense/yourdfpy),
 [IsaacGym](https://developer.nvidia.com/isaac-gym),
 [SAPIEN](https://sapien.ucsd.edu/),
