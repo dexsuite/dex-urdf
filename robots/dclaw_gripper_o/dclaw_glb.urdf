@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="utf-8"?>
+<robot name="DClaw">
+  <link name="base_link">
+    <inertial>
+      <origin xyz="0.026137 -0.13908 0.095138" rpy="0 0 0"/>
+      <mass value="0.23695"/>
+      <inertia ixx="0.00032097" ixy="-6.6887E-18" ixz="1.9851E-17" iyy="0.00016917" iyz="-1.3585E-07" izz="0.00016932"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="meshes/visual/Base_link.glb"/>
+      </geometry>
+    </visual>
+    <collision> <!-- base_cylinder -->
+      <geometry>
+        <mesh filename="meshes/collision/base_link_cylinder.obj"/>
+      </geometry>
+    </collision>
+    <collision> <!-- base_motor_1 -->
+      <origin xyz="0.0345 -0.2 0.085" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.026 0.04 0.05"/>
+      </geometry>
+    </collision>
+    <collision> <!-- base_motor_2 -->
+      <origin xyz="0.0345 -0.097 0.049" rpy="-1.0472 0 0"/>
+      <geometry>
+        <box size="0.026 0.04 0.05"/>
+      </geometry>
+    </collision>
+    <collision> <!-- base_motor_3 -->
+      <origin xyz="0.0345 -0.12 0.154" rpy="1.0472 0 0"/>
+      <geometry>
+        <box size="0.026 0.04 0.05"/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="Link1_1">
+    <visual>
+      <geometry>
+        <mesh filename="meshes/visual/Link1_1.glb"/>
+      </geometry>
+    </visual>
+    <collision>  <!-- Link1_1 -->
+      <origin xyz="0.055 0.038 -0.024" rpy="1.0472 0 0"/>
+      <geometry>
+        <box size="0.056 0.038 0.03"/>
+      </geometry>
+    </collision>
+    <collision>  <!-- Link1_1_side -->
+      <origin xyz="0.013 0.022 -0.013" rpy="1.0472 0 0"/>
+      <geometry>
+        <box size="0.03 0.024 0.01"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="0.013 0.055 -0.032" rpy="1.0472 0 0"/>
+      <geometry>
+        <box size="0.03 0.024 0.01"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="Joint1_1" type="revolute">
+    <origin xyz="0.033836 -0.086572 0.0038435" rpy="2.6178 0.014876 -0.025864"/>
+    <parent link="base_link"/>
+    <child link="Link1_1"/>
+    <axis xyz="0 0.86525 -0.50134"/>
+    <limit lower="-1.32" upper="0.524" effort="10" velocity="100"/>
+  </joint>
+  <link name="Link2_1">
+    <visual>
+      <geometry>
+        <mesh
+          filename="meshes/visual/Link2_1.glb"/>
+      </geometry>
+    </visual>
+    <collision>  <!-- Link2_1 -->
+      <origin xyz="0.042 0.026 -0.0162" rpy="-0.3316 -0.4014 -0.89"/>
+      <geometry>
+        <box size="0.03 0.054 0.038"/>
+      </geometry>
+    </collision>
+    <collision>  <!-- Link2_1_side -->
+      <origin xyz="0.01 0.017 0.015" rpy="-0.3316 -0.4014 -0.89"/>
+      <geometry>
+        <box size="0.024 0.03 0.01"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="0.01 -0.003 -0.02" rpy="-0.3316 -0.4014 -0.89"/>
+      <geometry>
+        <box size="0.024 0.03 0.01"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="Joint2_1" type="revolute">
+    <origin xyz="0.068497 0.038635 -0.023133" rpy="0.085364 -0.30753 -0.57541"/>
+    <parent link="Link1_1"/>
+    <child link="Link2_1"/>
+    <axis xyz="0.009437 0.50132 0.86521"/>
+    <limit lower="-1.57" upper="1.57" effort="10" velocity="100"/>
+  </joint>
+  <link name="Link3_1">
+    <visual>
+      <geometry>
+        <mesh filename="meshes/visual/Link3_1.glb"/>
+      </geometry>
+    </visual>
+    <collision>  <!-- Link3_1 -->
+      <geometry>
+        <mesh filename="meshes/collision/link3_1_C.obj"/>
+      </geometry>
+    </collision>
+    <collision>  <!-- Link3_1_side -->
+      <origin xyz="0.013 -0.01 0.018" rpy="0.524 0 0"/>
+      <geometry>
+        <box size="0.03 0.024 0.01"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="0.013 0.011 -0.018" rpy="0.524 0 0"/>
+      <geometry>
+        <box size="0.03 0.024 0.01"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="Joint3_1" type="revolute">
+    <origin xyz="0.055352 0.034651 -0.020681" rpy="-0.85342 0.42531 0.84594"/>
+    <parent link="Link2_1"/>
+    <child link="Link3_1"/>
+    <axis xyz="0.009437 0.49863 -0.86676"/>
+    <limit lower="-1.57" upper="1.57" effort="10" velocity="100"/>
+  </joint>
+  <link name="Link1_2">
+    <visual>
+      <geometry>
+        <mesh filename="meshes/visual/Link1_2.glb"/>
+      </geometry>
+    </visual>
+    <collision>  <!-- Link1_2 -->
+      <origin xyz="0.052 0.008 -0.006" rpy="-0.524 0 0"/>
+      <geometry>
+        <box size="0.056 0.03 0.038"/>
+      </geometry>
+    </collision>
+    <collision>  <!-- Link1_2_side -->
+      <origin xyz="0.012 -0.008 0.005" rpy="-0.524 0 0"/>
+      <geometry>
+        <box size="0.03 0.01 0.024"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="0.012 0.025 -0.015" rpy="-0.524 0 0"/>
+      <geometry>
+        <box size="0.03 0.01 0.024"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="Joint1_2" type="revolute">
+    <origin xyz="0.033836 -0.11353 0.13927" rpy="1.571 0.014928 0.025769"/>
+    <parent link="base_link"/>
+    <child link="Link1_2"/>
+    <axis xyz="0 0.86525 -0.50134"/>
+    <limit lower="-0.524" upper="1.35" effort="10" velocity="100"/>
+  </joint>
+  <link name="Link2_2">
+    <visual>
+      <geometry>
+        <mesh filename="meshes/visual/Link2_2.glb"/>
+      </geometry>
+    </visual>
+    <collision> <!-- Link2_2 -->
+      <origin xyz="0.043 0.027 -0.015" rpy="-0.436 0.297 0.558"/>
+      <geometry>
+        <box size="0.056 0.03 0.038"/>
+      </geometry>
+    </collision>
+    <collision> <!-- Link2_2_side -->
+      <origin xyz="0.01 -0.003 -0.019" rpy="-0.436 0.297 0.558"/>
+      <geometry>
+        <box size="0.03 0.024 0.01"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="0.01 0.017 0.015" rpy="-0.436 0.297 0.558"/>
+      <geometry>
+        <box size="0.03 0.024 0.01"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="Joint2_2" type="revolute">
+    <origin xyz="0.068497 0.0077714 -0.00525" rpy="0.089096 -0.31316 -0.58804"/>
+    <parent link="Link1_2"/>
+    <child link="Link2_2"/>
+    <axis xyz="0.009437 0.50132 0.86521"/>
+    <limit lower="-1.57" upper="1.57" effort="10" velocity="100"/>
+  </joint>
+  <link name="Link3_2">
+    <visual>
+      <geometry>
+        <mesh filename="meshes/visual/Link3_2.glb"/>
+      </geometry>
+    </visual>
+    <collision> <!-- Link3_2 -->
+      <geometry>
+        <mesh filename="meshes/collision/link3_2_C.obj"/>
+      </geometry>
+    </collision>
+    <collision> <!-- Link3_2_side -->
+      <origin xyz="0.013 0.011 -0.02" rpy="0.524 0 0"/>
+      <geometry>
+        <box size="0.03 0.024 0.01"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="0.013 -0.01 0.018" rpy="0.524 0 0"/>
+      <geometry>
+        <box size="0.03 0.024 0.01"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="Joint3_2" type="revolute">
+    <origin xyz="0.055352 0.034651 -0.020681" rpy="-0.94339 0.33385 0.59814"/>
+    <parent link="Link2_2"/>
+    <child link="Link3_2"/>
+    <axis xyz="0.009437 0.49863 -0.86676"/>
+    <limit lower="-1.57" upper="1.57" effort="10" velocity="100"/>
+  </joint>
+  <link name="Link1_3">
+    <visual>
+      <geometry>
+        <mesh filename="meshes/visual/Link1_3.glb"/>
+      </geometry>
+    </visual>
+    <collision> <!-- Link1_3 -->
+      <origin xyz="0.053 -0.03 0.015" rpy="-0.524 0 0"/>
+      <geometry>
+        <box size="0.056 0.03 0.04"/>
+      </geometry>
+    </collision>
+    <collision> <!-- Link1_3_side -->
+      <origin xyz="0.013 -0.012 0.007" rpy="-0.524 0 0"/>
+      <geometry>
+        <box size="0.03 0.01 0.024"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="0.013 -0.045 0.025" rpy="-0.524 0 0"/>
+      <geometry>
+        <box size="0.03 0.01 0.024"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="Joint1_3" type="revolute">
+    <origin xyz="0.033836 -0.16663 0.095224" rpy="0.5236 -0.013932 2.1609E-05"/>
+    <parent link="base_link"/>
+    <child link="Link1_3"/>
+    <axis xyz="0 0.86525 -0.50134"/>
+    <limit lower="-1.35" upper="0.524" effort="10" velocity="100"/>
+  </joint>
+  <link name="Link2_3">
+    <visual>
+      <geometry>
+        <mesh filename="meshes/visual/Link2_3.glb"/>
+      </geometry>
+    </visual>
+    <collision> <!-- Link2_3 -->
+      <origin xyz="0.045 0.028 -0.017" rpy="-0.419 0.279 0.576"/>
+      <geometry>
+        <box size="0.056 0.03 0.04"/>
+      </geometry>
+    </collision>
+    <collision> <!-- Link2_3_side -->
+      <origin xyz="0.01 0.018 0.014" rpy="-0.419 0.279 0.576"/>
+      <geometry>
+        <box size="0.03 0.024 0.01"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="0.011 -0.005 -0.023" rpy="-0.419 0.279 0.576"/>
+      <geometry>
+        <box size="0.03 0.024 0.01"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="Joint2_3" type="revolute">
+    <origin xyz="0.068497 -0.028696 0.01588" rpy="0.063109 -0.26992 -0.49445"/>
+    <parent link="Link1_3"/>
+    <child link="Link2_3"/>
+    <axis xyz="0.009437 0.50132 0.86521"/>
+    <limit lower="-1.57" upper="1.57" effort="10" velocity="100"/>
+  </joint>
+  <link name="Link3_3">
+    <visual>
+      <geometry>
+        <mesh filename="meshes/visual/Link3_3.glb"/>
+      </geometry>
+    </visual>
+    <collision> <!-- Link3_3 -->
+      <geometry>
+        <mesh filename="meshes/collision/link3_3_C.obj"/>
+      </geometry>
+    </collision>
+    <collision> <!-- Link3_3_side -->
+      <origin xyz="0.013 -0.011 0.019" rpy="0.524 0 0"/>
+      <geometry>
+        <box size="0.03 0.024 0.01"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="0.013 0.01 -0.019" rpy="0.524 0 0"/>
+      <geometry>
+        <box size="0.03 0.024 0.01"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="Joint3_3" type="revolute">
+    <origin xyz="0.055352 0.034651 -0.020681" rpy="2.212 0.33079 0.64036"/>
+    <parent link="Link2_3"/>
+    <child link="Link3_3"/>
+    <axis xyz="0.009437 0.49863 -0.86676"/>
+    <limit lower="-1.57" upper="1.57" effort="10" velocity="100"/>
+  </joint>
+</robot>
