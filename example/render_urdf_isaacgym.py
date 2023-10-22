@@ -85,6 +85,7 @@ def visualize_urdf(urdf_file, simulate, disable_self_collision, fix_root):
     asset_options = gymapi.AssetOptions()
     asset_options.fix_base_link = fix_root
     asset_options.flip_visual_attachments = False
+    asset_options.disable_gravity = True
     asset = gym.load_asset(sim, asset_root, asset_file, asset_options)
     num_dof = gym.get_asset_dof_count(asset)
     dof_prop = gym.get_asset_dof_properties(asset)
@@ -104,8 +105,8 @@ def visualize_urdf(urdf_file, simulate, disable_self_collision, fix_root):
     dof_states["pos"] = init_qpos
     props = gym.get_actor_dof_properties(env, actor)
     props["driveMode"] = (gymapi.DOF_MODE_POS,) * num_dof
-    props["stiffness"] = (10000,) * num_dof
-    props["damping"] = (500,) * num_dof
+    props["stiffness"] = (100,) * num_dof
+    props["damping"] = (5,) * num_dof
     gym.set_actor_dof_properties(env, actor, props)
 
     # Create trajectory
