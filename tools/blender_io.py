@@ -2,14 +2,20 @@ import bpy
 from pathlib import Path
 
 IS_EXPORT = True
+IS_OBJ = True
+
+file_type = "dae" if not IS_OBJ else "obj"
 
 root_dir = Path("")
 if not IS_EXPORT:
     # Import all obj file in a directory to blender scene
-    for file in root_dir.glob("*.obj"):
+    for file in root_dir.glob(f"*.{file_type}"):
         if "_C" not in str(file):
             print(file)
-            imported_object = bpy.ops.import_scene.obj(filepath=str(file))
+            if IS_OBJ:
+                imported_object = bpy.ops.import_scene.obj(filepath=str(file))
+            else:
+                bpy.ops.wm.collada_import(filepath=str(file))
 
 
 else:
