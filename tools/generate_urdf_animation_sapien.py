@@ -1,4 +1,3 @@
-import sapien.core as sapien
 from pathlib import Path
 from typing import Optional
 
@@ -35,7 +34,7 @@ def generate_joint_limit_trajectory(robot: sapien.Articulation, loop_steps: int)
     return trajectory.T
 
 
-def render_urdf(urdf_path, use_rt, simulate, disable_self_collision, fix_root_link, headless, output_video_path):
+def render_urdf(urdf_path, use_rt, simulate, disable_self_collision, fix_root, headless, output_video_path):
     # Generate rendering config
     render_config = {}
     if not use_rt:
@@ -102,7 +101,7 @@ def render_urdf(urdf_path, use_rt, simulate, disable_self_collision, fix_root_li
     if disable_self_collision and not simulate:
         for link_builder in robot_builder.get_link_builders():
             link_builder.set_collision_groups(1, 1, 17, 0)
-    robot = robot_builder.build(fix_root_link=fix_root_link)
+    robot = robot_builder.build(fix_root_link=fix_root)
     if "shadow" in urdf_path:
         robot.set_pose(sapien.Pose([0, 0, -0.3]))
 
@@ -150,8 +149,6 @@ def render_urdf(urdf_path, use_rt, simulate, disable_self_collision, fix_root_li
             writer.write(rgb[..., ::-1])
 
     if record_video:
-        if not headless:
-            viewer.close()
         writer.release()
         print(f"Video generated: {output_video_path}, now convert it to webp.")
 
@@ -170,6 +167,8 @@ def render_urdf(urdf_path, use_rt, simulate, disable_self_collision, fix_root_li
         )
         ffmpeg.run(stream, overwrite_output=True, quiet=True)
 
+    if not headless:
+        viewer.close()
     scene = None
 
 
@@ -177,7 +176,7 @@ def main(
     urdf_path: str,
     /,
     use_rt: bool = False,
-    simulate: bool = False,
+    simulate: bool = True,
     fix_root: bool = True,
     output_video_path: Optional[str] = None,
     headless: bool = False,
@@ -201,7 +200,7 @@ def main(
         use_rt=use_rt,
         simulate=simulate,
         disable_self_collision=disable_self_collision,
-        fix_root_link=fix_root,
+        fix_root=fix_root,
         headless=headless,
         output_video_path=output_video_path,
     )

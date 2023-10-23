@@ -1,12 +1,12 @@
 This repository offers an assortment of high-quality models for dexterous hands and objects. Both of them are in URDF
 format.
 
-| Robot Model  |         Ray-Tracing[^1]          | Rasterization[^2] | 
-|:------------:|:--------------------------------:|:-----------------:|
-| Allegro Hand | ![](doc/gallery/allegro_rt.webp) |         0         |
-| Shadow Hand  | ![](doc/gallery/shadow_rt.webp)  |         0         |
+| Robot Model  |                                            Ray-Tracing[^1]                                             | Rasterization[^2] | 
+|:------------:|:------------------------------------------------------------------------------------------------------:|:-----------------:|
+| Allegro Hand | [<img src="doc/gallery/allegro_rt.webp" width="400">](robots/allegro_hand/allegro_hand_right_glb.urdf) |         0         |
+| Shadow Hand  |  [<img src="doc/gallery/shadow_rt.webp" width="400">](robots/shadow_hand/shadow_hand_right_glb.urdf)   |         0         |
 
-[^1]: Ray tracing images are rendered in `SAPIEN` using the urdf with `glb` version
+[^1]: Ray tracing animation are rendered in `SAPIEN` using the urdf with `glb` version. Code can be found in [SAPIEN ]()
 [^2]: Rasterization images are rendered in `IsaacGym` using the with the `glb` version
 following platform: [yourdfpy](https://github.com/clemense/yourdfpy),
 [IsaacGym](https://developer.nvidia.com/isaac-gym),
@@ -34,6 +34,10 @@ package in serval aspects:
 <summary>Improved visual mesh</summary>
 Consistent mesh format. All visual mesh are stored as `.obj` but not `.dae`,
 since different DAE loader may treat DAE differently, resulting inconsistent behavior across different URDF parser.
+For enhanced support of physically based rendering,
+every URDF file in this repository is accompanied by a GLTF version of urdf,
+which contains meshes in glb format, in addition to a standard urdf with obj mesh.
+Many simulators, such as IsaacGym and SAPIEN, can utilize the glb version to achieve superior visual results.
 </details>
 
 <details>
