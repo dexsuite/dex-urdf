@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com)
      Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
      For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
 <robot
@@ -50,7 +50,7 @@
       <geometry>
         <box size="0.026 0.04 0.05"/>
       </geometry>
-    </collision>    
+    </collision>
     <collision> <!-- base_motor_2 -->
       <origin
         xyz="0.015 0.06 0.11"
@@ -106,7 +106,7 @@
         <box size="0.058 0.038 0.03"/>
       </geometry>
     </collision>
-    <collision> 
+    <collision>
       <origin
         xyz="0.013 0.0035 0.02"
         rpy="0 0 0" />
@@ -114,7 +114,7 @@
         <box size="0.03 0.024 0.01"/>
       </geometry>
     </collision>
-    <collision>  
+    <collision>
       <origin
         xyz="0.013 0.0035 -0.015"
         rpy="0 0 0" />
@@ -179,7 +179,7 @@
         <box size="0.058 0.038 0.03"/>
       </geometry>
     </collision>
-    <collision> 
+    <collision>
       <origin
         xyz="0.013 0.018 0"
         rpy="0 0 0" />
@@ -187,7 +187,7 @@
         <box size="0.03 0.01 0.024"/>
       </geometry>
     </collision>
-    <collision>  
+    <collision>
       <origin
         xyz="0.013 -0.02 0"
         rpy="0 0 0" />
@@ -253,7 +253,7 @@
           filename="meshes/collision/finger_tip.obj" />
       </geometry>
     </collision>
-    <collision> 
+    <collision>
       <origin
         xyz="0.013 0.019 0"
         rpy="0 0 0" />
@@ -261,7 +261,7 @@
         <box size="0.03 0.01 0.024"/>
       </geometry>
     </collision>
-    <collision>  
+    <collision>
       <origin
         xyz="0.013 -0.018 0"
         rpy="0 0 0" />
@@ -326,7 +326,7 @@
         <box size="0.058 0.038 0.03"/>
       </geometry>
     </collision>
-    <collision> 
+    <collision>
       <origin
         xyz="0.013 0.0015 0.019"
         rpy="0 0 0" />
@@ -334,7 +334,7 @@
         <box size="0.03 0.024 0.01"/>
       </geometry>
     </collision>
-    <collision>  
+    <collision>
       <origin
         xyz="0.013 0.0015 -0.016"
         rpy="0 0 0" />
@@ -356,8 +356,8 @@
     <axis
       xyz="0 0.0015509 1" />
     <limit
-      lower="1.32"
-      upper="-0.524"
+      lower="-1.32"
+      upper="0.524"
       effort="10"
       velocity="100" />
   </joint>
@@ -399,7 +399,7 @@
         <box size="0.058 0.038 0.03"/>
       </geometry>
     </collision>
-    <collision> 
+    <collision>
       <origin
         xyz="0.013 0.018 0"
         rpy="0 0 0" />
@@ -407,7 +407,7 @@
         <box size="0.03 0.01 0.024"/>
       </geometry>
     </collision>
-    <collision>  
+    <collision>
       <origin
         xyz="0.013 -0.02 0"
         rpy="0 0 0" />
@@ -473,7 +473,7 @@
           filename="meshes/collision/finger_tip.obj" />
       </geometry>
     </collision>
-    <collision> 
+    <collision>
       <origin
         xyz="0.013 0.019 0"
         rpy="0 0 0" />
@@ -481,7 +481,7 @@
         <box size="0.03 0.01 0.024"/>
       </geometry>
     </collision>
-    <collision>  
+    <collision>
       <origin
         xyz="0.013 -0.018 0"
         rpy="0 0 0" />
@@ -546,7 +546,7 @@
         <box size="0.058 0.038 0.03"/>
       </geometry>
     </collision>
-    <collision> 
+    <collision>
       <origin
         xyz="0.013 -0.0005 0.019"
         rpy="0 0 0" />
@@ -554,7 +554,7 @@
         <box size="0.03 0.024 0.01"/>
       </geometry>
     </collision>
-    <collision>  
+    <collision>
       <origin
         xyz="0.013 -0.0005 -0.016"
         rpy="0 0 0" />
@@ -576,8 +576,8 @@
     <axis
       xyz="0 0.0015509 1" />
     <limit
-      lower="1.32"
-      upper="-0.524"
+      lower="-1.32"
+      upper="0.524"
       effort="10"
       velocity="100" />
   </joint>
@@ -619,7 +619,7 @@
         <box size="0.058 0.038 0.03"/>
       </geometry>
     </collision>
-    <collision> 
+    <collision>
       <origin
         xyz="0.013 0.018 0"
         rpy="0 0 0" />
@@ -627,7 +627,7 @@
         <box size="0.03 0.01 0.024"/>
       </geometry>
     </collision>
-    <collision>  
+    <collision>
       <origin
         xyz="0.013 -0.02 0"
         rpy="0 0 0" />
@@ -693,7 +693,7 @@
           filename="meshes/collision/finger_tip.obj" />
       </geometry>
     </collision>
-    <collision> 
+    <collision>
       <origin
         xyz="0.013 0.019 0"
         rpy="0 0 0" />
@@ -701,7 +701,7 @@
         <box size="0.03 0.01 0.024"/>
       </geometry>
     </collision>
-    <collision>  
+    <collision>
       <origin
         xyz="0.013 -0.018 0"
         rpy="0 0 0" />
