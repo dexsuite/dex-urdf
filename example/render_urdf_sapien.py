@@ -50,8 +50,6 @@ class ContactViewer(Viewer):
         self.highlighted_visual_shape: List[sapien.RenderBody] = []
         self.highlighted_collision: List[sapien.CollisionShape] = []
 
-        self.debug = []
-
     def highlight_contacted_geom(self, collision_shape: sapien.CollisionShape):
         if collision_shape in self.highlighted_collision:
             return
@@ -234,7 +232,7 @@ def visualize_urdf(use_rt, urdf_file, simulate, disable_self_collision, fix_root
     trajectory = np.array([])
     if simulate:
         for joint in robot.get_active_joints():
-            joint.set_drive_property(10000, 500, 10000)
+            joint.set_drive_property(1000, 50)
         trajectory = generate_joint_limit_trajectory(robot, loop_steps=loop_steps)
 
     robot.set_qpos(np.zeros([robot.dof]))

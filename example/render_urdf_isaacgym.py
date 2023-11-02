@@ -46,7 +46,7 @@ def visualize_urdf(urdf_file, simulate, disable_self_collision, fix_root):
     # create a simulator
     sim_params = gymapi.SimParams()
     sim_params.substeps = 2
-    sim_params.dt = 1.0 / 60.0
+    sim_params.dt = 1.0 / 120.0
     sim_params.physx.solver_type = 1
     sim_params.physx.num_position_iterations = 4
     sim_params.physx.num_velocity_iterations = 1
@@ -105,8 +105,8 @@ def visualize_urdf(urdf_file, simulate, disable_self_collision, fix_root):
     dof_states["pos"] = init_qpos
     props = gym.get_actor_dof_properties(env, actor)
     props["driveMode"] = (gymapi.DOF_MODE_POS,) * num_dof
-    props["stiffness"] = (100,) * num_dof
-    props["damping"] = (5,) * num_dof
+    props["stiffness"] = (1000,) * num_dof
+    props["damping"] = (50,) * num_dof
     gym.set_actor_dof_properties(env, actor, props)
 
     # Create trajectory
