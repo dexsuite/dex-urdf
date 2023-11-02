@@ -1,10 +1,11 @@
 This repository offers an assortment of high-quality models for dexterous hands and objects. Both of them are in URDF
 format.
 
-| Robot Model  |                                            Ray-Tracing[^1]                                             | Rasterization[^2] | 
-|:------------:|:------------------------------------------------------------------------------------------------------:|:-----------------:|
-| Allegro Hand | [<img src="doc/gallery/allegro_rt.webp" width="400">](robots/allegro_hand/allegro_hand_right_glb.urdf) |         0         |
-| Shadow Hand  |  [<img src="doc/gallery/shadow_rt.webp" width="400">](robots/shadow_hand/shadow_hand_right_glb.urdf)   |         0         |
+|  Robot Model  |                                            Ray-Tracing[^1]                                             | Rasterization[^2] | 
+|:-------------:|:------------------------------------------------------------------------------------------------------:|:-----------------:|
+| Allegro Hand  | [<img src="doc/gallery/allegro_rt.webp" width="400">](robots/allegro_hand/allegro_hand_right_glb.urdf) |         0         |
+|  Shadow Hand  |  [<img src="doc/gallery/shadow_rt.webp" width="400">](robots/shadow_hand/shadow_hand_right_glb.urdf)   |         0         |
+| DClaw Gripper |    [<img src="doc/gallery/dclaw_rt.webp" width="400">](robots/dclaw_gripper/dclaw_gripper_glb.urdf)    |         0         |
 
 [^1]: Ray tracing animation are rendered in `SAPIEN` using the urdf with `glb` version. Code can be found in [SAPIEN ]()
 [^2]: Rasterization images are rendered in `IsaacGym` using the with the `glb` version

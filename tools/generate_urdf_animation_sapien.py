@@ -58,6 +58,7 @@ def render_urdf(urdf_path, use_rt, simulate, disable_self_collision, fix_root, h
     renderer = sapien.SapienRenderer(offscreen_only=headless)
     engine.set_renderer(renderer)
     config = sapien.SceneConfig()
+    config.enable_tgs = True
     config.gravity = np.array([0, 0, 0])
     scene = engine.create_scene(config=config)
     scene.set_timestep(1 / 125)
@@ -104,11 +105,13 @@ def render_urdf(urdf_path, use_rt, simulate, disable_self_collision, fix_root, h
     robot = robot_builder.build(fix_root_link=fix_root)
     if "shadow" in urdf_path:
         robot.set_pose(sapien.Pose([0, 0, -0.3]))
+    elif "dclaw" in urdf_path:
+        robot.set_pose(sapien.Pose([0, 0, -0.05]))
 
     # Robot motion
     loop_steps = 300
     for joint in robot.get_active_joints():
-        joint.set_drive_property(10000, 500, 10000)
+        joint.set_drive_property(1000, 50)
     trajectory = generate_joint_limit_trajectory(robot, loop_steps=loop_steps)
 
     robot.set_qpos(np.zeros([robot.dof]))
