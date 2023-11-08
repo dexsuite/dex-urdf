@@ -94,7 +94,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="meshes/finger_1_prox_link.STL" />
+          filename="meshes/visual/prox_link.obj" />
       </geometry>
       <material
         name="">
@@ -102,13 +102,29 @@
           rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
       </material>
     </visual>
-    <collision>
+    <collision>   <!-- finger1_prox_link -->
       <origin
         xyz="0 0 0"
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="meshes/finger_1_prox_link.STL" />
+          filename="meshes/collision/prox_link_cylinder.obj" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin
+        xyz="-0.027 0 0.012"
+        rpy="0 0 0" />
+      <geometry>
+        <box size="0.076 0.024 0.026"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin
+        xyz="-0.036 0 0.03"
+        rpy="0 1.029 0" />
+      <geometry>
+        <box size="0.02 0.026 0.01"/>
       </geometry>
     </collision>
   </link>
@@ -233,7 +249,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="meshes/finger_1_dist_link.STL" />
+          filename="meshes/visual/dist_link.obj" />
       </geometry>
       <material
         name="">
@@ -241,13 +257,28 @@
           rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
       </material>
     </visual>
+    <collision> <!-- finger1_disk_link -->
+      <origin
+        xyz="-0.022 0.023 0"
+        rpy="0 0 0.8988" />
+      <geometry>
+        <box size="0.014 0.038 0.02"/>
+      </geometry>
+    </collision>
     <collision>
       <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
+        xyz="-0.002 0.002 0"
+        rpy="0 0 0.7766" />
       <geometry>
-        <mesh
-          filename="meshes/finger_1_dist_link.STL" />
+        <box size="0.018 0.022 0.02"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin
+        xyz="-0.038 0.034 0"
+        rpy="0 0 1.614" />
+      <geometry>
+        <box size="0.012 0.012 0.02"/>
       </geometry>
     </collision>
   </link>
@@ -291,7 +322,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="meshes/finger_2_prox_link.STL" />
+          filename="meshes/visual/prox_link.obj" />
       </geometry>
       <material
         name="">
@@ -299,13 +330,29 @@
           rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
       </material>
     </visual>
-    <collision>
+    <collision>   <!-- finger2_prox_link -->
       <origin
         xyz="0 0 0"
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="meshes/finger_2_prox_link.STL" />
+          filename="meshes/collision/prox_link_cylinder.obj" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin
+        xyz="-0.027 0 0.012"
+        rpy="0 0 0" />
+      <geometry>
+        <box size="0.076 0.024 0.026"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin
+        xyz="-0.036 0 0.03"
+        rpy="0 1.029 0" />
+      <geometry>
+        <box size="0.02 0.026 0.01"/>
       </geometry>
     </collision>
   </link>
@@ -430,7 +477,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="meshes/finger_2_dist_link.STL" />
+          filename="meshes/visual/dist_link.obj" />
       </geometry>
       <material
         name="">
@@ -438,13 +485,28 @@
           rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
       </material>
     </visual>
+    <collision> <!-- finger2_disk_link -->
+      <origin
+        xyz="-0.022 0.023 0"
+        rpy="0 0 0.8988" />
+      <geometry>
+        <box size="0.014 0.038 0.02"/>
+      </geometry>
+    </collision>
     <collision>
       <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
+        xyz="-0.002 0.002 0"
+        rpy="0 0 0.7766" />
       <geometry>
-        <mesh
-          filename="meshes/finger_2_dist_link.STL" />
+        <box size="0.018 0.022 0.02"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin
+        xyz="-0.038 0.034 0"
+        rpy="0 0 1.614" />
+      <geometry>
+        <box size="0.012 0.012 0.02"/>
       </geometry>
     </collision>
   </link>
@@ -569,7 +631,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="meshes/finger_3_dist_link.STL" />
+          filename="meshes/visual/dist_link.obj" />
       </geometry>
       <material
         name="">
@@ -577,13 +639,28 @@
           rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
       </material>
     </visual>
+    <collision> <!-- finger3_disk_link -->
+      <origin
+        xyz="-0.022 0.023 0"
+        rpy="0 0 0.8988" />
+      <geometry>
+        <box size="0.014 0.038 0.02"/>
+      </geometry>
+    </collision>
     <collision>
       <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
+        xyz="-0.002 0.002 0"
+        rpy="0 0 0.7766" />
       <geometry>
-        <mesh
-          filename="meshes/finger_3_dist_link.STL" />
+        <box size="0.018 0.022 0.02"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin
+        xyz="-0.038 0.034 0"
+        rpy="0 0 1.614" />
+      <geometry>
+        <box size="0.012 0.012 0.02"/>
       </geometry>
     </collision>
   </link>
