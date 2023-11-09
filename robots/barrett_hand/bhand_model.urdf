@@ -24,11 +24,6 @@
         <mesh
           filename="meshes/visual/base_link.obj" />
       </geometry>
-      <material
-        name="">
-        <color
-          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
-      </material>
     </visual>
     <collision> <!-- base_cylinder -->
       <origin
@@ -47,15 +42,15 @@
         <box size="0.026 0.108 0.026"/>
       </geometry>
     </collision>
-    <collision> 
+    <collision>
       <origin
         xyz="0 0 0.072"
         rpy="0 0 0" />
       <geometry>
-        <box size="0.084 0.05 0.014"/>
+        <box size="0.076 0.046 0.014"/>
       </geometry>
     </collision>
-    <collision> 
+    <collision>
       <origin
         xyz="0 0.032 0.068"
         rpy="-0.39 0 0" />
@@ -63,7 +58,7 @@
         <box size="0.026 0.02 0.01"/>
       </geometry>
     </collision>
-    <collision> 
+    <collision>
       <origin
         xyz="0 -0.035 0.07"
         rpy="-1.03 0 0" />
@@ -76,17 +71,17 @@
     name="finger_1_prox_link">
     <inertial>
       <origin
-        xyz="-0.0288648917008988 9.98379746692153E-05 0.0171253477569802"
+        xyz="-0.288648917008988 9.98379746692153E-04 0.171253477569802"
         rpy="0 0 0" />
       <mass
-        value="56143.0626955765" />
+        value="56143.0626955765E-5" />
       <inertia
-        ixx="10.4484040652085"
-        ixy="-0.117861448219975"
-        ixz="-5.31613760585343"
-        iyy="33.9552353012776"
-        iyz="0.0780041192837706"
-        izz="29.3669090518615" />
+        ixx="10.4484040652085E-5"
+        ixy="-0.117861448219975E-5"
+        ixz="-5.31613760585343E-5"
+        iyy="33.9552353012776E-5"
+        iyz="0.0780041192837706E-5"
+        izz="29.3669090518615E-5" />
     </inertial>
     <visual>
       <origin
@@ -96,11 +91,6 @@
         <mesh
           filename="meshes/visual/prox_link.obj" />
       </geometry>
-      <material
-        name="">
-        <color
-          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
-      </material>
     </visual>
     <collision>   <!-- finger1_prox_link -->
       <origin
@@ -113,10 +103,10 @@
     </collision>
     <collision>
       <origin
-        xyz="-0.027 0 0.012"
+        xyz="-0.029 0 0.012"
         rpy="0 0 0" />
       <geometry>
-        <box size="0.076 0.024 0.026"/>
+        <box size="0.07 0.024 0.026"/>
       </geometry>
     </collision>
     <collision>
@@ -141,10 +131,10 @@
     <axis
       xyz="0 0 1" />
     <limit
-      lower="-3.141"
+      lower="-3.14"
       upper="0"
       effort="0"
-      velocity="0" />
+      velocity="10" />
   </joint>
   <link
     name="finger_1_med_liink">
@@ -153,14 +143,14 @@
         xyz="-0.030918176135544 0.0019693024932544 0.000743369842666108"
         rpy="0 0 0" />
       <mass
-        value="31321.1214212939" />
+        value="31321.1214212939E-5" />
       <inertia
-        ixx="2.18512832127284"
-        ixy="-0.844484268309696"
-        ixz="0.0135401272401385"
-        iyy="17.3596441998536"
-        iyz="-0.001126692167519"
-        izz="17.7656644395659" />
+        ixx="2.18512832127284E-5"
+        ixy="-0.844484268309696E-5"
+        ixz="0.0135401272401385E-5"
+        iyy="17.3596441998536E-5"
+        iyz="-0.001126692167519E-5"
+        izz="17.7656644395659E-5" />
     </inertial>
     <visual>
       <origin
@@ -170,11 +160,6 @@
         <mesh
           filename="meshes/visual/med_link.obj" />
       </geometry>
-      <material
-        name="">
-        <color
-          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
-      </material>
     </visual>
     <collision> <!-- finger1_med_link -->
       <origin
@@ -184,7 +169,7 @@
         <box size="0.036 0.024 0.018"/>
       </geometry>
     </collision>
-    <collision> 
+    <collision>
       <origin
         xyz="-0.006 0.001 0.001"
         rpy="0 0 0" />
@@ -192,7 +177,7 @@
         <box size="0.032 0.022 0.01"/>
       </geometry>
     </collision>
-    <collision> 
+    <collision>
       <origin
         xyz="-0.068 0.003 0.001"
         rpy="0 0 0" />
@@ -200,7 +185,7 @@
         <box size="0.02 0.022 0.01"/>
       </geometry>
     </collision>
-    <collision> 
+    <collision>
       <origin
         xyz="-0.019 0.001 0.001"
         rpy="0 0 0" />
@@ -225,7 +210,7 @@
       lower="-2.44"
       upper="0"
       effort="0"
-      velocity="0" />
+      velocity="10" />
   </joint>
   <link
     name="finger_1_dist_link">
@@ -234,14 +219,14 @@
         xyz="-0.018331495851456 0.017563370050582 0.000497127783315291"
         rpy="0 0 0" />
       <mass
-        value="19342.3312257343" />
+        value="19342.3312257343E-5" />
       <inertia
-        ixx="3.67466110522623"
-        ixy="-2.57800680786605"
-        ixz="-0.0345727635031181"
-        iyy="4.08727012680705"
-        iyz="0.0329223427372985"
-        izz="5.99395386650428" />
+        ixx="3.67466110522623E-5"
+        ixy="-2.57800680786605E-5"
+        ixz="-0.0345727635031181E-5"
+        iyy="4.08727012680705E-5"
+        iyz="0.0329223427372985E-5"
+        izz="5.99395386650428E-5" />
     </inertial>
     <visual>
       <origin
@@ -251,11 +236,6 @@
         <mesh
           filename="meshes/visual/dist_link.obj" />
       </geometry>
-      <material
-        name="">
-        <color
-          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
-      </material>
     </visual>
     <collision> <!-- finger1_disk_link -->
       <origin
@@ -298,23 +278,23 @@
       lower="-0.785"
       upper="0"
       effort="0"
-      velocity="0" />
+      velocity="10" />
   </joint>
   <link
     name="finger_2_prox_link">
     <inertial>
       <origin
-        xyz="-0.0288648917008987 9.98379746692118E-05 0.0171253477569802"
+        xyz="-0.288648917008987 9.98379746692118E-04 0.171253477569802"
         rpy="0 0 0" />
       <mass
-        value="56143.0626955765" />
+        value="56143.0626955765E-5" />
       <inertia
-        ixx="10.4484040652085"
-        ixy="-0.117861448219975"
-        ixz="-5.31613760585343"
-        iyy="33.9552353012776"
-        iyz="0.0780041192837701"
-        izz="29.3669090518615" />
+        ixx="10.4484040652085E-5"
+        ixy="-0.117861448219975E-5"
+        ixz="-5.31613760585343E-5"
+        iyy="33.9552353012776E-5"
+        iyz="0.0780041192837701E-5"
+        izz="29.3669090518615E-5" />
     </inertial>
     <visual>
       <origin
@@ -324,11 +304,6 @@
         <mesh
           filename="meshes/visual/prox_link.obj" />
       </geometry>
-      <material
-        name="">
-        <color
-          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
-      </material>
     </visual>
     <collision>   <!-- finger2_prox_link -->
       <origin
@@ -341,10 +316,10 @@
     </collision>
     <collision>
       <origin
-        xyz="-0.027 0 0.012"
+        xyz="-0.029 0 0.012"
         rpy="0 0 0" />
       <geometry>
-        <box size="0.076 0.024 0.026"/>
+        <box size="0.07 0.024 0.026"/>
       </geometry>
     </collision>
     <collision>
@@ -370,9 +345,9 @@
       xyz="0 0 1" />
     <limit
       lower="0"
-      upper="3.141"
+      upper="3.14"
       effort="0"
-      velocity="0" />
+      velocity="10" />
   </joint>
   <link
     name="finger_2_med_link">
@@ -381,14 +356,14 @@
         xyz="-0.0309061378225848 0.00214997948654991 0.000743369814045599"
         rpy="0 0 0" />
       <mass
-        value="31321.1215499126" />
+        value="31321.1215499126E-5" />
       <inertia
-        ixx="2.19551825824831"
-        ixy="-0.933117181988174"
-        ixz="0.0135333166873642"
-        iyy="17.3492542935561"
-        iyz="-0.00120585854514789"
-        izz="17.7656644132238" />
+        ixx="2.19551825824831E-5"
+        ixy="-0.933117181988174E-5"
+        ixz="0.0135333166873642E-5"
+        iyy="17.3492542935561E-5"
+        iyz="-0.00120585854514789E-5"
+        izz="17.7656644132238E-5" />
     </inertial>
     <visual>
       <origin
@@ -398,11 +373,6 @@
         <mesh
           filename="meshes/visual/med_link.obj" />
       </geometry>
-      <material
-        name="">
-        <color
-          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
-      </material>
     </visual>
     <collision> <!-- finger2_med_link -->
       <origin
@@ -412,7 +382,7 @@
         <box size="0.036 0.024 0.018"/>
       </geometry>
     </collision>
-    <collision> 
+    <collision>
       <origin
         xyz="-0.006 0.001 0.001"
         rpy="0 0 0" />
@@ -420,7 +390,7 @@
         <box size="0.032 0.022 0.01"/>
       </geometry>
     </collision>
-    <collision> 
+    <collision>
       <origin
         xyz="-0.068 0.003 0.001"
         rpy="0 0 0" />
@@ -428,7 +398,7 @@
         <box size="0.02 0.022 0.01"/>
       </geometry>
     </collision>
-    <collision> 
+    <collision>
       <origin
         xyz="-0.019 0.001 0.001"
         rpy="0 0 0" />
@@ -453,7 +423,7 @@
       lower="-2.44"
       upper="0"
       effort="0"
-      velocity="0" />
+      velocity="10" />
   </joint>
   <link
     name="finger_2_dist_link">
@@ -462,14 +432,14 @@
         xyz="-0.0181940669984822 0.017705695005231 0.000497127783261171"
         rpy="0 0 0" />
       <mass
-        value="19342.3313295693" />
+        value="19342.3313295693E-5" />
       <inertia
-        ixx="3.71486604025429"
-        ixy="-2.58090906930852"
-        ixz="-0.0343151446338957"
-        iyy="4.04706522522361"
-        iyz="0.0331907761165059"
-        izz="5.99395390717116" />
+        ixx="3.71486604025429E-5"
+        ixy="-2.58090906930852E-5"
+        ixz="-0.0343151446338957E-5"
+        iyy="4.04706522522361E-5"
+        iyz="0.0331907761165059E-5"
+        izz="5.99395390717116E-5" />
     </inertial>
     <visual>
       <origin
@@ -479,11 +449,6 @@
         <mesh
           filename="meshes/visual/dist_link.obj" />
       </geometry>
-      <material
-        name="">
-        <color
-          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
-      </material>
     </visual>
     <collision> <!-- finger2_disk_link -->
       <origin
@@ -526,7 +491,7 @@
       lower="-0.785"
       upper="0"
       effort="0"
-      velocity="0" />
+      velocity="10" />
   </joint>
   <link
     name="finger_3_med_link">
@@ -535,14 +500,14 @@
         xyz="-0.0309181761355441 0.00196930249325443 0.000743369842666415"
         rpy="0 0 0" />
       <mass
-        value="31321.121421294" />
+        value="31321.121421294E-5" />
       <inertia
-        ixx="2.18512832127284"
-        ixy="-0.844484268309696"
-        ixz="0.0135401272400822"
-        iyy="17.3596441998537"
-        iyz="-0.0011266921675151"
-        izz="17.7656644395659" />
+        ixx="2.18512832127284E-5"
+        ixy="-0.844484268309696E-5"
+        ixz="0.0135401272400822E-5"
+        iyy="17.3596441998537E-5"
+        iyz="-0.0011266921675151E-5"
+        izz="17.7656644395659E-5" />
     </inertial>
     <visual>
       <origin
@@ -552,11 +517,6 @@
         <mesh
           filename="meshes/visual/med_link.obj" />
       </geometry>
-      <material
-        name="">
-        <color
-          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
-      </material>
     </visual>
     <collision> <!-- finger3_med_link -->
       <origin
@@ -566,7 +526,7 @@
         <box size="0.036 0.024 0.018"/>
       </geometry>
     </collision>
-    <collision> 
+    <collision>
       <origin
         xyz="-0.006 0.001 0.001"
         rpy="0 0 0" />
@@ -574,7 +534,7 @@
         <box size="0.032 0.022 0.01"/>
       </geometry>
     </collision>
-    <collision> 
+    <collision>
       <origin
         xyz="-0.068 0.003 0.001"
         rpy="0 0 0" />
@@ -582,7 +542,7 @@
         <box size="0.02 0.022 0.01"/>
       </geometry>
     </collision>
-    <collision> 
+    <collision>
       <origin
         xyz="-0.019 0.001 0.001"
         rpy="0 0 0" />
@@ -607,7 +567,7 @@
       lower="-2.44"
       upper="0"
       effort="0"
-      velocity="0" />
+      velocity="10" />
   </joint>
   <link
     name="finger_3_dist_link">
@@ -616,14 +576,14 @@
         xyz="-0.0183314958518909 0.0175633700501297 0.000497127783323787"
         rpy="0 0 0" />
       <mass
-        value="19342.3312257343" />
+        value="19342.3312257343E-5" />
       <inertia
-        ixx="3.67466110509902"
-        ixy="-2.57800680785588"
-        ixz="-0.0345727635040649"
-        iyy="4.08727012693427"
-        iyz="0.0329223427365976"
-        izz="5.99395386650428" />
+        ixx="3.67466110509902E-5"
+        ixy="-2.57800680785588E-5"
+        ixz="-0.0345727635040649E-5"
+        iyy="4.08727012693427E-5"
+        iyz="0.0329223427365976E-5"
+        izz="5.99395386650428E-5" />
     </inertial>
     <visual>
       <origin
@@ -633,11 +593,6 @@
         <mesh
           filename="meshes/visual/dist_link.obj" />
       </geometry>
-      <material
-        name="">
-        <color
-          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
-      </material>
     </visual>
     <collision> <!-- finger3_disk_link -->
       <origin
@@ -680,6 +635,6 @@
       lower="-0.785"
       upper="0"
       effort="0"
-      velocity="0" />
+      velocity="10" />
   </joint>
 </robot>
