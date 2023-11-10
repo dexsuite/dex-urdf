@@ -2,19 +2,17 @@ from pathlib import Path
 from typing import Optional
 
 import cv2
+import ffmpeg
 import numpy as np
-
-np.float = float
 import sapien.core as sapien
 import tqdm
 import transforms3d
 import tyro
 from sapien.asset import create_dome_envmap
 from sapien.utils import Viewer
-import ffmpeg
 
 
-def generate_joint_limit_trajectory(robot: sapien.Articulation, loop_steps: int):
+def generate_joint_limit_trajectory(robot: sapien.physx.PhysxArticulation, loop_steps: int):
     joint_limits = robot.get_qlimits()
     for index, joint in enumerate(robot.get_active_joints()):
         if joint.type == "continuous":
@@ -36,26 +34,19 @@ def generate_joint_limit_trajectory(robot: sapien.Articulation, loop_steps: int)
 
 def render_urdf(urdf_path, use_rt, simulate, disable_self_collision, fix_root, headless, output_video_path):
     # Generate rendering config
-    render_config = {}
     if not use_rt:
-        render_config.update(dict(camera_shader_dir="ibl", viewer_shader_dir="ibl"))
+        sapien.render.set_viewer_shader_dir("default")
+        sapien.render.set_camera_shader_dir("default")
     else:
-        render_config.update(
-            dict(
-                camera_shader_dir="rt",
-                viewer_shader_dir="rt",
-                rt_samples_per_pixel=32,
-                rt_max_path_depth=16,
-                rt_use_denoiser=True,
-            )
-        )
-    for k, v in render_config.items():
-        setattr(sapien.render_config, k, v)
+        sapien.render.set_viewer_shader_dir("rt")
+        sapien.render.set_camera_shader_dir("rt")
+        sapien.render.set_ray_tracing_samples_per_pixel(32)
+        sapien.render.set_ray_tracing_path_depth(16)
+        sapien.render.set_ray_tracing_denoiser("oidn")
 
     # Setup
     engine = sapien.Engine()
-    engine.set_log_level("warning")
-    renderer = sapien.SapienRenderer(offscreen_only=headless)
+    renderer = sapien.render.SapienRenderer(offscreen_only=headless)
     engine.set_renderer(renderer)
     config = sapien.SceneConfig()
     config.enable_tgs = True
@@ -64,7 +55,7 @@ def render_urdf(urdf_path, use_rt, simulate, disable_self_collision, fix_root, h
     scene.set_timestep(1 / 125)
 
     # Ground
-    render_mat = renderer.create_material()
+    render_mat = sapien.render.RenderMaterial()
     render_mat.base_color = [0.06, 0.08, 0.12, 1]
     render_mat.metallic = 0.0
     render_mat.roughness = 0.9
@@ -87,10 +78,10 @@ def render_urdf(urdf_path, use_rt, simulate, disable_self_collision, fix_root, h
     if not headless:
         viewer = Viewer(renderer)
         viewer.set_scene(scene)
-        viewer.set_move_speed(0.01)
-        viewer.toggle_axes(False)
-        viewer.toggle_camera_lines(True)
-        viewer.focus_camera(cam)
+        viewer.control_window.show_origin_frame = False
+        viewer.control_window.move_speed = 0.01
+        viewer.control_window.focus_camera(cam)
+        viewer.control_window._show_camera_linesets = True
     else:
         viewer = None
     record_video = output_video_path is not None
@@ -111,7 +102,7 @@ def render_urdf(urdf_path, use_rt, simulate, disable_self_collision, fix_root, h
     # Robot motion
     loop_steps = 300
     for joint in robot.get_active_joints():
-        joint.set_drive_property(1000, 50)
+        joint.set_drive_property(200, 10)
     trajectory = generate_joint_limit_trajectory(robot, loop_steps=loop_steps)
 
     robot.set_qpos(np.zeros([robot.dof]))
@@ -125,8 +116,9 @@ def render_urdf(urdf_path, use_rt, simulate, disable_self_collision, fix_root, h
     # Rendering
     for qpos in tqdm.tqdm(trajectory):
         if simulate:
-            robot.set_drive_target(qpos)
-            robot.set_qf(robot.compute_passive_force(external=False))
+            for i, joint in enumerate(robot.get_active_joints()):
+                joint.set_drive_target(qpos[i])
+            robot.set_qf(robot.compute_passive_force())
             scene.step()
         else:
             robot.set_qpos(qpos)
@@ -135,7 +127,7 @@ def render_urdf(urdf_path, use_rt, simulate, disable_self_collision, fix_root, h
         mat = transforms3d.axangles.axangle2mat([0, 0, 1], angle)
         quat = transforms3d.quaternions.mat2quat(mat)
         world_rotate = sapien.Pose(q=quat)
-        cam.set_pose(world_rotate * cam.get_pose())
+        cam.set_entity_pose(world_rotate * cam.get_entity_pose())
 
         if not headless:
             viewer.render()
@@ -143,12 +135,8 @@ def render_urdf(urdf_path, use_rt, simulate, disable_self_collision, fix_root, h
         if record_video:
             scene.update_render()
             cam.take_picture()
-            rgb = cam.get_texture("Color")[..., :3]
+            rgb = cam.get_picture("Color")[..., :3]
             rgb = (np.clip(rgb, 0, 1) * 255).astype(np.uint8)
-
-            # Use segmentation mask to paint background to white
-            seg = cam.get_visual_actor_segmentation()[..., 0] < 1
-            rgb[seg, :] = [255, 255, 255]
             writer.write(rgb[..., ::-1])
 
     if record_video:

@@ -4,7 +4,6 @@ from typing import List, Dict, Tuple
 import matplotlib
 import numpy as np
 import sapien
-import sapien.core as sapien
 import transforms3d
 from sapien import internal_renderer as R
 from sapien.utils import Viewer
@@ -243,6 +242,7 @@ def visualize_urdf(use_rt, urdf_file, simulate, disable_self_collision, fix_root
     renderer = sapien.render.SapienRenderer(offscreen_only=False)
     engine.set_renderer(renderer)
     config = sapien.SceneConfig()
+    config.enable_tgs = True
     config.gravity = np.array([0, 0, 0])
     scene = engine.create_scene(config=config)
     scene.set_timestep(1 / 125)
@@ -294,7 +294,6 @@ def visualize_urdf(use_rt, urdf_file, simulate, disable_self_collision, fix_root
     while not viewer.closed:
         viewer.render()
         if simulate:
-            # viewer.clear_contact()
             qpos = trajectory[step]
             for joint, single_qpos in zip(robot.get_active_joints(), qpos):
                 joint.set_drive_target(single_qpos)
