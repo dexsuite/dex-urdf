@@ -1,6 +1,5 @@
 # Blender 3.6.5
 # www.blender.org
-mtllib base_link_cylinder.mtl
 o base_link_cylinder
 v -0.009000 0.000090 0.081860
 v 0.002000 0.000090 0.081860

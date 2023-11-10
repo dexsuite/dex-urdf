@@ -48,9 +48,6 @@
       <geometry>
         <mesh filename="meshes/visual/link_1.glb"/>
       </geometry>
-      <material name="">
-        <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1"/>
-      </material>
     </visual>
     <collision>  <!-- link_finger1_1 -->
       <origin xyz="0.05 -0.005 0" rpy="0 0 0"/>
@@ -89,9 +86,6 @@
       <geometry>
         <mesh filename="meshes/visual/link_2.glb"/>
       </geometry>
-      <material name="">
-        <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1"/>
-      </material>
     </visual>
     <collision>  <!-- link_finger1_2 -->
       <origin xyz="0.05 0 0" rpy="0 0 0"/>
@@ -130,9 +124,6 @@
       <geometry>
         <mesh filename="meshes/visual/link_3.glb"/>
       </geometry>
-      <material name="">
-        <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1"/>
-      </material>
     </visual>
     <collision>   <!-- link_finger1_3 -->
       <origin xyz="0 0 0" rpy="0 0 0"/>
@@ -171,9 +162,6 @@
       <geometry>
         <mesh filename="meshes/visual/link_1.glb"/>
       </geometry>
-      <material name="">
-        <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1"/>
-      </material>
     </visual>
     <collision>  <!-- link_finger2_1 -->
       <origin xyz="0.05 0.003 0" rpy="0 0 0"/>
@@ -212,9 +200,6 @@
       <geometry>
         <mesh filename="meshes/visual/link_2.glb"/>
       </geometry>
-      <material name="">
-        <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1"/>
-      </material>
     </visual>
     <collision>  <!-- link_finger2_2 -->
       <origin xyz="0.05 0 0" rpy="0 0 0"/>
@@ -253,9 +238,6 @@
       <geometry>
         <mesh filename="meshes/visual/link_3.glb"/>
       </geometry>
-      <material name="">
-        <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1"/>
-      </material>
     </visual>
     <collision>   <!-- link_finger2_3 -->
       <origin xyz="0 0 0" rpy="0 0 0"/>
@@ -294,9 +276,6 @@
       <geometry>
         <mesh filename="meshes/visual/link_1.glb"/>
       </geometry>
-      <material name="">
-        <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1"/>
-      </material>
     </visual>
     <collision>  <!-- link_finger3_1 -->
       <origin xyz="0.05 0 0" rpy="0 0 0"/>
@@ -335,9 +314,6 @@
       <geometry>
         <mesh filename="meshes/visual/link_2.glb"/>
       </geometry>
-      <material name="">
-        <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1"/>
-      </material>
     </visual>
     <collision>  <!-- link_finger3_2 -->
       <origin xyz="0.05 0 0" rpy="0 0 0"/>
@@ -376,9 +352,6 @@
       <geometry>
         <mesh filename="meshes/visual/link_3.glb"/>
       </geometry>
-      <material name="">
-        <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1"/>
-      </material>
     </visual>
     <collision>   <!-- link_finger3_3 -->
       <origin xyz="0 0 0" rpy="0 0 0"/>

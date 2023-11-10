@@ -1,6 +1,5 @@
 # Blender 3.6.5
 # www.blender.org
-mtllib finger_tip.mtl
 o Cube
 v 0.023500 -0.024000 -0.013000
 v 0.023500 -0.024000 0.013000
