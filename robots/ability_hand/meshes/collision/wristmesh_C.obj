@@ -1,6 +1,5 @@
 # Blender 3.6.4
 # www.blender.org
-mtllib wristmesh_C.mtl
 g Cylinder_up_Cylinder
 v 0.000000 0.020000 0.004000
 v 0.000000 0.020000 0.006000

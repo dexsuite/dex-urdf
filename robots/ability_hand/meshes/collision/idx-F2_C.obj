@@ -1,6 +1,5 @@
 # Blender 3.6.4
 # www.blender.org
-mtllib idx-F2_C.mtl
 g Cylinder.01_Cylinder
 v -0.001602 0.006440 0.000000
 v 0.019389 -0.005195 -0.000000
