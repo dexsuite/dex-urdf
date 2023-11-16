@@ -23,7 +23,7 @@
  or tort (including negligence or otherwise) arising in any way out of the use of this
  software, even if advised of the possibility of such damage.
 -->
-<robot name="shadow_right">
+<robot name="shadow_left">
   <link name="world"/>
   <joint name="world_joint" type="fixed">
     <parent link="world"/>
@@ -39,7 +39,7 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0.0"/>
       <geometry name="forearm_visual">
-        <mesh filename="meshes/visual/forearm_E3M5.glb" scale="0.001 0.001 0.001"/>
+        <mesh filename="meshes/visual/forearm_E3M5.obj" scale="0.001 0.001 0.001"/>
       </geometry>
     </visual>
     <collision>
@@ -65,7 +65,7 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry name="wrist_visual">
-        <mesh filename="meshes/visual/wrist_E3M5.glb" scale="0.001 0.001 0.001"/>
+        <mesh filename="meshes/visual/wrist_E3M5.obj" scale="0.001 0.001 0.001"/>
       </geometry>
     </visual>
     <collision>
@@ -75,25 +75,25 @@
       </geometry>
     </collision>
     <collision>
-      <origin rpy="0 1.5708 0" xyz="-0.026 0 0.034"/>
+      <origin rpy="0 1.5708 0" xyz="0.026 0 0.034"/>
       <geometry>
         <cylinder length="0.010" radius="0.011"/>
       </geometry>
     </collision>
     <collision>
-      <origin rpy="0 1.5708 0" xyz="0.031 0 0.034"/>
+      <origin rpy="0 1.5708 0" xyz="-0.031 0 0.034"/>
       <geometry>
         <cylinder length="0.010" radius="0.011"/>
       </geometry>
     </collision>
     <collision>
-      <origin rpy="0 0.7854 0" xyz="-0.021 0 0.011"/>
+      <origin rpy="0 -0.7854 0" xyz="0.021 0 0.011"/>
       <geometry>
         <box size="0.027 0.018 0.010"/>
       </geometry>
     </collision>
     <collision>
-      <origin rpy="0 -0.7854 0" xyz="0.026 0 0.010"/>
+      <origin rpy="0 0.7854 0" xyz="-0.026 0 0.010"/>
       <geometry>
         <box size="0.027 0.018 0.010"/>
       </geometry>
@@ -103,7 +103,7 @@
     <parent link="forearm"/>
     <child link="wrist"/>
     <origin rpy="0 0 0" xyz="0 -0.010 0.21301"/>
-    <axis xyz="0 1 0"/>
+    <axis xyz="0 -1 0"/>
     <limit effort="10" lower="-0.523598775598" upper="0.174532925199" velocity="2.0"/>
     <dynamics damping="0.1"/>
   </joint>
@@ -116,58 +116,58 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry name="palm_visual">
-        <mesh filename="meshes/visual/palm_E3M5.glb" scale="0.001 0.001 0.001"/>
+        <mesh filename="meshes/visual/palm_E3M5.obj" scale="-0.001 0.001 0.001"/>
       </geometry>
     </visual>
     <collision>
-      <origin rpy="0 0 0" xyz="0.011 0.0085 0.042"/>
+      <origin rpy="0 0 0" xyz="-0.011 0.0085 0.042"/>
       <geometry name="palm_collision_geom">
         <box size="0.062 0.007 0.090"/>
       </geometry>
     </collision>
     <collision>
-      <origin rpy="0 0 0" xyz="-0.002 -0.0035 0.042"/>
+      <origin rpy="0 0 0" xyz="0.002 -0.0035 0.042"/>
       <geometry>
         <box size="0.036 0.017 0.090"/>
       </geometry>
     </collision>
     <!-- palm complement below first finger -->
     <collision>
-      <origin rpy="0 0 0" xyz="0.029 -0.0035 0.082"/>
+      <origin rpy="0 0 0" xyz="-0.029 -0.0035 0.082"/>
       <geometry>
         <box size="0.026 0.017 0.010"/>
       </geometry>
     </collision>
     <collision>
-      <origin rpy="0.2 0 0.25" xyz="0.0265 -0.001 0.070"/>
+      <origin rpy="0.2 0 -0.25" xyz="-0.0265 -0.001 0.070"/>
       <geometry>
         <box size="0.026 0.014 0.018"/>
       </geometry>
     </collision>
     <!-- thumb pulp side -->
     <collision>
-      <origin rpy="0 0 0" xyz="0.0315 -0.0085 0.005"/>
+      <origin rpy="0 0 0" xyz="-0.0315 -0.0085 0.001"/>
       <geometry>
         <box size="0.021 0.027 0.016"/>
       </geometry>
     </collision>
     <!-- thumb pulp central -->
     <collision>
-      <origin rpy="0 0 -0.48" xyz="0.0125 -0.015 0.013"/>
+      <origin rpy="0 0 0.48" xyz="-0.0125 -0.015 0.009"/>
       <geometry>
         <box size="0.022 0.005 0.032"/>
       </geometry>
     </collision>
     <!-- above middle finger-->
     <collision>
-      <origin rpy="0 0 0" xyz="0.011 0 0.089"/>
+      <origin rpy="0 0 0" xyz="-0.011 0 0.089"/>
       <geometry>
         <box size="0.018 0.024 0.004"/>
       </geometry>
     </collision>
     <!-- metacarpal side-->
     <collision>
-      <origin rpy="0 0 0" xyz="-0.03 0 0.013"/>
+      <origin rpy="0 0 0" xyz="0.03 0 0.009"/>
       <geometry>
         <box size="0.020 0.024 0.032"/>
       </geometry>
@@ -176,7 +176,7 @@
   <joint name="ee_fixed_joint" type="fixed">
     <parent link="palm"/>
     <child link="ee_link"/>
-    <origin rpy="0.0 0.0 -1.57079" xyz="0.0 0.0 0.0"/>
+    <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.00"/>
   </joint>
   <link name="ee_link"/>
   <joint name="WRJ1" type="revolute">
@@ -202,11 +202,12 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0.0005"/>
       <geometry name="ffknuckle_visual">
-        <mesh filename="meshes/visual/f_knuckle_E3M5.glb" scale="0.001 0.001 0.001"/>
+        <mesh filename="meshes/visual/f_knuckle_E3M5.obj" scale="0.001 0.001 0.001"/>
       </geometry>
     </visual>
     <collision>
-      <geometry name="ffknuckle_visual">
+      <origin rpy="0 1.5708 0" xyz="0 0 0"/>
+      <geometry name="lh_ffknuckle_collision_geom">
         <mesh filename="meshes/collision/f_knuckle_E3M5.obj"/>
       </geometry>
     </collision>
@@ -214,8 +215,8 @@
   <joint name="FFJ4" type="revolute">
     <parent link="palm"/>
     <child link="ffknuckle"/>
-    <origin rpy="0 0 0" xyz="0.033 0 0.095"/>
-    <axis xyz="0 -1 0"/>
+    <origin rpy="0 0 0" xyz="-0.033 0 0.095"/>
+    <axis xyz="0 1 0"/>
     <limit effort="2" lower="-0.349065850399" upper="0.349065850399" velocity="2.0"/>
     <dynamics damping="0.1"/>
   </joint>
@@ -228,7 +229,7 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry name="ffproximal_visual">
-        <mesh filename="meshes/visual/f_proximal_E3M5.glb" scale="0.001 0.001 0.001"/>
+        <mesh filename="meshes/visual/f_proximal_E3M5.obj" scale="0.001 0.001 0.001"/>
       </geometry>
     </visual>
     <collision>
@@ -255,7 +256,7 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry name="ffmiddle_visual">
-        <mesh filename="meshes/visual/f_middle_E3M5.glb" scale="0.001 0.001 0.001"/>
+        <mesh filename="meshes/visual/f_middle_E3M5.obj" scale="0.001 0.001 0.001"/>
       </geometry>
     </visual>
     <collision>
@@ -295,7 +296,7 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry name="ffdistal_visual">
-        <mesh filename="meshes/visual/f_distal_pst.glb" scale="0.001 0.001 0.001"/>
+        <mesh filename="meshes/visual/f_distal_pst.obj" scale="0.001 0.001 0.001"/>
       </geometry>
     </visual>
     <collision>
@@ -334,7 +335,7 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0.0005"/>
       <geometry name="mfknuckle_visual">
-        <mesh filename="meshes/visual/f_knuckle_E3M5.glb" scale="0.001 0.001 0.001"/>
+        <mesh filename="meshes/visual/f_knuckle_E3M5.obj" scale="0.001 0.001 0.001"/>
       </geometry>
     </visual>
     <collision>
@@ -347,8 +348,8 @@
     <parent link="palm"/>
     <child link="mfknuckle"/>
     <!--<origin xyz="0.033 0 0.095" rpy="0 0 0" />-->
-    <origin rpy="0 0 0" xyz="0.011 0 0.099"/>
-    <axis xyz="0 -1 0"/>
+    <origin rpy="0 0 0" xyz="-0.011 0 0.099"/>
+    <axis xyz="0 1 0"/>
     <limit effort="2" lower="-0.349065850399" upper="0.349065850399" velocity="2.0"/>
     <dynamics damping="0.1"/>
   </joint>
@@ -361,7 +362,7 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry name="mfproximal_visual">
-        <mesh filename="meshes/visual/f_proximal_E3M5.glb" scale="0.001 0.001 0.001"/>
+        <mesh filename="meshes/visual/f_proximal_E3M5.obj" scale="0.001 0.001 0.001"/>
       </geometry>
     </visual>
     <collision>
@@ -388,7 +389,7 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry name="mfmiddle_visual">
-        <mesh filename="meshes/visual/f_middle_E3M5.glb" scale="0.001 0.001 0.001"/>
+        <mesh filename="meshes/visual/f_middle_E3M5.obj" scale="0.001 0.001 0.001"/>
       </geometry>
     </visual>
     <collision>
@@ -428,7 +429,7 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry name="mfdistal_visual">
-        <mesh filename="meshes/visual/f_distal_pst.glb" scale="0.001 0.001 0.001"/>
+        <mesh filename="meshes/visual/f_distal_pst.obj" scale="0.001 0.001 0.001"/>
       </geometry>
     </visual>
     <collision>
@@ -467,7 +468,7 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0.0005"/>
       <geometry name="rfknuckle_visual">
-        <mesh filename="meshes/visual/f_knuckle_E3M5.glb" scale="0.001 0.001 0.001"/>
+        <mesh filename="meshes/visual/f_knuckle_E3M5.obj" scale="0.001 0.001 0.001"/>
       </geometry>
     </visual>
     <collision>
@@ -480,8 +481,8 @@
     <parent link="palm"/>
     <child link="rfknuckle"/>
     <!--<origin xyz="0.033 0 0.095" rpy="0 0 0" />-->
-    <origin rpy="0 0 0" xyz="-0.011 0 0.095"/>
-    <axis xyz="0 1 0"/>
+    <origin rpy="0 0 0" xyz="0.011 0 0.095"/>
+    <axis xyz="0 -1 0"/>
     <limit effort="2" lower="-0.349065850399" upper="0.349065850399" velocity="2.0"/>
     <dynamics damping="0.1"/>
   </joint>
@@ -494,7 +495,7 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry name="rfproximal_visual">
-        <mesh filename="meshes/visual/f_proximal_E3M5.glb" scale="0.001 0.001 0.001"/>
+        <mesh filename="meshes/visual/f_proximal_E3M5.obj" scale="0.001 0.001 0.001"/>
       </geometry>
     </visual>
     <collision>
@@ -521,7 +522,7 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry name="rfmiddle_visual">
-        <mesh filename="meshes/visual/f_middle_E3M5.glb" scale="0.001 0.001 0.001"/>
+        <mesh filename="meshes/visual/f_middle_E3M5.obj" scale="0.001 0.001 0.001"/>
       </geometry>
     </visual>
     <collision>
@@ -561,7 +562,7 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry name="rfdistal_visual">
-        <mesh filename="meshes/visual/f_distal_pst.glb" scale="0.001 0.001 0.001"/>
+        <mesh filename="meshes/visual/f_distal_pst.obj" scale="0.001 0.001 0.001"/>
       </geometry>
     </visual>
     <collision>
@@ -598,13 +599,13 @@
       <inertia ixx="0.0000145" ixy="0.0" ixz="0.0" iyy="0.00001638" iyz="0.0" izz="0.000004272"/>
     </inertial>
     <visual>
-      <origin rpy="0 0.9599 0" xyz="0 0 0"/>
+      <origin rpy="0 -0.9599 0" xyz="0 0 0"/>
       <geometry name="lfmetacarpal_visual">
-        <mesh filename="meshes/visual/lf_metacarpal_E3M5.glb" scale="0.001 0.001 0.001"/>
+        <mesh filename="meshes/visual/lf_metacarpal_E3M5.obj" scale="-0.001 0.001 0.001"/>
       </geometry>
     </visual>
     <collision>
-      <origin rpy="0 0.9599 0" xyz="0.026986375 0 0.019"/>
+      <origin rpy="0 -0.9599 0" xyz="-0.026986375 0 0.019"/>
       <geometry name="lfmetacarpal_collision_geom">
         <box size="0.018 0.024 0.040"/>
       </geometry>
@@ -613,7 +614,7 @@
   <joint name="LFJ5" type="revolute">
     <parent link="palm"/>
     <child link="lfmetacarpal"/>
-    <origin rpy="0 -0.9599 0" xyz="-0.033 0 0.02071"/>
+    <origin rpy="0 0.9599 0" xyz="0.033 0 0.02071"/>
     <axis xyz="1 0 0"/>
     <limit effort="2" lower="0" upper="0.785398163397" velocity="2.0"/>
     <dynamics damping="0.1"/>
@@ -627,7 +628,7 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0.0005"/>
       <geometry name="lfknuckle_visual">
-        <mesh filename="meshes/visual/f_knuckle_E3M5.glb" scale="0.001 0.001 0.001"/>
+        <mesh filename="meshes/visual/f_knuckle_E3M5.obj" scale="0.001 0.001 0.001"/>
       </geometry>
     </visual>
     <collision>
@@ -640,8 +641,8 @@
     <parent link="lfmetacarpal"/>
     <child link="lfknuckle"/>
     <!--<origin xyz="0.033 0 0.095" rpy="0 0 0" />-->
-    <origin rpy="0 0.9599 0" xyz="0.05397275 0 0.03779463"/>
-    <axis xyz="0 1 0"/>
+    <origin rpy="0 -0.9599 0" xyz="-0.05397275 0 0.03779463"/>
+    <axis xyz="0 -1 0"/>
     <limit effort="2" lower="-0.349065850399" upper="0.349065850399" velocity="2.0"/>
     <dynamics damping="0.1"/>
   </joint>
@@ -654,7 +655,7 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry name="lfproximal_visual">
-        <mesh filename="meshes/visual/f_proximal_E3M5.glb" scale="0.001 0.001 0.001"/>
+        <mesh filename="meshes/visual/f_proximal_E3M5.obj" scale="0.001 0.001 0.001"/>
       </geometry>
     </visual>
     <collision>
@@ -681,7 +682,7 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry name="lfmiddle_visual">
-        <mesh filename="meshes/visual/f_middle_E3M5.glb" scale="0.001 0.001 0.001"/>
+        <mesh filename="meshes/visual/f_middle_E3M5.obj" scale="0.001 0.001 0.001"/>
       </geometry>
     </visual>
     <collision>
@@ -721,7 +722,7 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry name="lfdistal_visual">
-        <mesh filename="meshes/visual/f_distal_pst.glb" scale="0.001 0.001 0.001"/>
+        <mesh filename="meshes/visual/f_distal_pst.obj" scale="0.001 0.001 0.001"/>
       </geometry>
     </visual>
     <collision>
@@ -773,8 +774,8 @@
   <joint name="THJ5" type="revolute">
     <parent link="palm"/>
     <child link="thbase"/>
-    <origin rpy="-0.785398163397 0 -1.57079632679" xyz="0.034 -0.00858 0.029"/>
-    <axis xyz="0 0 -1"/>
+    <origin rpy="-0.785398163397 0 1.57079632679" xyz="-0.034 -0.00858 0.029"/>
+    <axis xyz="0 0 1"/>
     <limit effort="5.0" lower="-1.0471975512" upper="1.0471975512" velocity="4.0"/>
     <dynamics damping="0.2"/>
   </joint>
@@ -787,10 +788,11 @@
     <visual>
       <origin rpy="0 0 1.57079632679" xyz="0 0 0"/>
       <geometry name="thproximal_visual">
-        <mesh filename="meshes/visual/th_proximal_E3M5.glb" scale="0.001 0.001 0.001"/>
+        <mesh filename="meshes/visual/th_proximal_E3M5.obj" scale="0.001 0.001 0.001"/>
       </geometry>
     </visual>
     <collision>
+      <origin rpy="0 0 1.57079632679" xyz="0 0 0"/>
       <geometry name="thproximal_collision">
         <mesh filename="meshes/collision/th_proximal_E3M5.obj" scale="0.001 0.001 0.001"/>
       </geometry>
@@ -800,7 +802,7 @@
     <parent link="thbase"/>
     <child link="thproximal"/>
     <origin rpy="0 0 0" xyz="0 0 0"/>
-    <axis xyz="0 1 0"/>
+    <axis xyz="0 -1 0"/>
     <limit effort="3" lower="0.0" upper="1.2217304764" velocity="4.0"/>
     <dynamics damping="0.2"/>
   </joint>
@@ -821,7 +823,7 @@
     <parent link="thproximal"/>
     <child link="thhub"/>
     <origin rpy="0 0 0" xyz="0 0 0.038"/>
-    <axis xyz="0 1 0"/>
+    <axis xyz="0 -1 0"/>
     <limit effort="2.0" lower="-0.209439510239" upper="0.209439510239" velocity="4.0"/>
     <dynamics damping="0.2"/>
   </joint>
@@ -834,7 +836,7 @@
     <visual>
       <origin rpy="0 0 1.57079632679" xyz="0 0 0"/>
       <geometry name="thmiddle_visual">
-        <mesh filename="meshes/visual/th_middle_E3M5.glb" scale="0.001 0.001 0.001"/>
+        <mesh filename="meshes/visual/th_middle_E3M5.obj" scale="0.001 0.001 0.001"/>
       </geometry>
     </visual>
     <collision>
@@ -862,7 +864,7 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry name="thdistal_visual">
-        <mesh filename="meshes/visual/th_distal_pst.glb" scale="0.001 0.001 0.001"/>
+        <mesh filename="meshes/visual/th_distal_pst.obj" scale="0.001 0.001 0.001"/>
       </geometry>
     </visual>
     <collision>

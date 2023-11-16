@@ -23,7 +23,7 @@
  or tort (including negligence or otherwise) arising in any way out of the use of this
  software, even if advised of the possibility of such damage.
 -->
-<robot name="bimanual_shadowhand_motor">
+<robot name="shadow_right">
   <link name="world"/>
   <joint name="world_joint" type="fixed">
     <parent link="world"/>
