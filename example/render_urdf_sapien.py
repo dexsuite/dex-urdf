@@ -123,6 +123,8 @@ class ContactViewer(Viewer):
         x, y, z = normal
         if np.isclose(z, 1.0):
             return np.array([0.707, 0, -0.707, 0])
+        elif np.isclose(z, -1.0):
+            return np.array([0.707, 0, 0.707, 0])
         xy_sqrt = np.sqrt(x * x + y * y)
         y_axis = [y / xy_sqrt, -x / xy_sqrt, 0]
         z_axis = [x * z / xy_sqrt, y * z / xy_sqrt, -xy_sqrt]
@@ -267,7 +269,7 @@ def visualize_urdf(use_rt, urdf_file, simulate, disable_self_collision, fix_root
     viewer.set_scene(scene)
     viewer.control_window.set_camera_xyz(0.5, 0, 0.5)
     viewer.control_window.set_camera_rpy(0, -0.8, 3.14)
-    viewer.control_window.show_origin_frame = True
+    viewer.control_window.show_origin_frame = False
     viewer.control_window.move_speed = 0.01
 
     # Articulation
