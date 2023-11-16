@@ -85,6 +85,7 @@ def visualize_urdf(urdf_file, simulate, disable_self_collision, fix_root):
     asset_options = gymapi.AssetOptions()
     asset_options.fix_base_link = fix_root
     asset_options.flip_visual_attachments = False
+    asset_options.convex_decomposition_from_submeshes = True
     asset_options.disable_gravity = True
     asset = gym.load_asset(sim, asset_root, asset_file, asset_options)
     num_dof = gym.get_asset_dof_count(asset)
