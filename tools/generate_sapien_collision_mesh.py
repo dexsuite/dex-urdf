@@ -57,7 +57,6 @@ def parse_urdf(urdf_path, output_dir):
                 print("1")
             mesh.apply_transform(collision_shape.local_pose.to_transformation_matrix())
             scene.add_geometry(mesh)
-            print(link.name, collision_shape.local_pose, type(collision_shape))
         if len(scene.geometry) > 0:
             filename = Path(output_dir) / f"{link.name}.obj"
             scene.export(str(filename))

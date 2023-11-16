@@ -1,4 +1,10 @@
 <robot name="ability_hand">
+  <link name="base_link"/>
+  <joint name="base_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="base"/>
+    <origin xyz="0 0 0" rpy="0 0 -1.57079"/>
+  </joint>
   <link name="base">
     <visual name="wrist_mesh">
       <origin rpy="0 0 0" xyz="0 0 0"/>
@@ -10,18 +16,6 @@
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
         <mesh filename="meshes/collision/wristmesh_C.obj"/>
-      </geometry>
-    </collision>
-    <collision>
-      <origin xyz="0.013 -0.002 0.01" rpy="0 0 -0.07"/>
-      <geometry>
-        <box size="0.01 0.01 0.008"/>
-      </geometry>
-    </collision>
-    <collision>
-      <origin xyz="-0.013 0 0.01" rpy="0 0 -0.07"/>
-      <geometry>
-        <box size="0.01 0.01 0.008"/>
       </geometry>
     </collision>
     <inertial>  <!-- the mass and inertia here are NOT correct -->
