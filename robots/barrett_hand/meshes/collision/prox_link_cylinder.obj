@@ -1,6 +1,5 @@
 # Blender 3.6.5
 # www.blender.org
-mtllib prox_link_cylinder.mtl
 o Cylinder.00001
 v -0.050000 0.013000 0.048000
 v -0.050000 -0.013000 0.048000

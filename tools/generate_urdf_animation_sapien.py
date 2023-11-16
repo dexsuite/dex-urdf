@@ -89,15 +89,32 @@ def render_urdf(urdf_path, use_rt, simulate, disable_self_collision, fix_root, h
     # Articulation
     loader = scene.create_urdf_loader()
     loader.load_multiple_collisions_from_file = True
+    if "ability" in urdf_path:
+        loader.scale = 1.5
+    elif "dclaw" in urdf_path:
+        loader.scale = 1.25
+    elif "allegro" in urdf_path:
+        loader.scale = 1.4
+    elif "shadow" in urdf_path:
+        loader.scale = 1.2
+    elif "bhand" in urdf_path:
+        loader.scale = 1.5
+
     robot_builder = loader.load_file_as_articulation_builder(urdf_path)
     if disable_self_collision and not simulate:
         for link_builder in robot_builder.get_link_builders():
             link_builder.set_collision_groups(1, 1, 17, 0)
     robot = robot_builder.build(fix_root_link=fix_root)
-    if "shadow" in urdf_path:
-        robot.set_pose(sapien.Pose([0, 0, -0.3]))
+    if "ability" in urdf_path:
+        robot.set_pose(sapien.Pose([0, 0, -0.15]))
+    elif "shadow" in urdf_path:
+        robot.set_pose(sapien.Pose([0, 0, -0.4]))
     elif "dclaw" in urdf_path:
+        robot.set_pose(sapien.Pose([0, 0, -0.15]))
+    elif "allegro" in urdf_path:
         robot.set_pose(sapien.Pose([0, 0, -0.05]))
+    elif "bhand" in urdf_path:
+        robot.set_pose(sapien.Pose([0, 0, -0.2]))
 
     # Robot motion
     loop_steps = 300
@@ -105,7 +122,7 @@ def render_urdf(urdf_path, use_rt, simulate, disable_self_collision, fix_root, h
         joint.set_drive_property(200, 10)
     trajectory = generate_joint_limit_trajectory(robot, loop_steps=loop_steps)
 
-    robot.set_qpos(np.zeros([robot.dof]))
+    robot.set_qpos(trajectory[0])
     scene.step()
 
     # Video recorder

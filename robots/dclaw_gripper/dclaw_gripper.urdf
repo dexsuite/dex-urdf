@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <robot name="dclaw_gripper">
+  <link name="base"/>
+  <joint name="base_joint" type="fixed">
+    <parent link="base"/>
+    <child link="base_link"/>
+    <origin xyz="0 0 0" rpy="0 -1.57079 0"/>
+  </joint>
   <link name="base_link">
     <inertial>
       <origin xyz="0.0061371 0.00092103 0.0001376" rpy="0 0 0"/>
