@@ -302,7 +302,7 @@
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry name="ffdistal_collision_geom">
-        <mesh filename="meshes/visual/f_distal_pst.obj" scale="0.001 0.001 0.001"/>
+        <mesh filename="meshes/collision/f_distal_pst.obj" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -435,7 +435,7 @@
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry name="mfdistal_collision_geom">
-        <mesh filename="meshes/visual/f_distal_pst.obj" scale="0.001 0.001 0.001"/>
+        <mesh filename="meshes/collision/f_distal_pst.obj" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -568,7 +568,7 @@
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry name="rfdistal_collision_geom">
-        <mesh filename="meshes/visual/f_distal_pst.obj" scale="0.001 0.001 0.001"/>
+        <mesh filename="meshes/collision/f_distal_pst.obj" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
