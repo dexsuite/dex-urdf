@@ -39,7 +39,7 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0.0"/>
       <geometry name="forearm_visual">
-        <mesh filename="meshes/visual/forearm_E3M5.obj" scale="0.001 0.001 0.001"/>
+        <mesh filename="meshes/visual/forearm_E3M5.glb" scale="0.001 0.001 0.001"/>
       </geometry>
     </visual>
     <collision>
@@ -65,7 +65,7 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry name="wrist_visual">
-        <mesh filename="meshes/visual/wrist_E3M5.obj" scale="0.001 0.001 0.001"/>
+        <mesh filename="meshes/visual/wrist_E3M5.glb" scale="0.001 0.001 0.001"/>
       </geometry>
     </visual>
     <collision>
@@ -116,7 +116,7 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry name="palm_visual">
-        <mesh filename="meshes/visual/palm_E3M5.obj" scale="-0.001 0.001 0.001"/>
+        <mesh filename="meshes/visual/palm_E3M5_left.glb" scale="0.001 0.001 0.001"/>
       </geometry>
     </visual>
     <collision>
@@ -202,7 +202,7 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0.0005"/>
       <geometry name="ffknuckle_visual">
-        <mesh filename="meshes/visual/f_knuckle_E3M5.obj" scale="0.001 0.001 0.001"/>
+        <mesh filename="meshes/visual/f_knuckle_E3M5.glb" scale="0.001 0.001 0.001"/>
       </geometry>
     </visual>
     <collision>
@@ -229,7 +229,7 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry name="ffproximal_visual">
-        <mesh filename="meshes/visual/f_proximal_E3M5.obj" scale="0.001 0.001 0.001"/>
+        <mesh filename="meshes/visual/f_proximal_E3M5.glb" scale="0.001 0.001 0.001"/>
       </geometry>
     </visual>
     <collision>
@@ -296,13 +296,13 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry name="ffdistal_visual">
-        <mesh filename="meshes/visual/f_distal_pst.obj" scale="0.001 0.001 0.001"/>
+        <mesh filename="meshes/visual/f_distal_pst.glb" scale="0.001 0.001 0.001"/>
       </geometry>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry name="ffdistal_collision_geom">
-        <mesh filename="meshes/visual/f_distal_pst.obj" scale="0.001 0.001 0.001"/>
+        <mesh filename="meshes/visual/f_distal_pst.glb" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -335,7 +335,7 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0.0005"/>
       <geometry name="mfknuckle_visual">
-        <mesh filename="meshes/visual/f_knuckle_E3M5.obj" scale="0.001 0.001 0.001"/>
+        <mesh filename="meshes/visual/f_knuckle_E3M5.glb" scale="0.001 0.001 0.001"/>
       </geometry>
     </visual>
     <collision>
@@ -362,7 +362,7 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry name="mfproximal_visual">
-        <mesh filename="meshes/visual/f_proximal_E3M5.obj" scale="0.001 0.001 0.001"/>
+        <mesh filename="meshes/visual/f_proximal_E3M5.glb" scale="0.001 0.001 0.001"/>
       </geometry>
     </visual>
     <collision>
@@ -389,7 +389,7 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry name="mfmiddle_visual">
-        <mesh filename="meshes/visual/f_middle_E3M5.obj" scale="0.001 0.001 0.001"/>
+        <mesh filename="meshes/visual/f_middle_E3M5.glb" scale="0.001 0.001 0.001"/>
       </geometry>
     </visual>
     <collision>
@@ -429,13 +429,13 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry name="mfdistal_visual">
-        <mesh filename="meshes/visual/f_distal_pst.obj" scale="0.001 0.001 0.001"/>
+        <mesh filename="meshes/visual/f_distal_pst.glb" scale="0.001 0.001 0.001"/>
       </geometry>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry name="mfdistal_collision_geom">
-        <mesh filename="meshes/visual/f_distal_pst.obj" scale="0.001 0.001 0.001"/>
+        <mesh filename="meshes/visual/f_distal_pst.glb" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -468,7 +468,7 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0.0005"/>
       <geometry name="rfknuckle_visual">
-        <mesh filename="meshes/visual/f_knuckle_E3M5.obj" scale="0.001 0.001 0.001"/>
+        <mesh filename="meshes/visual/f_knuckle_E3M5.glb" scale="0.001 0.001 0.001"/>
       </geometry>
     </visual>
     <collision>
@@ -495,7 +495,7 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry name="rfproximal_visual">
-        <mesh filename="meshes/visual/f_proximal_E3M5.obj" scale="0.001 0.001 0.001"/>
+        <mesh filename="meshes/visual/f_proximal_E3M5.glb" scale="0.001 0.001 0.001"/>
       </geometry>
     </visual>
     <collision>
@@ -522,7 +522,7 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry name="rfmiddle_visual">
-        <mesh filename="meshes/visual/f_middle_E3M5.obj" scale="0.001 0.001 0.001"/>
+        <mesh filename="meshes/visual/f_middle_E3M5.glb" scale="0.001 0.001 0.001"/>
       </geometry>
     </visual>
     <collision>
@@ -562,13 +562,13 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry name="rfdistal_visual">
-        <mesh filename="meshes/visual/f_distal_pst.obj" scale="0.001 0.001 0.001"/>
+        <mesh filename="meshes/visual/f_distal_pst.glb" scale="0.001 0.001 0.001"/>
       </geometry>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry name="rfdistal_collision_geom">
-        <mesh filename="meshes/visual/f_distal_pst.obj" scale="0.001 0.001 0.001"/>
+        <mesh filename="meshes/visual/f_distal_pst.glb" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -601,7 +601,7 @@
     <visual>
       <origin rpy="0 -0.9599 0" xyz="0 0 0"/>
       <geometry name="lfmetacarpal_visual">
-        <mesh filename="meshes/visual/lf_metacarpal_E3M5.obj" scale="-0.001 0.001 0.001"/>
+        <mesh filename="meshes/visual/lf_metacarpal_E3M5_left.glb" scale="0.001 0.001 0.001"/>
       </geometry>
     </visual>
     <collision>
@@ -628,7 +628,7 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0.0005"/>
       <geometry name="lfknuckle_visual">
-        <mesh filename="meshes/visual/f_knuckle_E3M5.obj" scale="0.001 0.001 0.001"/>
+        <mesh filename="meshes/visual/f_knuckle_E3M5.glb" scale="0.001 0.001 0.001"/>
       </geometry>
     </visual>
     <collision>
@@ -655,7 +655,7 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry name="lfproximal_visual">
-        <mesh filename="meshes/visual/f_proximal_E3M5.obj" scale="0.001 0.001 0.001"/>
+        <mesh filename="meshes/visual/f_proximal_E3M5.glb" scale="0.001 0.001 0.001"/>
       </geometry>
     </visual>
     <collision>
@@ -682,7 +682,7 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry name="lfmiddle_visual">
-        <mesh filename="meshes/visual/f_middle_E3M5.obj" scale="0.001 0.001 0.001"/>
+        <mesh filename="meshes/visual/f_middle_E3M5.glb" scale="0.001 0.001 0.001"/>
       </geometry>
     </visual>
     <collision>
@@ -722,13 +722,13 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry name="lfdistal_visual">
-        <mesh filename="meshes/visual/f_distal_pst.obj" scale="0.001 0.001 0.001"/>
+        <mesh filename="meshes/visual/f_distal_pst.glb" scale="0.001 0.001 0.001"/>
       </geometry>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry name="lfdistal_collision_geom">
-        <mesh filename="meshes/visual/f_distal_pst.obj" scale="0.001 0.001 0.001"/>
+        <mesh filename="meshes/visual/f_distal_pst.glb" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -788,7 +788,7 @@
     <visual>
       <origin rpy="0 0 1.57079632679" xyz="0 0 0"/>
       <geometry name="thproximal_visual">
-        <mesh filename="meshes/visual/th_proximal_E3M5.obj" scale="0.001 0.001 0.001"/>
+        <mesh filename="meshes/visual/th_proximal_E3M5.glb" scale="0.001 0.001 0.001"/>
       </geometry>
     </visual>
     <collision>
@@ -836,7 +836,7 @@
     <visual>
       <origin rpy="0 0 1.57079632679" xyz="0 0 0"/>
       <geometry name="thmiddle_visual">
-        <mesh filename="meshes/visual/th_middle_E3M5.obj" scale="0.001 0.001 0.001"/>
+        <mesh filename="meshes/visual/th_middle_E3M5.glb" scale="0.001 0.001 0.001"/>
       </geometry>
     </visual>
     <collision>
@@ -864,13 +864,13 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry name="thdistal_visual">
-        <mesh filename="meshes/visual/th_distal_pst.obj" scale="0.001 0.001 0.001"/>
+        <mesh filename="meshes/visual/th_distal_pst.glb" scale="0.001 0.001 0.001"/>
       </geometry>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry name="thmiddle_collision_geom">
-        <mesh filename="meshes/visual/th_distal_pst.obj" scale="0.001 0.001 0.001"/>
+        <mesh filename="meshes/visual/th_distal_pst.glb" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
