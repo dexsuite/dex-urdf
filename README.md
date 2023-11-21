@@ -6,6 +6,7 @@ format.
 | Allegro Hand  | [<img src="doc/gallery/allegro_rt.webp" width="400">](robots/allegro_hand/allegro_hand_right_glb.urdf) |       0       |
 |  Shadow Hand  |  [<img src="doc/gallery/shadow_rt.webp" width="400">](robots/shadow_hand/shadow_hand_right_glb.urdf)   |       0       |
 | Ability Hand  | [<img src="doc/gallery/ability_rt.webp" width="400">](robots/ability_hand/ability_hand_right_glb.urdf) |       0       |
+|   Leap Hand   |     [<img src="doc/gallery/leap_rt.webp" width="400">](robots/leap_hand/leap_hand_right_glb.urdf)      |       0       |
 | DClaw Gripper |    [<img src="doc/gallery/dclaw_rt.webp" width="400">](robots/dclaw_gripper/dclaw_gripper_glb.urdf)    |       0       |
 | Barrett Hand  |     [<img src="doc/gallery/bhand_rt.webp" width="400">](robots/barrett_hand/bhand_model_glb.urdf)      |       0       |
 

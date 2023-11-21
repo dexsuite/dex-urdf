@@ -99,6 +99,8 @@ def render_urdf(urdf_path, use_rt, simulate, disable_self_collision, fix_root, h
         loader.scale = 1.2
     elif "bhand" in urdf_path:
         loader.scale = 1.5
+    elif "leap" in urdf_path:
+        loader.scale = 1.25
 
     robot_builder = loader.load_file_as_articulation_builder(urdf_path)
     if disable_self_collision and not simulate:
@@ -115,6 +117,8 @@ def render_urdf(urdf_path, use_rt, simulate, disable_self_collision, fix_root, h
         robot.set_pose(sapien.Pose([0, 0, -0.05]))
     elif "bhand" in urdf_path:
         robot.set_pose(sapien.Pose([0, 0, -0.2]))
+    elif "leap" in urdf_path:
+        robot.set_pose(sapien.Pose([0, 0, -0.15]))
 
     # Robot motion
     loop_steps = 300
