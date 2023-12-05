@@ -1,7 +1,7 @@
 # Blender 3.6.1
 # www.blender.org
-mtllib base10.mtl
-o Base10
+mtllib palm.mtl
+o base10
 v 0.000000 0.032416 0.000000
 v -0.006324 0.031793 0.000000
 v -0.012405 0.029948 0.000000

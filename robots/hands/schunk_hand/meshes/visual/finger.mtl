@@ -11,6 +11,16 @@ Ni 1.000000
 d 1.000000
 illum 2
 
+newmtl Kunststoff_druckteile_final
+Ns 490.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.491020 0.496932 0.527115
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+
 newmtl Metall_Alu_final
 Ns 640.000000
 Ka 0.800000 0.800000 0.800000
@@ -21,7 +31,7 @@ Ni 2.000000
 d 1.000000
 illum 3
 
-newmtl Metall_Daumen_001
+newmtl Metall_Daumen
 Ns 490.000000
 Ka 0.800000 0.800000 0.800000
 Kd 0.350000 0.350000 0.350000
@@ -31,7 +41,7 @@ Ni 1.000000
 d 1.000000
 illum 3
 
-newmtl Metall_goeldlich_001
+newmtl Metall_goeldlich
 Ns 250.000000
 Ka 1.000000 1.000000 1.000000
 Kd 0.831000 0.686000 0.216000

@@ -1,6 +1,6 @@
 # Blender 3.6.1
 # www.blender.org
-mtllib f12.mtl
+mtllib finger.mtl
 o f12
 v 0.002770 0.000018 0.009047
 v 0.002496 0.001222 0.009045

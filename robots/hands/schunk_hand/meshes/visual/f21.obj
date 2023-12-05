@@ -1,6 +1,6 @@
 # Blender 3.6.1
 # www.blender.org
-mtllib f21.mtl
+mtllib finger.mtl
 o f21
 v 0.002322 -0.000116 -0.007920
 v 0.002057 -0.001081 -0.007912

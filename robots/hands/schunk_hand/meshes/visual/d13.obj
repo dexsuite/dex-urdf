@@ -1,7 +1,7 @@
 # Blender 3.6.1
 # www.blender.org
-mtllib d13.mtl
-o d3
+mtllib finger.mtl
+o d13
 v 0.003551 0.000019 0.002007
 v 0.003551 0.000019 0.006997
 v 0.003199 -0.001524 0.002007
