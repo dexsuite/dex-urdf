@@ -15,9 +15,9 @@
       </geometry>
     </visual>
     <collision>
-      <origin rpy="0 0 0" xyz="0 0 -0.032"/>
+      <origin rpy="0 0 0" xyz="0 0 -0.009"/>
       <geometry>
-        <mesh filename="meshes/collision/base10.stl"/>
+        <cylinder radius="0.045" length="0.045"/>
       </geometry>
     </collision>
   </link>
@@ -53,11 +53,16 @@
     <collision>
       <origin rpy="0 0 0" xyz="0.016 0 0.02"/>
       <geometry>
-        <box size="0.0279 0.035 0.0483"/>
+        <box size="0.0246 0.035 0.0564"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin rpy="0 0 0" xyz="0.0032 -0.0083 0.048"/>
+      <geometry>
+        <box size="0.012 0.018 0.021"/>
       </geometry>
     </collision>
   </link>
-  <link name="right_hand_e"/>
   <!-- THUMB LINKS -->
   <link name="right_hand_z">
     <visual>
@@ -66,8 +71,25 @@
         <mesh filename="meshes/visual/d10.obj" scale="1 1 1"/>
       </geometry>
     </visual>
+    <collision>
+      <origin xyz="0 0 0.02842"/>
+      <geometry>
+        <box size="0.024 0.0188 0.008"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="0.0125 0.0 0.04292"/>
+      <geometry>
+        <box size="0.006 0.024 0.033"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="-0.0125 0.0 0.04292"/>
+      <geometry>
+        <box size="0.006 0.024 0.033"/>
+      </geometry>
+    </collision>
   </link>
-  <link name="right_hand_virtual_a"/>
   <link name="right_hand_a">
     <visual>
       <geometry>
@@ -76,7 +98,7 @@
     </visual>
     <collision>
       <geometry>
-        <mesh filename="meshes/collision/d11.stl" scale="1 1 1"/>
+        <mesh filename="meshes/collision/d11.obj" scale="1 1 1"/>
       </geometry>
     </collision>
   </link>
@@ -88,7 +110,7 @@
     </visual>
     <collision>
       <geometry>
-        <mesh filename="meshes/collision/d12.stl" scale="1 1 1"/>
+        <mesh filename="meshes/collision/d12.obj" scale="1 1 1"/>
       </geometry>
     </collision>
   </link>
@@ -105,7 +127,7 @@
     </visual>
     <collision>
       <geometry>
-        <mesh filename="meshes/collision/d13.stl" scale="1 1 1"/>
+        <mesh filename="meshes/collision/d13.obj" scale="1 1 1"/>
       </geometry>
     </collision>
   </link>
@@ -114,13 +136,13 @@
     <visual>
       <origin xyz="0 0 0.01321"/>
       <geometry>
-        <mesh filename="meshes/visual/f10.obj"/>
+        <mesh filename="meshes/visual/f10_f20.obj"/>
       </geometry>
     </visual>
     <collision>
-      <origin xyz="-0.01 0 0"/>
+      <origin xyz="0 0 0.00121"/>
       <geometry>
-        <sphere radius="0.01"/>
+        <sphere radius="0.012"/>
       </geometry>
     </collision>
   </link>
@@ -132,7 +154,7 @@
     </visual>
     <collision>
       <geometry>
-        <mesh filename="meshes/collision/f11.stl" scale="1 1 1"/>
+        <mesh filename="meshes/collision/f11.obj" scale="1 1 1"/>
       </geometry>
     </collision>
   </link>
@@ -149,7 +171,7 @@
     </visual>
     <collision>
       <geometry>
-        <mesh filename="meshes/collision/f12.stl"/>
+        <mesh filename="meshes/collision/f12.obj"/>
       </geometry>
     </collision>
   </link>
@@ -161,12 +183,12 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="meshes/visual/f13.obj"/>
+        <mesh filename="meshes/visual/finger_tip.obj"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="meshes/collision/f13.stl" scale="1 1 1"/>
+        <mesh filename="meshes/collision/finger_tip.obj" scale="1 1 1"/>
       </geometry>
     </collision>
   </link>
@@ -175,11 +197,11 @@
     <visual>
       <origin xyz="0 0 0.01321"/>
       <geometry>
-        <mesh filename="meshes/visual/f20.obj"/>
+        <mesh filename="meshes/visual/f10_f20.obj"/>
       </geometry>
     </visual>
     <collision>
-      <origin xyz="-0.01 0 0"/>
+      <origin xyz="0 0 0.00321"/>
       <geometry>
         <sphere radius="0.01"/>
       </geometry>
@@ -193,19 +215,19 @@
     </visual>
     <collision>
       <geometry>
-        <mesh filename="meshes/collision/f21.stl" scale="1 1 1"/>
+        <mesh filename="meshes/collision/f21.obj" scale="1 1 1"/>
       </geometry>
     </collision>
   </link>
   <link name="right_hand_o">
     <visual>
       <geometry>
-        <mesh filename="meshes/visual/f22.obj"/>
+        <mesh filename="meshes/visual/f22_f32.obj"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="meshes/collision/f22.stl" scale="1 1 1"/>
+        <mesh filename="meshes/collision/f22_f32.obj" scale="1 1 1"/>
       </geometry>
     </collision>
   </link>
@@ -217,12 +239,12 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="meshes/visual/f23.obj"/>
+        <mesh filename="meshes/visual/finger_tip.obj"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="meshes/collision/f23.stl" scale="1 1 1"/>
+        <mesh filename="meshes/collision/finger_tip.obj" scale="1 1 1"/>
       </geometry>
     </collision>
   </link>
@@ -231,11 +253,11 @@
     <visual>
       <origin xyz="0 0 -0.01321"/>
       <geometry>
-        <mesh filename="meshes/visual/f30.obj"/>
+        <mesh filename="meshes/visual/f30_f40.obj"/>
       </geometry>
     </visual>
     <collision>
-      <origin xyz="0 0 0"/>
+      <origin xyz="0 0 -0.00321"/>
       <geometry>
         <sphere radius="0.01"/>
       </geometry>
@@ -249,19 +271,19 @@
     </visual>
     <collision>
       <geometry>
-        <mesh filename="meshes/collision/f31.stl" scale="1 1 1"/>
+        <mesh filename="meshes/collision/f31.obj" scale="1 1 1"/>
       </geometry>
     </collision>
   </link>
   <link name="right_hand_n">
     <visual>
       <geometry>
-        <mesh filename="meshes/visual/f32.obj"/>
+        <mesh filename="meshes/visual/f22_f32.obj"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="meshes/collision/f32.stl" scale="1 1 1"/>
+        <mesh filename="meshes/collision/f22_f32.obj" scale="1 1 1"/>
       </geometry>
     </collision>
   </link>
@@ -273,12 +295,12 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="meshes/visual/f33.obj"/>
+        <mesh filename="meshes/visual/finger_tip.obj"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="meshes/collision/f33.stl" scale="1 1 1"/>
+        <mesh filename="meshes/collision/finger_tip.obj" scale="1 1 1"/>
       </geometry>
     </collision>
   </link>
@@ -287,11 +309,11 @@
     <visual>
       <origin xyz="0 0 -0.01321"/>
       <geometry>
-        <mesh filename="meshes/visual/f40.obj"/>
+        <mesh filename="meshes/visual/f30_f40.obj"/>
       </geometry>
     </visual>
     <collision>
-      <origin xyz="0 0 0"/>
+      <origin xyz="0 0 -0.00321"/>
       <geometry>
         <sphere radius="0.01"/>
       </geometry>
@@ -305,7 +327,7 @@
     </visual>
     <collision>
       <geometry>
-        <mesh filename="meshes/collision/f41.stl"/>
+        <mesh filename="meshes/collision/f41.obj"/>
       </geometry>
     </collision>
   </link>
@@ -322,7 +344,7 @@
     </visual>
     <collision>
       <geometry>
-        <mesh filename="meshes/collision/f42.stl"/>
+        <mesh filename="meshes/collision/f42.obj"/>
       </geometry>
     </collision>
   </link>
@@ -334,26 +356,21 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="meshes/visual/f43.obj"/>
+        <mesh filename="meshes/visual/finger_tip.obj"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="meshes/collision/f43.stl"/>
+        <mesh filename="meshes/collision/finger_tip.obj"/>
       </geometry>
     </collision>
   </link>
   <joint name="right_hand_Thumb_Flexion" type="revolute">
-    <parent link="right_hand_virtual_a"/>
+    <parent link="right_hand_z"/>
     <child link="right_hand_a"/>
     <limit effort="1000.0" lower="0.0" upper="0.9704" velocity="1"/>
-    <origin rpy="0 0 -0.9704" xyz="0 0 0"/>
+    <origin rpy="1.57079 -0.6004 1.57079" xyz="0 0 0.04596"/>
     <axis xyz="0 0 1"/>
-  </joint>
-  <joint name="right_hand_Thumb_Helper" type="fixed">
-    <parent link="right_hand_z"/>
-    <child link="right_hand_virtual_a"/>
-    <origin rpy="0 -1.5707 3.1416" xyz="0 0 0.04596"/>
   </joint>
   <!-- BASE_LINE JOINTS -->
   <joint name="right_hand_Thumb_Opposition" type="revolute">
@@ -375,11 +392,6 @@
     <origin rpy="0 0 0" xyz="0.0184 0.006 0.0375"/>
     <axis xyz="0 0 1"/>
     <mimic joint="right_hand_Thumb_Opposition" multiplier="1" offset="0"/>
-  </joint>
-  <joint name="right_hand_f5" type="fixed">
-    <parent link="right_hand_e2"/>
-    <child link="right_hand_e"/>
-    <origin rpy="0 0 0" xyz="0 -0.0060 0"/>
   </joint>
   <!-- THUMB JOINTS -->
   <joint name="right_hand_j3" type="revolute">
@@ -507,18 +519,18 @@
     <origin rpy="0 -1.5707 1.5707" xyz="0 0 0.110"/>
   </joint>
   <joint name="right_hand_ring_spread" type="revolute">
-    <parent link="right_hand_e"/>
+    <parent link="right_hand_e2"/>
     <child link="right_hand_virtual_j"/>
     <limit effort="1000.0" lower="0.0" upper="0.28833" velocity="1"/>
-    <origin rpy="-1.5707 -1.5707 0" xyz="0.003855 0 0.0655"/>
+    <origin rpy="-1.5707 -1.5707 0" xyz="0.003855 -0.006 0.0655"/>
     <axis xyz="0 0 1"/>
     <mimic joint="right_hand_Finger_Spread" multiplier="0.5" offset="0"/>
   </joint>
   <joint name="right_hand_Finger_Spread" type="revolute">
-    <parent link="right_hand_e"/>
+    <parent link="right_hand_e2"/>
     <child link="right_hand_virtual_i"/>
     <limit effort="1000.0" lower="0.0" upper="0.5829" velocity="1"/>
-    <origin rpy="-1.5707 -1.5707 0" xyz="0.025355 0 0.056"/>
+    <origin rpy="-1.5707 -1.5707 0" xyz="0.025355 -0.006 0.056"/>
     <axis xyz="0 0 1"/>
   </joint>
 
