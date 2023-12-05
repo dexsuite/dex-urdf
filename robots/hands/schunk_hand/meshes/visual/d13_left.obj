@@ -1,7 +1,7 @@
 # Blender 4.0.1
 # www.blender.org
 mtllib finger.mtl
-o d13
+o d13_left
 v 0.003551 -0.000019 -0.002007
 v 0.003551 -0.000019 -0.006997
 v 0.003199 0.001524 -0.002007

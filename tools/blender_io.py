@@ -10,12 +10,11 @@ root_dir = Path("")
 if not IS_EXPORT:
     # Import all obj file in a directory to blender scene
     for file in root_dir.glob(f"*.{file_type}"):
-        if "_C" not in str(file):
-            print(file)
-            if IS_OBJ:
-                imported_object = bpy.ops.import_scene.obj(filepath=str(file))
-            else:
-                bpy.ops.wm.collada_import(filepath=str(file))
+        print(file)
+        if IS_OBJ:
+            imported_object = bpy.ops.wm.obj_import(filepath=str(file))
+        else:
+            bpy.ops.wm.collada_import(filepath=str(file))
 
 
 else:
