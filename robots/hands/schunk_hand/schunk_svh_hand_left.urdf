@@ -26,7 +26,7 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0.01313 0"/>
       <geometry>
-        <mesh filename="meshes/visual/h10.obj" scale="1 1 1"/>
+        <mesh filename="meshes/visual/h10_left.obj" scale="1 1 1"/>
       </geometry>
     </visual>
     <collision>
@@ -36,7 +36,7 @@
       </geometry>
     </collision>
     <collision>
-      <origin rpy="0 0 0" xyz="-0.00573 0.0035 0.05747"/>
+      <origin rpy="0 0 0" xyz="0.00573 0.0035 0.05747"/>
       <geometry>
         <box size="0.0584 0.038 0.0641"/>
       </geometry>
@@ -45,19 +45,19 @@
   <!-- LENGTH NOT FOUND IN DATASHEET! GUESSED!!! -->
   <link name="right_hand_e2">
     <visual>
-      <origin xyz="-0.0007 0 -0.01002"/>
+      <origin xyz="0.0007 0 -0.01002"/>
       <geometry>
-        <mesh filename="meshes/visual/h11.obj" scale="1 1 1"/>
+        <mesh filename="meshes/visual/h11_left.obj" scale="1 1 1"/>
       </geometry>
     </visual>
     <collision>
-      <origin rpy="0 0 0" xyz="0.016 0 0.02"/>
+      <origin rpy="0 0 0" xyz="-0.016 0 0.02"/>
       <geometry>
         <box size="0.0246 0.035 0.0564"/>
       </geometry>
     </collision>
     <collision>
-      <origin rpy="0 0 0" xyz="0.0032 -0.0083 0.048"/>
+      <origin rpy="0 0 0" xyz="-0.0032 -0.0083 0.048"/>
       <geometry>
         <box size="0.012 0.018 0.021"/>
       </geometry>
@@ -68,7 +68,7 @@
     <visual>
       <origin xyz="0 0 0.02442"/>
       <geometry>
-        <mesh filename="meshes/visual/d10.obj" scale="1 1 1"/>
+        <mesh filename="meshes/visual/d10_left.obj" scale="1 1 1"/>
       </geometry>
     </visual>
     <collision>
@@ -93,24 +93,24 @@
   <link name="right_hand_a">
     <visual>
       <geometry>
-        <mesh filename="meshes/visual/d11.obj" scale="1 1 1"/>
+        <mesh filename="meshes/visual/d11_left.obj" scale="1 1 1"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="meshes/collision/d11.obj" scale="1 1 1"/>
+        <mesh filename="meshes/collision/d11_left.obj" scale="1 1 1"/>
       </geometry>
     </collision>
   </link>
   <link name="right_hand_b">
     <visual>
       <geometry>
-        <mesh filename="meshes/visual/d12.obj" scale="1 1 1"/>
+        <mesh filename="meshes/visual/d12_left.obj" scale="1 1 1"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="meshes/collision/d12.obj" scale="1 1 1"/>
+        <mesh filename="meshes/collision/d12_left.obj" scale="1 1 1"/>
       </geometry>
     </collision>
   </link>
@@ -122,12 +122,12 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="meshes/visual/d13.obj" scale="1 1 1"/>
+        <mesh filename="meshes/visual/d13_left.obj" scale="1 1 1"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="meshes/collision/d13.obj" scale="1 1 1"/>
+        <mesh filename="meshes/collision/d13_left.obj" scale="1 1 1"/>
       </geometry>
     </collision>
   </link>
@@ -369,7 +369,7 @@
     <parent link="right_hand_z"/>
     <child link="right_hand_a"/>
     <limit effort="1000.0" lower="0.0" upper="0.9704" velocity="1"/>
-    <origin rpy="1.57079 -0.6004 1.57079" xyz="0 0 0.04596"/>
+    <origin rpy="-1.57079 -0.6004 -1.57079" xyz="0 0 0.04596"/>
     <axis xyz="0 0 1"/>
   </joint>
   <!-- BASE_LINE JOINTS -->
@@ -377,8 +377,8 @@
     <parent link="right_hand_e1"/>
     <child link="right_hand_z"/>
     <limit effort="1000.0" lower="0.0" upper="0.9879" velocity="1"/>
-    <origin rpy="0 0.2618 1.571" xyz="-0.0169 0.02626 0"/>
-    <axis xyz="0 0 -1"/>
+    <origin rpy="0 0.2618 1.571" xyz="0.0169 0.02626 0"/>
+    <axis xyz="0 0 1"/>
   </joint>
   <joint name="right_hand_f4" type="fixed">
     <parent link="right_hand_base_link"/>
@@ -389,7 +389,7 @@
     <parent link="right_hand_e1"/>
     <child link="right_hand_e2"/>
     <limit effort="1000.0" lower="0.0" upper="0.98786" velocity="1"/>
-    <origin rpy="0 0 0" xyz="0.0184 0.006 0.0375"/>
+    <origin rpy="0 0 0" xyz="-0.0184 0.006 0.0375"/>
     <axis xyz="0 0 1"/>
     <mimic joint="right_hand_Thumb_Opposition" multiplier="1" offset="0"/>
   </joint>
@@ -399,7 +399,7 @@
     <child link="right_hand_b"/>
     <limit effort="1000.0" lower="0.0" upper="0.98506" velocity="1"/>
     <origin rpy="0 0 0" xyz="0.0485 0 0"/>
-    <axis xyz="0 0 1"/>
+    <axis xyz="0 0 -1"/>
     <mimic joint="right_hand_Thumb_Flexion" multiplier="1.01511" offset="0"/>
   </joint>
   <joint name="right_hand_j4" type="revolute">
@@ -407,7 +407,7 @@
     <child link="right_hand_c"/>
     <limit effort="1000.0" lower="0.0" upper="1.406" velocity="1"/>
     <origin rpy="0 0 0" xyz="0.030 0 0"/>
-    <axis xyz="0 0 1"/>
+    <axis xyz="0 0 -1"/>
     <mimic joint="right_hand_Thumb_Flexion" multiplier="1.44889" offset="0"/>
   </joint>
   <!-- INDEX FINGER JOINTS -->
@@ -509,8 +509,8 @@
     <parent link="right_hand_e1"/>
     <child link="right_hand_virtual_l"/>
     <limit effort="1000.0" lower="0.0" upper="0.28833" velocity="1"/>
-    <origin rpy="0 -1.5707 1.5707" xyz="-0.025 0 0.110"/>
-    <axis xyz="0 0 1"/>
+    <origin rpy="0 -1.5707 1.5707" xyz="0.025 0 0.110"/>
+    <axis xyz="0 0 -1"/>
     <mimic joint="right_hand_Finger_Spread" multiplier="0.5" offset="0"/>
   </joint>
   <joint name="right_hand_middle_spread_dummy" type="fixed">
@@ -522,16 +522,16 @@
     <parent link="right_hand_e2"/>
     <child link="right_hand_virtual_j"/>
     <limit effort="1000.0" lower="0.0" upper="0.28833" velocity="1"/>
-    <origin rpy="-1.5707 -1.5707 0" xyz="0.003855 -0.006 0.0655"/>
-    <axis xyz="0 0 1"/>
+    <origin rpy="-1.5707 -1.5707 0" xyz="-0.003855 -0.006 0.0655"/>
+    <axis xyz="0 0 -1"/>
     <mimic joint="right_hand_Finger_Spread" multiplier="0.5" offset="0"/>
   </joint>
   <joint name="right_hand_Finger_Spread" type="revolute">
     <parent link="right_hand_e2"/>
     <child link="right_hand_virtual_i"/>
     <limit effort="1000.0" lower="0.0" upper="0.5829" velocity="1"/>
-    <origin rpy="-1.5707 -1.5707 0" xyz="0.025355 -0.006 0.056"/>
-    <axis xyz="0 0 1"/>
+    <origin rpy="-1.5707 -1.5707 0" xyz="-0.025355 -0.006 0.056"/>
+    <axis xyz="0 0 -1"/>
   </joint>
 
   <link name="thtip"/>

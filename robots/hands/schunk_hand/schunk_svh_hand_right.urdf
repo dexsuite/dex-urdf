@@ -41,24 +41,6 @@
         <box size="0.0584 0.038 0.0641"/>
       </geometry>
     </collision>
-<!--    <collision>-->
-<!--      <origin rpy="0 0 0" xyz="0.0075 0.028 0.043"/>-->
-<!--      <geometry>-->
-<!--        <box size="0.02 0.01 0.02"/>-->
-<!--      </geometry>-->
-<!--    </collision>-->
-<!--    <collision>-->
-<!--      <origin rpy="0 0 0" xyz="-0.0186 0.028 0.069"/>-->
-<!--      <geometry>-->
-<!--        <box size="0.02 0.01 0.0147"/>-->
-<!--      </geometry>-->
-<!--    </collision>-->
-<!--    <collision>-->
-<!--      <origin rpy="0 0.7854 0" xyz="0 0.028 0.06"/>-->
-<!--      <geometry>-->
-<!--        <box size="0.0286 0.01 0.0147"/>-->
-<!--      </geometry>-->
-<!--    </collision>-->
   </link>
   <!-- LENGTH NOT FOUND IN DATASHEET! GUESSED!!! -->
   <link name="right_hand_e2">
