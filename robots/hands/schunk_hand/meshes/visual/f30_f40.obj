@@ -1,7 +1,7 @@
 # Blender 3.6.1
 # www.blender.org
-mtllib f30.mtl
-o f30
+mtllib f30_f40.mtl
+o f30_f40
 v 0.003965 0.001666 0.001250
 v 0.004005 0.001680 0.003250
 v 0.003252 0.001368 0.001241

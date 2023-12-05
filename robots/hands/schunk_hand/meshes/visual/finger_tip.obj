@@ -1,7 +1,7 @@
 # Blender 3.6.1
 # www.blender.org
-mtllib f13.mtl
-o f13
+mtllib finger_tip.mtl
+o finger_tip
 v 0.003531 0.000038 0.006001
 v 0.003182 0.001568 0.006001
 v 0.002203 0.002796 0.006002

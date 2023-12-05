@@ -279,7 +279,7 @@ def visualize_urdf(use_rt, urdf_file, simulate, disable_self_collision, fix_root
     if disable_self_collision and not simulate:
         for link_builder in robot_builder.get_link_builders():
             link_builder.set_collision_groups(1, 1, 17, 0)
-    robot = robot_builder.build(fix_root_link=fix_root)
+    robot: sapien.physx.PhysxArticulation = robot_builder.build(fix_root_link=fix_root)
 
     # Robot motion
     loop_steps = 600
