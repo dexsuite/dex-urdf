@@ -40,8 +40,8 @@ def render_urdf(urdf_path, use_rt, simulate, disable_self_collision, fix_root, h
     else:
         sapien.render.set_viewer_shader_dir("rt")
         sapien.render.set_camera_shader_dir("rt")
-        sapien.render.set_ray_tracing_samples_per_pixel(32)
-        sapien.render.set_ray_tracing_path_depth(16)
+        sapien.render.set_ray_tracing_samples_per_pixel(64)
+        sapien.render.set_ray_tracing_path_depth(8)
         sapien.render.set_ray_tracing_denoiser("oidn")
 
     # Setup
@@ -101,6 +101,8 @@ def render_urdf(urdf_path, use_rt, simulate, disable_self_collision, fix_root, h
         loader.scale = 1.5
     elif "leap" in urdf_path:
         loader.scale = 1.25
+    elif "svh" in urdf_path:
+        loader.scale = 1.5
 
     robot_builder = loader.load_file_as_articulation_builder(urdf_path)
     if disable_self_collision and not simulate:
@@ -119,6 +121,8 @@ def render_urdf(urdf_path, use_rt, simulate, disable_self_collision, fix_root, h
         robot.set_pose(sapien.Pose([0, 0, -0.2]))
     elif "leap" in urdf_path:
         robot.set_pose(sapien.Pose([0, 0, -0.15]))
+    elif "svh" in urdf_path:
+        robot.set_pose(sapien.Pose([0, 0, -0.2]))
 
     # Robot motion
     loop_steps = 300
