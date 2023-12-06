@@ -1,64 +1,22 @@
 This repository offers an assortment of high-quality models for dexterous hands and objects. Both of them are in URDF
 format.
 
-|  Robot Model  |                                                  Visual[^1]                                                  | Collision[^2] | 
-|:-------------:|:------------------------------------------------------------------------------------------------------------:|:-------------:|
-| Allegro Hand  | [<img src="doc/gallery/allegro_rt.webp" width="400">](robots/hands/allegro_hand/allegro_hand_right_glb.urdf) |       0       |
-|  Shadow Hand  |  [<img src="doc/gallery/shadow_rt.webp" width="400">](robots/hands/shadow_hand/shadow_hand_right_glb.urdf)   |       0       |
-| Ability Hand  | [<img src="doc/gallery/ability_rt.webp" width="400">](robots/hands/ability_hand/ability_hand_right_glb.urdf) |       0       |
-|   Leap Hand   |     [<img src="doc/gallery/leap_rt.webp" width="400">](robots/hands/leap_hand/leap_hand_right_glb.urdf)      |       0       |
-| DClaw Gripper |    [<img src="doc/gallery/dclaw_rt.webp" width="400">](robots/hands/dclaw_gripper/dclaw_gripper_glb.urdf)    |       0       |
-| Barrett Hand  |     [<img src="doc/gallery/bhand_rt.webp" width="400">](robots/hands/barrett_hand/bhand_model_glb.urdf)      |       0       |
+|   Robot Model   |                                                  Visual[^1]                                                  | Collision[^2] | 
+|:---------------:|:------------------------------------------------------------------------------------------------------------:|:-------------:|
+|  Allegro Hand   | [<img src="doc/gallery/allegro_rt.webp" width="400">](robots/hands/allegro_hand/allegro_hand_right_glb.urdf) |       0       |
+|   Shadow Hand   |  [<img src="doc/gallery/shadow_rt.webp" width="400">](robots/hands/shadow_hand/shadow_hand_right_glb.urdf)   |       0       |
+| SCHUNK SVH Hand |  [<img src="doc/gallery/svh_rt.webp" width="400">](robots/hands/schunk_hand/schunk_svh_hand_right_glb.urdf)  |       0       |
+|  Ability Hand   | [<img src="doc/gallery/ability_rt.webp" width="400">](robots/hands/ability_hand/ability_hand_right_glb.urdf) |       0       |
+|    Leap Hand    |     [<img src="doc/gallery/leap_rt.webp" width="400">](robots/hands/leap_hand/leap_hand_right_glb.urdf)      |       0       |
+|  DClaw Gripper  |    [<img src="doc/gallery/dclaw_rt.webp" width="400">](robots/hands/dclaw_gripper/dclaw_gripper_glb.urdf)    |       0       |
+|  Barrett Hand   |     [<img src="doc/gallery/bhand_rt.webp" width="400">](robots/hands/barrett_hand/bhand_model_glb.urdf)      |       0       |
 
-[^1]: Ray tracing animation are rendered in `SAPIEN` using the urdf with `glb` version. Code can be found in [SAPIEN ]()
-[^2]: Rasterization images are rendered in `IsaacGym` using the with the `glb` version
-following platform: [yourdfpy](https://github.com/clemense/yourdfpy),
+[^1]: Ray tracing animation are rendered in `SAPIEN` using the urdf with `glb` version. Code can be found
+in [SAPIEN](tools/generate_urdf_animation_sapien.py)
+[yourdfpy](https://github.com/clemense/yourdfpy),
 [IsaacGym](https://developer.nvidia.com/isaac-gym),
 [SAPIEN](https://sapien.ucsd.edu/),
 [PyBullet](https://pybullet.org/wordpress/)
-
-## Why do we need this repo?
-
-The robot models in this repo are different from the original robot description files provided by the robot driver
-package in serval aspects:
-
-<details>
-<summary>Improved collision mesh</summary>
-<br>
-  All collision mesh are represented as stl or URDF primitives with simplified triangle meshes, i.e. fewer vertices and
-  simpler edge connection. No self collision after loading into simulator.
-
-|          Allegro Visual Model          |              Original Collision Model              |           Improved Collision Model            |
-|:--------------------------------------:|:--------------------------------------------------:|:---------------------------------------------:|
-| ![](doc/improved_collision/visual.png) | ![](doc/improved_collision/original_collision.png) | ![](doc/improved_collision/new_collision.png) | 
-
-</details>
-
-<details>
-<summary>Improved visual mesh</summary>
-Consistent mesh format. All visual mesh are stored as `.obj` but not `.dae`,
-since different DAE loader may treat DAE differently, resulting inconsistent behavior across different URDF parser.
-For enhanced support of physically based rendering,
-every URDF file in this repository is accompanied by a GLTF version of urdf,
-which contains meshes in glb format, in addition to a standard urdf with obj mesh.
-Many simulators, such as IsaacGym and SAPIEN, can utilize the glb version to achieve superior visual results.
-</details>
-
-<details>
-<summary>More stable inertia parameters</summary>
-</details>
-
-<details>
-<summary>Consistent URDF parsing across different parsers, e.g. different simulator</summary>
-</details>
-
-<details>
-<summary>Consistent root convention and auxiliary links</summary>
-
-For all dexterous hands, the orientation are kept consistent across all dexterous hands. For right hand, the x-axis is
-forward, the y-axis the direction from litter finger to thumb, the z-axis is the direction from wrist to fingertip of
-middle finger.
-</details>
 
 ## Robot Source
 
