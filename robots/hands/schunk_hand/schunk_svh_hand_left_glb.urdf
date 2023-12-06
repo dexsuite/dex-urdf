@@ -41,6 +41,12 @@
         <box size="0.0584 0.038 0.0641"/>
       </geometry>
     </collision>
+    <collision>
+      <origin rpy="0 0 0" xyz="0.01 0.0035 0.096"/>
+      <geometry>
+        <box size="0.042 0.038 0.015"/>
+      </geometry>
+    </collision>
   </link>
   <!-- LENGTH NOT FOUND IN DATASHEET! GUESSED!!! -->
   <link name="right_hand_e2">
@@ -142,7 +148,7 @@
     <collision>
       <origin xyz="0 0 0.00121"/>
       <geometry>
-        <sphere radius="0.012"/>
+        <sphere radius="0.01"/>
       </geometry>
     </collision>
   </link>
