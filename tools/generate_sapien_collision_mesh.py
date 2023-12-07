@@ -5,6 +5,8 @@ import sapien
 import trimesh
 import tyro
 
+CONVERT_PRIMITIVE = False
+
 
 def parse_urdf(urdf_path, output_dir):
     # Setup
@@ -23,43 +25,61 @@ def parse_urdf(urdf_path, output_dir):
     robot = loader.load(urdf_path)
 
     for link in robot.get_links():
-        scene = trimesh.Scene()
+        trimesh_scene = trimesh.Scene()
         for collision_shape in link.get_collision_shapes():
-            if isinstance(collision_shape, sapien.physx.PhysxCollisionShapeSphere):
-                mesh = trimesh.creation.icosphere(radius=collision_shape.radius)
+            no_mesh = False
+            if CONVERT_PRIMITIVE:
+                if isinstance(collision_shape, sapien.physx.PhysxCollisionShapeSphere):
+                    mesh = trimesh.creation.icosphere(radius=collision_shape.radius)
 
-            elif isinstance(collision_shape, sapien.physx.PhysxCollisionShapeBox):
-                mesh = trimesh.creation.box(extents=collision_shape.half_size * 2)
+                elif isinstance(collision_shape, sapien.physx.PhysxCollisionShapeBox):
+                    mesh = trimesh.creation.box(extents=collision_shape.half_size * 2)
 
-            elif isinstance(collision_shape, sapien.physx.PhysxCollisionShapeCapsule):
-                mesh = trimesh.creation.capsule(radius=collision_shape.radius, height=collision_shape.half_length * 2)
+                elif isinstance(collision_shape, sapien.physx.PhysxCollisionShapeCapsule):
+                    mesh = trimesh.creation.capsule(
+                        radius=collision_shape.radius, height=collision_shape.half_length * 2
+                    )
 
-            elif isinstance(collision_shape, sapien.physx.PhysxCollisionShapeConvexMesh):
-                mesh = trimesh.Trimesh(
-                    vertices=collision_shape.vertices * collision_shape.scale, faces=collision_shape.triangles
-                )
+                elif isinstance(collision_shape, sapien.physx.PhysxCollisionShapeConvexMesh):
+                    mesh = trimesh.Trimesh(
+                        vertices=collision_shape.vertices * collision_shape.scale, faces=collision_shape.triangles
+                    )
 
-            elif isinstance(collision_shape, sapien.physx.PhysxCollisionShapeTriangleMesh):
-                mesh = trimesh.Trimesh(
-                    vertices=collision_shape.vertices * collision_shape.scale, faces=collision_shape.triangles
-                )
+                elif isinstance(collision_shape, sapien.physx.PhysxCollisionShapeTriangleMesh):
+                    mesh = trimesh.Trimesh(
+                        vertices=collision_shape.vertices * collision_shape.scale, faces=collision_shape.triangles
+                    )
 
-            elif isinstance(collision_shape, sapien.physx.PhysxCollisionShapePlane):
-                mesh = trimesh.creation.box([1, 1e4, 1e4])
+                elif isinstance(collision_shape, sapien.physx.PhysxCollisionShapePlane):
+                    mesh = trimesh.creation.box([1, 1e4, 1e4])
 
-            elif isinstance(collision_shape, sapien.physx.PhysxCollisionShapeCylinder):
-                mesh = trimesh.creation.cylinder(radius=collision_shape.radius, height=collision_shape.half_length * 2)
+                elif isinstance(collision_shape, sapien.physx.PhysxCollisionShapeCylinder):
+                    mesh = trimesh.creation.cylinder(
+                        radius=collision_shape.radius, height=collision_shape.half_length * 2
+                    )
 
+                else:
+                    raise Exception("invalid collision shape, this code should be unreachable.")
             else:
-                raise Exception("invalid collision shape, this code should be unreachable.")
+                if isinstance(collision_shape, sapien.physx.PhysxCollisionShapeConvexMesh):
+                    mesh = trimesh.Trimesh(
+                        vertices=collision_shape.vertices * collision_shape.scale, faces=collision_shape.triangles
+                    )
+                elif isinstance(collision_shape, sapien.physx.PhysxCollisionShapeTriangleMesh):
+                    mesh = trimesh.Trimesh(
+                        vertices=collision_shape.vertices * collision_shape.scale, faces=collision_shape.triangles
+                    )
+                else:
+                    no_mesh = True
 
-            if "thumb" in link.name:
-                print("1")
-            mesh.apply_transform(collision_shape.local_pose.to_transformation_matrix())
-            scene.add_geometry(mesh)
-        if len(scene.geometry) > 0:
+            if not no_mesh:
+                mesh.apply_transform(collision_shape.local_pose.to_transformation_matrix())
+                trimesh_scene.add_geometry(mesh)
+        if len(trimesh_scene.geometry) > 0:
             filename = Path(output_dir) / f"{link.name}.obj"
-            scene.export(str(filename))
+            trimesh_scene.export(str(filename))
+        else:
+            print(f"Skip pure primitive link: {link.name}")
 
 
 def main(urdf_path: str, output_dir: str, /):
