@@ -20,21 +20,13 @@ in [SAPIEN](tools/generate_urdf_animation_sapien.py)
 
 ## Robot Source
 
-|   Robot Model   |                          Official Website                           |                                                 URDF Source                                                 |                                    CAD Model Source                                    |  License   |
-|:---------------:|:-------------------------------------------------------------------:|:-----------------------------------------------------------------------------------------------------------:|:--------------------------------------------------------------------------------------:|:----------:|
-|  Allegro Hand   | [Wonik Robotics](https://www.wonikrobotics.com/research-robot-hand) | [allegro_hand_ros](https://github.com/simlabrobotics/allegro_hand_ros/tree/master/allegro_hand_description) |                                          N/A                                           |    BSD     |
-| SCHUNK SVH Hand |                 [SCHUNK](https://schunk.com/us/en)                  |             [schunk_svh_ros_driver](https://github.com/SCHUNK-GmbH-Co-KG/schunk_svh_ros_driver)             |                                          N/A                                           | Apache-2.0 |
-|   Shadow Hand   |        [Shadow Robot Company](https://www.shadowrobot.com/)         |                     [schunk_svh_ros_driver](https://github.com/shadow-robot/sr_common)                      |                                          N/A                                           |  GPL-3.0   |
-|   Robel DClaw   |     [Robel Benchmark](https://github.com/google-research/robel)     |                                                     N/A                                                     | [D'Claw CAD](https://drive.google.com/drive/folders/1H1xN5BU03-eXjuEyIL_iJ_4XzrdDSnlM) | Apache-2.0 |
-|  Barrett Hand   |  [Barrett Technology](http://barrett.com/robot/products-hand.html)  |                        [bhand_model](https://github.com/jhu-lcsr-attic/bhand_model)                         |    [BarrettHand CAD](https://github.com/jhu-lcsr-attic/bhand_model/tree/master/cad)    |    BSD     |
-|  Ability Hand   |                 [PSYONIC](https://www.psyonic.io/)                  |                     [ability-hand-api](https://github.com/psyonicinc/ability-hand-api)                      |                                          N/A                                           |    N/A     |
-
-## Todo
-
-- [ ] Attach hand on robot arm
-- [ ] Manipulated objects for dexterous hands
-- [ ] Add Barrett Hand
-- [ ] PyBullet URDF checking
-- [X] SAPIEN URDF checking
-- [X] IsaacGym URDF checking
-- [X] Self collision checking
+|   Robot Model   |                          Official Website                           |                                                 URDF Source                                                 |                                    CAD Model Source                                    |     License     |
+|:---------------:|:-------------------------------------------------------------------:|:-----------------------------------------------------------------------------------------------------------:|:--------------------------------------------------------------------------------------:|:---------------:|
+|  Allegro Hand   | [Wonik Robotics](https://www.wonikrobotics.com/research-robot-hand) | [allegro_hand_ros](https://github.com/simlabrobotics/allegro_hand_ros/tree/master/allegro_hand_description) |                                          N/A                                           |       BSD       |
+|   Shadow Hand   |        [Shadow Robot Company](https://www.shadowrobot.com/)         |                           [sr_common](https://github.com/shadow-robot/sr_common)                            |                                          N/A                                           |     GPL-3.0     |
+| SCHUNK SVH Hand |                 [SCHUNK](https://schunk.com/us/en)                  |             [schunk_svh_ros_driver](https://github.com/SCHUNK-GmbH-Co-KG/schunk_svh_ros_driver)             |                                          N/A                                           |   Apache-2.0    |
+|  Ability Hand   |                 [PSYONIC](https://www.psyonic.io/)                  |                     [ability-hand-api](https://github.com/psyonicinc/ability-hand-api)                      |                                          N/A                                           |       N/A       |
+|    Leap Hand    |                  [Leap Hand](http://leaphand.com)                   |          [LEAP_Hand_Sim](https://github.com/leap-hand/LEAP_Hand_Sim/tree/master/assets/leap_hand)           |                     [Leap Hand CAD](http://leaphand.com/assembly)                      |  CC BY-NC 4.0   |
+|  DClaw Gripper  |     [Robel Benchmark](https://github.com/google-research/robel)     |                                                     N/A                                                     | [D'Claw CAD](https://drive.google.com/drive/folders/1H1xN5BU03-eXjuEyIL_iJ_4XzrdDSnlM) |   Apache-2.0    |
+|  Barrett Hand   |  [Barrett Technology](http://barrett.com/robot/products-hand.html)  |                        [bhand_model](https://github.com/jhu-lcsr-attic/bhand_model)                         |    [BarrettHand CAD](https://github.com/jhu-lcsr-attic/bhand_model/tree/master/cad)    |       BSD       |
+|     DexHand     |                 [DexHand](https://www.dexhand.org/)                 |  [dexhand_description ](https://github.com/iotdesignshop/dexhand_description/blob/main/urdf/dexhand.urdf)   |               [Dexhand](https://github.com/TheRobotStudio/V1.0-Dexhand)                | CC BY-NC-SA 4.0 |
