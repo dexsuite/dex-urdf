@@ -7,7 +7,7 @@
   </joint>
   <link name="palm_lower">
     <visual>
-      <origin xyz="-0.020095249652862544332 0.025757756134899473244 -0.034722403578460216134" rpy="0 0 0"/>
+      <origin xyz="-0.0200 0.02575 -0.0347" rpy="0 0 0"/>
       <geometry>
         <mesh filename="meshes/visual/palm_lower.obj"/>
       </geometry>
@@ -59,7 +59,7 @@
       <geometry>
         <box size="0.044 0.052 0.046"/>
       </geometry>
-    </collision> <!--    <collision>--> <!--      <origin--> <!--        xyz="-0.064 -0.0115 -0.021" rpy="0 0 0"/>--> <!--      <geometry>--> <!--        <box size="0.006 0.036 0.02"/>--> <!--      </geometry>--> <!--    </collision>-->
+    </collision>
     <collision>
       <origin xyz="-0.098 -0.009 -0.006" rpy="0 0 0"/>
       <geometry>
@@ -80,7 +80,7 @@
   </link>
   <link name="mcp_joint">
     <visual>
-      <origin xyz="0.0084069022611744960438 0.0077662438597169954416 0.014657354985032912051" rpy="0 0 0"/>
+      <origin xyz="0.0084 0.0077 0.01465" rpy="0 0 0"/>
       <geometry>
         <mesh filename="meshes/visual/mcp_joint.obj"/>
       </geometry>
@@ -129,7 +129,7 @@
   </link>
   <link name="pip">
     <visual>
-      <origin xyz="0.0096433630922713280131 0.00029999999999998951117 0.00078403401041737645627" rpy="-1.570796326794896558 -1.570796326794896336 0"/>
+      <origin xyz="0.0096 0.0002 0.0007" rpy="-1.57079 -1.57079 0"/>
       <geometry>
         <mesh filename="meshes/visual/pip.obj"/>
       </geometry>
@@ -148,7 +148,7 @@
   </link>
   <link name="dip">
     <visual>
-      <origin xyz="0.021133352895225002849 -0.0084321191467048792201 0.0097850881620952408213" rpy="-3.141592653589793116 0 0"/>
+      <origin xyz="0.0211 -0.0084 0.0097" rpy="-3.1415926 0 0"/>
       <geometry>
         <mesh filename="meshes/visual/dip.obj"/>
       </geometry>
@@ -191,7 +191,7 @@
   </link>
   <link name="fingertip">
     <visual>
-      <origin xyz="0.013286424108533503169 -0.0061142383865419869249 0.014499999999999497666" rpy="3.141592653589793116 0 0"/>
+      <origin xyz="0.0132 -0.0061 0.0144" rpy="3.1415926 0 0"/>
       <geometry>
         <mesh filename="meshes/visual/fingertip.obj"/>
       </geometry>
@@ -227,7 +227,7 @@
     </inertial>
   </link>
   <joint name="0" type="revolute">
-    <origin xyz="-0.012200000000000007713 0.038099999999999994982 0.014500000000000000736" rpy="-1.570796326794896558 -1.0065212660796336576e-15 1.5707963267948943376"/>
+    <origin xyz="-0.0122 0.03810 0.01450" rpy="-1.57079 0 1.57079"/>
     <parent link="mcp_joint"/>
     <child link="pip"/>
     <axis xyz="0 0 -1"/>
@@ -235,7 +235,7 @@
     <joint_properties friction="0.0"/>
   </joint>
   <joint name="1" type="revolute">
-    <origin xyz="-0.0070952496528625457958 0.023057756134899472233 -0.01872240357846021927" rpy="1.5707963267948950037 1.5707963267948945596 0"/>
+    <origin xyz="-0.0070 0.0230 -0.0187" rpy="1.57079 1.57079 0"/>
     <parent link="palm_lower"/>
     <child link="mcp_joint"/>
     <axis xyz="0 0 -1"/>
@@ -243,7 +243,7 @@
     <joint_properties friction="0.0"/>
   </joint>
   <joint name="2" type="revolute">
-    <origin xyz="0.01499999999999996822 0.014299999999999904801 -0.012999999999999824196" rpy="1.5707963267948958919 -1.570796326794896336 0"/>
+    <origin xyz="0.015 0.0143 -0.013" rpy="1.57079 -1.57079 0"/>
     <parent link="pip"/>
     <child link="dip"/>
     <axis xyz="0 0 -1"/>
@@ -251,7 +251,7 @@
     <joint_properties friction="0.0"/>
   </joint>
   <joint name="3" type="revolute">
-    <origin xyz="-4.0880582495572692636e-09 -0.036100004210367367397 0.00020000000000007858714" rpy="0 0 0"/>
+    <origin xyz="0 -0.0361 0.0002" rpy="0 0 0"/>
     <parent link="dip"/>
     <child link="fingertip"/>
     <axis xyz="0 0 -1"/>
@@ -260,7 +260,7 @@
   </joint>
   <link name="mcp_joint_2">
     <visual>
-      <origin xyz="0.0084069022611744960438 0.0077662438597169954416 0.014657354985032913786" rpy="0 0 0"/>
+      <origin xyz="0.0084 0.0077 0.01465" rpy="0 0 0"/>
       <geometry>
         <mesh filename="meshes/visual/mcp_joint.obj"/>
       </geometry>
@@ -309,7 +309,7 @@
   </link>
   <link name="pip_2">
     <visual>
-      <origin xyz="0.0096433630922713280131 0.00029999999999999471534 0.00078403401041737645627" rpy="-1.570796326794896558 -1.570796326794896336 0"/>
+      <origin xyz="0.0096 0.0003 0.0007" rpy="-1.57079 -1.57079 0"/>
       <geometry>
         <mesh filename="meshes/visual/pip.obj"/>
       </geometry>
@@ -328,7 +328,7 @@
   </link>
   <link name="dip_2">
     <visual>
-      <origin xyz="0.021133352895225002849 -0.0084321191467048653423 0.0097850881620952373519" rpy="-3.141592653589793116 0 0"/>
+      <origin xyz="0.0211 -0.0084 0.0097" rpy="-3.14159 0 0"/>
       <geometry>
         <mesh filename="meshes/visual/dip.obj"/>
       </geometry>
@@ -371,7 +371,7 @@
   </link>
   <link name="fingertip_2">
     <visual>
-      <origin xyz="0.01328642410853349623 -0.0061142383865420008027 0.014499999999999495931" rpy="3.141592653589793116 0 0"/>
+      <origin xyz="0.0132 -0.0061 0.01450" rpy="3.14159 0 0"/>
       <geometry>
         <mesh filename="meshes/visual/fingertip.obj"/>
       </geometry>
@@ -407,7 +407,7 @@
     </inertial>
   </link>
   <joint name="4" type="revolute">
-    <origin xyz="-0.012200000000000019856 0.038099999999999981104 0.01450000000000000594" rpy="-1.570796326794896558 -1.0065212760057939085e-15 1.5707963267948943376"/>
+    <origin xyz="-0.0122 0.0381 0.0145" rpy="-1.57079 0 1.57079"/>
     <parent link="mcp_joint_2"/>
     <child link="pip_2"/>
     <axis xyz="0 0 -1"/>
@@ -415,7 +415,7 @@
     <joint_properties friction="0.0"/>
   </joint>
   <joint name="5" type="revolute">
-    <origin xyz="-0.0070952496528625388569 -0.022392243865100525113 -0.018722403578460229678" rpy="1.570796326794896558 1.570796326794896558 0"/>
+    <origin xyz="-0.0071 -0.0224 -0.0187" rpy="1.57079 1.57079 0"/>
     <parent link="palm_lower"/>
     <child link="mcp_joint_2"/>
     <axis xyz="0 0 -1"/>
@@ -423,7 +423,7 @@
     <joint_properties friction="0.0"/>
   </joint>
   <joint name="6" type="revolute">
-    <origin xyz="0.014999999999999975159 0.014300000000000000211 -0.013000000000000018485" rpy="1.5707963267948958919 -1.570796326794896336 0"/>
+    <origin xyz="0.015 0.0143 -0.013" rpy="1.57079 -1.57079 0"/>
     <parent link="pip_2"/>
     <child link="dip_2"/>
     <axis xyz="0 0 -1"/>
@@ -431,7 +431,7 @@
     <joint_properties friction="0.0"/>
   </joint>
   <joint name="7" type="revolute">
-    <origin xyz="1.0061396160665481148e-16 -0.036099999999999854428 0.00020000000000007858714" rpy="4.5935029425113654229e-17 -2.8730071914463794583e-16 1.4408183216511868558e-31"/>
+    <origin xyz="0 -0.0361 0.0002" rpy="0 0 0"/>
     <parent link="dip_2"/>
     <child link="fingertip_2"/>
     <axis xyz="0 0 -1"/>
@@ -440,7 +440,7 @@
   </joint>
   <link name="mcp_joint_3">
     <visual>
-      <origin xyz="0.0084069022611744995133 0.0077662438597169963089 0.014657354985032913786" rpy="0 0 0"/>
+      <origin xyz="0.0084 0.0077 0.01465" rpy="0 0 0"/>
       <geometry>
         <mesh filename="meshes/visual/mcp_joint.obj"/>
       </geometry>
@@ -489,7 +489,7 @@
   </link>
   <link name="pip_3">
     <visual>
-      <origin xyz="0.0096433630922713314826 0.00029999999999998083755 0.00078403401041737645627" rpy="-1.570796326794896558 -1.570796326794896336 0"/>
+      <origin xyz="0.0096 0.0003 0.0007" rpy="-1.57079 -1.57079 0"/>
       <geometry>
         <mesh filename="meshes/visual/pip.obj"/>
       </geometry>
@@ -508,7 +508,7 @@
   </link>
   <link name="dip_3">
     <visual>
-      <origin xyz="0.021133352895225006318 -0.0084321191467048653423 0.0097850881620952373519" rpy="-3.141592653589793116 0 0"/>
+      <origin xyz="0.0211 -0.0084 0.0097" rpy="-3.14159 0 0"/>
       <geometry>
         <mesh filename="meshes/visual/dip.obj"/>
       </geometry>
@@ -551,7 +551,7 @@
   </link>
   <link name="fingertip_3">
     <visual>
-      <origin xyz="0.013286424108533501434 -0.0061142383865419869249 0.0144999999999994994" rpy="3.141592653589793116 0 0"/>
+      <origin xyz="0.0132 -0.0061 0.0145" rpy="3.14159 0 0"/>
       <geometry>
         <mesh filename="meshes/visual/fingertip.obj"/>
       </geometry>
@@ -587,7 +587,7 @@
     </inertial>
   </link>
   <joint name="8" type="revolute">
-    <origin xyz="-0.012200000000000004244 0.038100000000000001921 0.014499999999999999001" rpy="-1.570796326794896558 -1.0065212660796360242e-15 1.5707963267948943376"/>
+    <origin xyz="-0.0122 0.0381 0.0145" rpy="-1.57079 0 1.57079"/>
     <parent link="mcp_joint_3"/>
     <child link="pip_3"/>
     <axis xyz="0 0 -1"/>
@@ -595,7 +595,7 @@
     <joint_properties friction="0.0"/>
   </joint>
   <joint name="9" type="revolute">
-    <origin xyz="-0.0070952454426398371343 -0.067842243865100515521 -0.018722407666402932774" rpy="1.5707963267948950037 1.5707963267948945596 0"/>
+    <origin xyz="-0.00709 -0.0678 -0.0187" rpy="1.57079 1.57079 0"/>
     <parent link="palm_lower"/>
     <child link="mcp_joint_3"/>
     <axis xyz="0 0 -1"/>
@@ -603,7 +603,7 @@
     <joint_properties friction="0.0"/>
   </joint>
   <joint name="10" type="revolute">
-    <origin xyz="0.014999999999999971689 0.014299999999999951639 -0.012999999999999959505" rpy="1.5707963267948958919 -1.570796326794896336 0"/>
+    <origin xyz="0.015 0.0143 -0.013" rpy="1.57079 -1.57079 0"/>
     <parent link="pip_3"/>
     <child link="dip_3"/>
     <axis xyz="0 0 -1"/>
@@ -611,7 +611,7 @@
     <joint_properties friction="0.0"/>
   </joint>
   <joint name="11" type="revolute">
-    <origin xyz="9.7144514654701197287e-17 -0.036099999999999868305 0.00020000000000007511769" rpy="4.5935029425113685044e-17 -2.8730071914463799514e-16 1.5565411607615035382e-32"/>
+    <origin xyz="0 -0.03609 0.0002" rpy="0 0 0"/>
     <parent link="dip_3"/>
     <child link="fingertip_3"/>
     <axis xyz="0 0 -1"/>
@@ -620,7 +620,7 @@
   </joint>
   <link name="pip_4">
     <visual>
-      <origin xyz="-0.0053566369077286714317 0.00029999999999999991951 0.00078403401041737819099" rpy="-1.570796326794896558 -1.570796326794896336 0"/>
+      <origin xyz="-0.0053 0.0003 0.00078" rpy="-1.57079 -1.57079 0"/>
       <geometry>
         <mesh filename="meshes/visual/pip.obj"/>
       </geometry>
@@ -639,7 +639,7 @@
   </link>
   <link name="thumb_pip">
     <visual>
-      <origin xyz="0.011961920770611186859 -5.3082538364890297089e-16 -0.015852648956664199681" rpy="1.570796326794896558 0 0"/>
+      <origin xyz="0.01196 0 -0.0158" rpy="1.57079 0 0"/>
       <geometry>
         <mesh filename="meshes/visual/thumb_pip.obj"/>
       </geometry>
@@ -670,7 +670,7 @@
   </link>
   <link name="thumb_dip">
     <visual>
-      <origin xyz="0.043968715707239175439 0.057952952973709198625 -0.0086286764493694757122" rpy="0 0 0"/>
+      <origin xyz="0.0439 0.0579 -0.0086" rpy="0 0 0"/>
       <geometry>
         <mesh filename="meshes/visual/thumb_dip.obj"/>
       </geometry>
@@ -713,7 +713,7 @@
   </link>
   <link name="thumb_fingertip">
     <visual>
-      <origin xyz="0.062559538462667388381 0.078459682911396988469 0.048992911807332215068" rpy="0 0 0"/>
+      <origin xyz="0.0625 0.0784 0.0489" rpy="0 0 0"/>
       <geometry>
         <mesh filename="meshes/visual/thumb_fingertip.obj"/>
       </geometry>
@@ -749,7 +749,7 @@
     </inertial>
   </link>
   <joint name="12" type="revolute">
-    <origin xyz="-0.069395249652862533996 -0.0012422438651005258004 -0.021622403578460215601" rpy="-8.2381766464939424156e-17 1.5707963267948956698 0"/>
+    <origin xyz="-0.0693 -0.0012 -0.0216" rpy="0 1.57079 0"/>
     <parent link="palm_lower"/>
     <child link="pip_4"/>
     <axis xyz="0 0 -1"/>
@@ -757,7 +757,7 @@
     <joint_properties friction="0.0"/>
   </joint>
   <joint name="13" type="revolute">
-    <origin xyz="-2.7755575615628913511e-17 0.014300000000000005415 -0.013000000000000011546" rpy="1.5707963267948958919 -1.570796326794896336 0"/>
+    <origin xyz="0 0.0143 -0.013" rpy="1.57079 -1.57079 0"/>
     <parent link="pip_4"/>
     <child link="thumb_pip"/>
     <axis xyz="0 0 -1"/>
@@ -765,7 +765,7 @@
     <joint_properties friction="0.0"/>
   </joint>
   <joint name="14" type="revolute">
-    <origin xyz="0 0.014499999999999966041 -0.017000000000000053263" rpy="-1.570796326794896558 1.6050198443300131245e-46 -1.9721522630516624601e-31"/>
+    <origin xyz="0 0.0145 -0.017" rpy="-1.57079 0 0"/>
     <parent link="thumb_pip"/>
     <child link="thumb_dip"/>
     <axis xyz="0 0 -1"/>
@@ -773,7 +773,7 @@
     <joint_properties friction="0.0"/>
   </joint>
   <joint name="15" type="revolute">
-    <origin xyz="-1.249000902703301108e-16 0.046599999999999863753 0.00019999999999997710581" rpy="1.5063958491491781023e-44 5.4234187233935260503e-31 3.141592653589793116"/>
+    <origin xyz="0 0.0466 0.0002" rpy="0 0 3.14159"/>
     <parent link="thumb_dip"/>
     <child link="thumb_fingertip"/>
     <axis xyz="0 0 -1"/>
