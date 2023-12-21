@@ -1,4 +1,5 @@
-<robot name="onshape">
+<?xml version="1.0" encoding="utf-8"?>
+<robot name="leap_right">
   <link name="base"/>
   <joint name="base_joint" type="fixed">
     <parent link="base"/>
@@ -779,5 +780,31 @@
     <axis xyz="0 0 -1"/>
     <limit effort="0.95" velocity="8.48" lower="-1.34" upper="1.88"/>
     <joint_properties friction="0.0"/>
+  </joint>
+
+  <!--  virtual auxiliary link-->
+  <link name="thumb_tip_head"/>
+  <link name="index_tip_head"/>
+  <link name="middle_tip_head"/>
+  <link name="ring_tip_head"/>
+  <joint name="thumb_tip" type="fixed">
+    <parent link="thumb_fingertip"/>
+    <child link="thumb_tip_head"/>
+    <origin rpy="0 0 0" xyz="0 -0.06 -0.015"/>
+  </joint>
+  <joint name="index_tip" type="fixed">
+    <parent link="fingertip"/>
+    <child link="index_tip_head"/>
+    <origin rpy="0 0 0" xyz="0 -0.048 0.015"/>
+  </joint>
+  <joint name="middle_tip" type="fixed">
+    <parent link="fingertip_2"/>
+    <child link="middle_tip_head"/>
+    <origin rpy="0 0 0" xyz="0 -0.048 0.015"/>
+  </joint>
+  <joint name="ring_tip" type="fixed">
+    <parent link="fingertip_3"/>
+    <child link="ring_tip_head"/>
+    <origin rpy="0 0 0" xyz="0 -0.048 0.015"/>
   </joint>
 </robot>

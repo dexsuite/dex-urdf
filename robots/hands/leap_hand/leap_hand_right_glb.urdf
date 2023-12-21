@@ -1,4 +1,5 @@
-<robot name="onshape">
+<?xml version="1.0" encoding="utf-8"?>
+<robot name="leap_right">
   <link name="base"/>
   <joint name="base_joint" type="fixed">
     <parent link="base"/>
