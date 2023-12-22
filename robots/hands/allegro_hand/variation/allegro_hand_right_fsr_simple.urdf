@@ -750,10 +750,11 @@
   </joint>
   <link name="link_15.0_tip_fsr">
     <visual>
-      <origin rpy="1.57079 0 1.57079" xyz="0.0108 0 0"/>
+      <origin rpy="0 0 0" xyz="0.0108 0 0"/>
       <geometry>
-        <mesh filename="meshes/visual/tactile.obj" scale="0.6 0.6 0.6"/>
+        <box size="0.003 0.0228 0.0168"/>
       </geometry>
+      <material name="tactile"/>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0.0108 0 0"/>
