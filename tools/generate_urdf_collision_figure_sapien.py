@@ -29,9 +29,7 @@ def build_collision_visual_shape(
             vs = sapien.render.RenderShapeBox(collision_shape.half_size, primitive_mat)
 
         elif isinstance(collision_shape, sapien.physx.PhysxCollisionShapeCapsule):
-            vs = sapien.render.RenderShapeCapsule(
-                collision_shape.radius, collision_shape.half_length, primitive_mat
-            )
+            vs = sapien.render.RenderShapeCapsule(collision_shape.radius, collision_shape.half_length, primitive_mat)
 
         elif isinstance(collision_shape, sapien.physx.PhysxCollisionShapeConvexMesh):
             vs = sapien.render.RenderShapeTriangleMesh(
@@ -49,9 +47,7 @@ def build_collision_visual_shape(
             vs = sapien.render.RenderShapePlane([1, 1e4, 1e4], primitive_mat)
 
         elif isinstance(collision_shape, sapien.physx.PhysxCollisionShapeCylinder):
-            vs = sapien.render.RenderShapeCylinder(
-                collision_shape.radius, collision_shape.half_length, primitive_mat
-            )
+            vs = sapien.render.RenderShapeCylinder(collision_shape.radius, collision_shape.half_length, primitive_mat)
 
         else:
             raise Exception("invalid collision shape, this code should be unreachable.")
@@ -115,7 +111,7 @@ def render_urdf(urdf_path, fix_root, disable_self_collision, headless, output_im
     loader = scene.create_urdf_loader()
     loader.load_multiple_collisions_from_file = True
     if "ability" in urdf_path:
-        loader.scale = 1.5
+        loader.scale = 1.7
     elif "dclaw" in urdf_path:
         loader.scale = 1.25
     elif "allegro" in urdf_path:
@@ -134,20 +130,23 @@ def render_urdf(urdf_path, fix_root, disable_self_collision, headless, output_im
         for link_builder in robot_builder.get_link_builders():
             link_builder.set_collision_groups(1, 1, 17, 0)
     robot = robot_builder.build(fix_root_link=fix_root)
+
+    qpos = np.zeros(robot.dof)
     if "ability" in urdf_path:
         robot.set_pose(sapien.Pose([0, 0, -0.15]))
     elif "shadow" in urdf_path:
-        robot.set_pose(sapien.Pose([0, 0, -0.4]))
+        robot.set_pose(sapien.Pose([0, 0, -0.35]))
     elif "dclaw" in urdf_path:
-        robot.set_pose(sapien.Pose([0, 0, -0.15]))
+        robot.set_pose(sapien.Pose([0, 0, -0.1], [0.9659258, 0, 0, 0.258819]))
     elif "allegro" in urdf_path:
         robot.set_pose(sapien.Pose([0, 0, -0.05]))
     elif "bhand" in urdf_path:
-        robot.set_pose(sapien.Pose([0, 0, -0.2]))
+        robot.set_pose(sapien.Pose([0, 0, -0.15]))
+        qpos = np.array([0, -1, 0, 0, -1, 0, -1, 0])
     elif "leap" in urdf_path:
         robot.set_pose(sapien.Pose([0, 0, -0.15]))
     elif "svh" in urdf_path:
-        robot.set_pose(sapien.Pose([0, 0, -0.2]))
+        robot.set_pose(sapien.Pose([0, 0, -0.15]))
 
     # Robot visual
     for link in robot.get_links():
@@ -163,7 +162,6 @@ def render_urdf(urdf_path, fix_root, disable_self_collision, headless, output_im
                     collision_visual.set_property("shadeFlat", 1)
 
     # Robot motion
-    qpos = np.zeros(robot.dof)
     robot.set_qpos(qpos)
 
     # Video recorder
