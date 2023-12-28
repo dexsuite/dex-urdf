@@ -14,19 +14,19 @@
       </geometry>
     </visual>
     <collision>     <!-- palm_lower -->
-      <origin xyz="-0.009 0.009 -0.011" rpy="0 0 0"/>
+      <origin xyz="-0.009 0.008 -0.011" rpy="0 0 0"/>
       <geometry>
         <box size="0.022 0.026 0.034"/>
       </geometry>
     </collision>
     <collision>
-      <origin xyz="-0.009 -0.036 -0.011" rpy="0 0 0"/>
+      <origin xyz="-0.009 -0.037 -0.011" rpy="0 0 0"/>
       <geometry>
         <box size="0.022 0.026 0.034"/>
       </geometry>
     </collision>
     <collision>
-      <origin xyz="-0.009 -0.081 -0.011" rpy="0 0 0"/>
+      <origin xyz="-0.009 -0.082 -0.011" rpy="0 0 0"/>
       <geometry>
         <box size="0.022 0.026 0.034"/>
       </geometry>
