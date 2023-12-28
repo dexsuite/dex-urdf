@@ -1,15 +1,15 @@
 This repository offers an assortment of high-quality models for dexterous hands and objects. Both of them are in URDF
 format.
 
-|   Robot Model   |                                                  Visual[^1]                                                  | Collision[^2] | 
-|:---------------:|:------------------------------------------------------------------------------------------------------------:|:-------------:|
-|  Allegro Hand   | [<img src="doc/gallery/allegro_rt.webp" width="400">](robots/hands/allegro_hand/allegro_hand_right_glb.urdf) |       0       |
-|   Shadow Hand   |  [<img src="doc/gallery/shadow_rt.webp" width="400">](robots/hands/shadow_hand/shadow_hand_right_glb.urdf)   |       0       |
-| SCHUNK SVH Hand |  [<img src="doc/gallery/svh_rt.webp" width="400">](robots/hands/schunk_hand/schunk_svh_hand_right_glb.urdf)  |       0       |
-|  Ability Hand   | [<img src="doc/gallery/ability_rt.webp" width="400">](robots/hands/ability_hand/ability_hand_right_glb.urdf) |       0       |
-|    Leap Hand    |     [<img src="doc/gallery/leap_rt.webp" width="400">](robots/hands/leap_hand/leap_hand_right_glb.urdf)      |       0       |
-|  DClaw Gripper  |    [<img src="doc/gallery/dclaw_rt.webp" width="400">](robots/hands/dclaw_gripper/dclaw_gripper_glb.urdf)    |       0       |
-|  Barrett Hand   |     [<img src="doc/gallery/bhand_rt.webp" width="400">](robots/hands/barrett_hand/bhand_model_glb.urdf)      |       0       |
+|   Robot Model   |                                                  Visual[^1]                                                  |                                                    Collision[^2]                                                    | 
+|:---------------:|:------------------------------------------------------------------------------------------------------------:|:-------------------------------------------------------------------------------------------------------------------:|
+|  Allegro Hand   | [<img src="doc/gallery/allegro_rt.webp" width="400">](robots/hands/allegro_hand/allegro_hand_right_glb.urdf) | [<img src="doc/gallery/allegro-collision.png" width="400">](robots/hands/allegro_hand/allegro_hand_right_glb.urdf)  |
+|   Shadow Hand   |  [<img src="doc/gallery/shadow_rt.webp" width="400">](robots/hands/shadow_hand/shadow_hand_right_glb.urdf)   |   [<img src="doc/gallery/shadow-collision.png" width="400">](robots/hands/shadow_hand/shadow_hand_right_glb.urdf)   |
+| SCHUNK SVH Hand |  [<img src="doc/gallery/svh_rt.webp" width="400">](robots/hands/schunk_hand/schunk_svh_hand_right_glb.urdf)  | [<img src="doc/gallery/schunk-collision.png" width="400">](robots/hands/schunk_hand/schunk_svh_hand_right_glb.urdf) |
+|  Ability Hand   | [<img src="doc/gallery/ability_rt.webp" width="400">](robots/hands/ability_hand/ability_hand_right_glb.urdf) | [<img src="doc/gallery/ability-collision.png" width="400">](robots/hands/ability_hand/ability_hand_right_glb.urdf)  |
+|    Leap Hand    |     [<img src="doc/gallery/leap_rt.webp" width="400">](robots/hands/leap_hand/leap_hand_right_glb.urdf)      |      [<img src="doc/gallery/leap-collision.png" width="400">](robots/hands/leap_hand/leap_hand_right_glb.urdf)      |
+|  DClaw Gripper  |    [<img src="doc/gallery/dclaw_rt.webp" width="400">](robots/hands/dclaw_gripper/dclaw_gripper_glb.urdf)    |    [<img src="doc/gallery/dclaw-collision.png" width="400">](robots/hands/dclaw_gripper/dclaw_gripper_glb.urdf)     |
+|  Barrett Hand   |     [<img src="doc/gallery/bhand_rt.webp" width="400">](robots/hands/barrett_hand/bhand_model_glb.urdf)      |     [<img src="doc/gallery/barrett-collision.png" width="400">](robots/hands/barrett_hand/bhand_model_glb.urdf)     |
 
 [^1]: Ray tracing animation are rendered in `SAPIEN` using the urdf with `glb` version. Code can be found
 in [SAPIEN](tools/generate_urdf_animation_sapien.py)

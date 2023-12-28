@@ -137,7 +137,7 @@ def render_urdf(urdf_path, fix_root, disable_self_collision, headless, output_im
     elif "shadow" in urdf_path:
         robot.set_pose(sapien.Pose([0, 0, -0.35]))
     elif "dclaw" in urdf_path:
-        robot.set_pose(sapien.Pose([0, 0, -0.1], [0.9659258, 0, 0, 0.258819]))
+        robot.set_pose(sapien.Pose([0, 0, -0.15], [0.9659258, 0, 0, 0.258819]))
     elif "allegro" in urdf_path:
         robot.set_pose(sapien.Pose([0, 0, -0.05]))
     elif "bhand" in urdf_path:
