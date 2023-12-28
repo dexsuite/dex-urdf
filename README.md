@@ -12,14 +12,16 @@ format.
 |  Barrett Hand   |     [<img src="doc/gallery/bhand_rt.webp" width="400">](robots/hands/barrett_hand/bhand_model_glb.urdf)      |     [<img src="doc/gallery/barrett-collision.png" width="400">](robots/hands/barrett_hand/bhand_model_glb.urdf)     |
 
 [^1]: Ray tracing animation are rendered in `SAPIEN` using the urdf with `glb` version. Code can be found
-in [generate_urdf_animation_sapien](tools/generate_urdf_animation_sapien.py)
+in [generate_urdf_animation_sapien.py](tools/generate_urdf_animation_sapien.py).
+[^2]: Collision mesh are rendered in `SAPIEN` using the same urdf as the visual. Blue links are modeled using primitives
+while green links are modeled using convex triangle meshes. Code can be found
+in generate_urdf_collision_figure_sapien.py](tools/generate_urdf_collision_figure_sapien.py).
+
+URDF Parser Links:
 [yourdfpy](https://github.com/clemense/yourdfpy),
 [IsaacGym](https://developer.nvidia.com/isaac-gym),
 [SAPIEN](https://sapien.ucsd.edu/),
 [PyBullet](https://pybullet.org/wordpress/)
-[^2]: Collision mesh are rendered in `SAPIEN` using the same urdf as the visual. Blue links are modeled using primitives
-while green links are modeled using convex triangle meshes. Code can be found
-in [generate_urdf_animation_sapien](tools/generate_urdf_collision_figure_sapien.py)
 
 ## Robot Source
 
