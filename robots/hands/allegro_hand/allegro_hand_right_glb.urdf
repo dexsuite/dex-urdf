@@ -119,11 +119,6 @@
     <origin xyz="0 0 0.054"/>
   </joint>
   <link name="link_3.0">
-    <inertial>
-      <mass value="0.0096"/>
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <inertia ixx="4.701248e-06" ixy="1.255968e-06" ixz="1.2936e-06" iyy="3.649312e-06" iyz="1.7622e-06" izz="4.701248e-06"/>
-    </inertial>
     <visual>
       <geometry>
         <mesh filename="meshes/visual/link_3.0.glb"/>
