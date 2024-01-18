@@ -385,4 +385,24 @@
     <axis xyz="-0.010147 0.99995 -0.0015508"/>
     <limit lower="-1.57" upper="1.57" effort="10" velocity="100"/>
   </joint>
+
+  <!--  virtual auxiliary link-->
+  <link name="link_f1_head"/>
+  <link name="link_f2_head"/>
+  <link name="link_f3_head"/>
+  <joint name="joint_f1_head" type="fixed">
+    <parent link="link_f1_3"/>
+    <child link="link_f1_head"/>
+    <origin rpy="0 0 0" xyz="0.084 0 0"/>
+  </joint>
+  <joint name="joint_f2_head" type="fixed">
+    <parent link="link_f2_3"/>
+    <child link="link_f2_head"/>
+    <origin rpy="0 0 0" xyz="0.084 0 0"/>
+  </joint>
+  <joint name="joint_f3_head" type="fixed">
+    <parent link="link_f3_3"/>
+    <child link="link_f3_head"/>
+    <origin rpy="0 0 0" xyz="0.084 0 0"/>
+  </joint>
 </robot>
