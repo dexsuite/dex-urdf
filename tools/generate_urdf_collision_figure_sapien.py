@@ -139,7 +139,9 @@ def render_urdf(urdf_path, fix_root, disable_self_collision, headless, output_im
     elif "dclaw" in urdf_path:
         robot.set_pose(sapien.Pose([0, 0, -0.15], [0.9659258, 0, 0, 0.258819]))
     elif "allegro" in urdf_path:
-        robot.set_pose(sapien.Pose([0, 0, -0.05]))
+        robot.set_pose(sapien.Pose([0, 0, -0.07]))
+        qpos += np.ones(robot.dof) * 0.2
+        qpos[[0, 4, 8, 12]] = 0
     elif "bhand" in urdf_path:
         robot.set_pose(sapien.Pose([0, 0, -0.15]))
         qpos = np.array([0, -1, 0, 0, -1, 0, -1, 0])
