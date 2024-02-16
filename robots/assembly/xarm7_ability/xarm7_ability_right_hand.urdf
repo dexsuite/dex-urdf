@@ -258,6 +258,66 @@
       </geometry>
     </collision>
   </link>
+  <link name="thumb_L1">
+    <inertial>
+      <mass value="0.00268342"/>
+      <inertia ixx="0.16931e-4" ixy="-0.076214e-4" ixz="-0.16959148e-4" iyy="0.77769934e-4" iyz="0.0156622e-4" izz="0.7249122e-4"/>
+      <origin rpy="0 0 0" xyz="14.606e-3 -1.890854e-3 -3.1155356e-3"/>
+    </inertial>
+    <visual name="thumb_mesh_1">
+      <origin xyz=" 27.8283501e-3 1.7436510745838653e-19 14.7507e-3 " rpy=" 1.832595714594045 -0.0 5.366520605522463e-18 "/>
+      <geometry>
+        <mesh filename="../../hands/ability_hand/meshes/visual/thumb-F1-MIR.glb"/>
+      </geometry>
+    </visual>
+    <collision>                            <!-- thumb_L1 -->
+      <origin xyz="27.8283501e-3 1.7436510745838653e-19 14.7507e-3" rpy="1.832595714594045 -0.0 5.366520605522463e-18"/>
+      <geometry>
+        <mesh filename="../../hands/ability_hand/meshes/collision/thumb-F1-MIR_C.obj"/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="thumb_L2">
+    <inertial>
+      <mass value="0.0055"/>
+      <inertia ixx="4.4789082e-4" ixy="4.4789082e-4" ixz="-0.62144934e-4" iyy="15.600996e-4" iyz="-0.07466143e-4" izz="17.908554e-4"/>
+      <origin rpy="0 0 0" xyz="30.020522e-3 5.59476e-3 -4.1504356e-3"/>
+    </inertial>
+    <visual name="thumb_mesh_2">
+      <origin xyz="65.18669e-3 23.34021e-3 3.93483e-3" rpy="-3.141592 0 0.343830"/>
+      <geometry>
+        <mesh filename="../../hands/ability_hand/meshes/visual/thumb-F2.glb"/>
+      </geometry>
+    </visual>
+    <collision>                            <!-- thumb_L2 -->
+      <origin xyz="65.18669e-3 23.34021e-3 3.93483e-3" rpy="-3.141592 0 0.343830"/>
+      <geometry>
+        <mesh filename="../../hands/ability_hand/meshes/collision/thumb-F2_C.obj"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="thumb_q1" type="revolute">
+    <parent link="thumb_base"/>
+    <child link="thumb_L1"/>
+    <origin xyz=" 0.0 0.0 0.0 " rpy=" 3.141592653589793 -0.0 -0.18884434641020664 "/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-2.0943951" upper="0" effort="1.2" velocity="40.338888721"/>    <!-- angles in rad, efforts in N-m, velocity in rad/s -->
+    <dynamics damping="0.001" friction="0.001"/>  <!-- Friction coefficient is not from quantitative measurement -->
+  </joint>
+  <joint name="thumb_q2" type="revolute">
+    <parent link="thumb_L1"/>
+    <child link="thumb_L2"/>
+    <origin xyz=" 27.8283501e-3 1.7436510745838653e-19 14.7507e-3 " rpy=" 1.832595714594045 -0.0 5.366520605522463e-18 "/>
+    <axis xyz="0 0 1"/>
+    <limit lower="0" upper="2.0943951" effort="6.0" velocity="8.0677777442"/>    <!-- angles in rad, efforts in N-m, velocity in rad/s -->
+    <dynamics damping="0.001" friction="0.001"/>  <!-- Friction coefficient is not from quantitative measurement -->
+  </joint>
+  <link name="thumb_tip"/>
+  <joint name="thumb_tip_joint" type="fixed">
+    <parent link="thumb_L2"/>
+    <child link="thumb_tip"/>
+    <origin rpy="0 0 0" xyz="0.065 0.016 0"/>
+  </joint>
   <link name="index_L1">
     <inertial>
       <mass value="0.00635888"/>
@@ -622,65 +682,6 @@
     <child link="pinky_tip"/>
     <origin rpy="0 0 0" xyz="0.035  -0.018 0"/>
   </joint>
-  <link name="thumb_L1">
-    <inertial>
-      <mass value="0.00268342"/>
-      <inertia ixx="0.16931e-4" ixy="-0.076214e-4" ixz="-0.16959148e-4" iyy="0.77769934e-4" iyz="0.0156622e-4" izz="0.7249122e-4"/>
-      <origin rpy="0 0 0" xyz="14.606e-3 -1.890854e-3 -3.1155356e-3"/>
-    </inertial>
-    <visual name="thumb_mesh_1">
-      <origin xyz=" 27.8283501e-3 1.7436510745838653e-19 14.7507e-3 " rpy=" 1.832595714594045 -0.0 5.366520605522463e-18 "/>
-      <geometry>
-        <mesh filename="../../hands/ability_hand/meshes/visual/thumb-F1-MIR.glb"/>
-      </geometry>
-    </visual>
-    <collision>                            <!-- thumb_L1 -->
-      <origin xyz="27.8283501e-3 1.7436510745838653e-19 14.7507e-3" rpy="1.832595714594045 -0.0 5.366520605522463e-18"/>
-      <geometry>
-        <mesh filename="../../hands/ability_hand/meshes/collision/thumb-F1-MIR_C.obj"/>
-      </geometry>
-    </collision>
-  </link>
-  <link name="thumb_L2">
-    <inertial>
-      <mass value="0.0055"/>
-      <inertia ixx="4.4789082e-4" ixy="4.4789082e-4" ixz="-0.62144934e-4" iyy="15.600996e-4" iyz="-0.07466143e-4" izz="17.908554e-4"/>
-      <origin rpy="0 0 0" xyz="30.020522e-3 5.59476e-3 -4.1504356e-3"/>
-    </inertial>
-    <visual name="thumb_mesh_2">
-      <origin xyz="65.18669e-3 23.34021e-3 3.93483e-3" rpy="-3.141592 0 0.343830"/>
-      <geometry>
-        <mesh filename="../../hands/ability_hand/meshes/visual/thumb-F2.glb"/>
-      </geometry>
-    </visual>
-    <collision>                            <!-- thumb_L2 -->
-      <origin xyz="65.18669e-3 23.34021e-3 3.93483e-3" rpy="-3.141592 0 0.343830"/>
-      <geometry>
-        <mesh filename="../../hands/ability_hand/meshes/collision/thumb-F2_C.obj"/>
-      </geometry>
-    </collision>
-  </link>
-  <joint name="thumb_q1" type="revolute">
-    <parent link="thumb_base"/>
-    <child link="thumb_L1"/>
-    <origin xyz=" 0.0 0.0 0.0 " rpy=" 3.141592653589793 -0.0 -0.18884434641020664 "/>
-    <axis xyz="0 0 1"/>
-    <limit lower="-2.0943951" upper="0" effort="1.2" velocity="40.338888721"/>    <!-- angles in rad, efforts in N-m, velocity in rad/s -->
-    <dynamics damping="0.001" friction="0.001"/>  <!-- Friction coefficient is not from quantitative measurement -->
-  </joint>
-  <joint name="thumb_q2" type="revolute">
-    <parent link="thumb_L1"/>
-    <child link="thumb_L2"/>
-    <origin xyz=" 27.8283501e-3 1.7436510745838653e-19 14.7507e-3 " rpy=" 1.832595714594045 -0.0 5.366520605522463e-18 "/>
-    <axis xyz="0 0 1"/>
-    <limit lower="0" upper="2.0943951" effort="6.0" velocity="8.0677777442"/>    <!-- angles in rad, efforts in N-m, velocity in rad/s -->
-    <dynamics damping="0.001" friction="0.001"/>  <!-- Friction coefficient is not from quantitative measurement -->
-  </joint>
-  <link name="thumb_tip"/>
-  <joint name="thumb_tip_joint" type="fixed">
-    <parent link="thumb_L2"/>
-    <child link="thumb_tip"/>
-    <origin rpy="0 0 0" xyz="0.065 0.016 0"/>
-  </joint>
+
 </robot>
 
