@@ -200,6 +200,18 @@
       </geometry>
       <origin rpy="0 0 0" xyz="0 0 0"/>
     </collision>
+    <visual name="hand_mount">
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="meshes/hand_base.obj"/>
+      </geometry>
+    </visual>
+    <collision name="hand_mount_collision">
+      <origin rpy="0 0 0" xyz="0 0 0.009"/>
+      <geometry>
+        <cylinder radius="0.0365" length="0.018"/>
+      </geometry>
+    </collision>
   </link>
   <joint name="joint7" type="revolute">
     <origin rpy="-1.5708 0 0" xyz="0.076 0.097 0"/>
@@ -210,7 +222,7 @@
     <dynamics damping="2" friction="1"/>
   </joint>
   <joint name="joint_eef" type="fixed">
-    <origin xyz="0 0 0" rpy="0 0 -1.57079"/>
+    <origin xyz="0 0 0.018" rpy="0 0 -1.57079"/>
     <parent link="link7"/>
     <child link="base"/>
   </joint>
