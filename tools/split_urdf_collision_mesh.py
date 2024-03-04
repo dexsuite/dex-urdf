@@ -1,13 +1,10 @@
-from xml.etree import ElementTree as ET
 from xml.dom import minidom
+from xml.etree import ElementTree as ET
 
 import sapien
 import trimesh
 import tyro
 from pathlib import Path
-
-
-import xml.dom.minidom
 
 
 def parse_urdf(urdf_path, new_mesh_dir):
@@ -36,7 +33,6 @@ def parse_urdf(urdf_path, new_mesh_dir):
 
         for k, collision_shape in enumerate(link.get_collision_shapes()):
             trimesh_scene = trimesh.Scene()
-            # print(collision_shape)
             if isinstance(collision_shape, sapien.physx.PhysxCollisionShapeConvexMesh):
                 mesh = trimesh.Trimesh(
                     vertices=collision_shape.vertices * collision_shape.scale, faces=collision_shape.triangles
