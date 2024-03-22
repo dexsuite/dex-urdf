@@ -226,7 +226,6 @@
     <parent link="link7"/>
     <child link="base"/>
   </joint>
-
   <link name="base">
     <visual name="wrist_mesh">
       <origin rpy="0 0 0" xyz="0 0 0"/>
@@ -246,6 +245,15 @@
       <origin xyz="22.41911e-3 -0.15798201e-3 -0.01319866e-3" rpy="0 0 0"/>
     </inertial>
   </link>
+
+  <!--  enf effector frame-->
+  <joint name="ee_joint" type="fixed">
+    <parent link="base"/>
+    <child link="ee_link"/>
+    <origin xyz="0 0 0" rpy="0 0 1.57079"/>
+  </joint>
+  <link name="ee_link"/>
+
   <joint name="wrist2thumb" type="fixed">
     <parent link="base"/>
     <child link="thumb_base"/>
@@ -413,7 +421,6 @@
     <axis xyz="0 0 1"/>
     <limit lower="0.0" upper="2.6586" effort="6.0" velocity="8.0677777442"/>    <!-- angles in rad, efforts in N-m, velocity in rad/s -->
     <dynamics damping="0.001" friction="0.001"/>  <!-- Friction coefficient is not from quantitative measurement -->
-    <mimic joint="index_q1" multiplier="1.05851325" offset="0.72349796"/>
   </joint>
   <link name="index_tip"/>
   <joint name="index_tip_joint" type="fixed">
@@ -504,7 +511,6 @@
     <axis xyz="0 0 1"/>
     <limit lower="0.0" upper="2.6586" effort="6.0" velocity="8.0677777442"/>    <!-- angles in rad, efforts in N-m, velocity in rad/s -->
     <dynamics damping="0.001" friction="0.001"/>  <!-- Friction coefficient is not from quantitative measurement -->
-    <mimic joint="middle_q1" multiplier="1.05851325" offset="0.72349796"/>
   </joint>
   <link name="middle_tip"/>
   <joint name="middle_tip_joint" type="fixed">
@@ -595,7 +601,6 @@
     <axis xyz="0 0 1"/>
     <limit lower="0.0" upper="2.6586" effort="6.0" velocity="8.0677777442"/>    <!-- angles in rad, efforts in N-m, velocity in rad/s -->
     <dynamics damping="0.001" friction="0.001"/>  <!-- Friction coefficient is not from quantitative measurement -->
-    <mimic joint="ring_q1" multiplier="1.05851325" offset="0.72349796"/>
   </joint>
   <link name="ring_tip"/>
   <joint name="ring_tip_joint" type="fixed">
@@ -686,7 +691,6 @@
     <limit lower="0.0" upper="2.6586" effort="6.0" velocity="8.0677777442"/>    <!-- angles in rad, efforts in N-m, velocity in rad/s -->
     <dynamics damping="0.001" friction="0.001"/>  <!-- Friction coefficient is not from quantitative measurement -->
     <axis xyz="0 0 1"/>
-    <mimic joint="pinky_q1" multiplier="1.05851325" offset="0.72349796"/>
   </joint>
   <link name="pinky_tip"/>
   <joint name="pinky_tip_joint" type="fixed">
@@ -694,6 +698,4 @@
     <child link="pinky_tip"/>
     <origin rpy="0 0 0" xyz="0.035  -0.018 0"/>
   </joint>
-
 </robot>
-
