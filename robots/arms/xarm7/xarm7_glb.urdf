@@ -9,7 +9,7 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="meshes/visual/link_base.obj"/>
+        <mesh filename="meshes/visual/link_base.glb"/>
       </geometry>
       <origin rpy="0 0 0" xyz="0 0 0"/>
     </visual>
@@ -28,7 +28,7 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="meshes/visual/link1.obj"/>
+        <mesh filename="meshes/visual/link1.glb"/>
       </geometry>
       <origin rpy="0 0 0" xyz="0 0 0"/>
     </visual>
@@ -55,7 +55,7 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="meshes/visual/link2.obj"/>
+        <mesh filename="meshes/visual/link2.glb"/>
       </geometry>
       <origin rpy="0 0 0" xyz="0 0 0"/>
     </visual>
@@ -82,7 +82,7 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="meshes/visual/link3.obj"/>
+        <mesh filename="meshes/visual/link3.glb"/>
       </geometry>
       <origin rpy="0 0 0" xyz="0 0 0"/>
     </visual>
@@ -109,7 +109,7 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="meshes/visual/link4.obj"/>
+        <mesh filename="meshes/visual/link4.glb"/>
       </geometry>
       <origin rpy="0 0 0" xyz="0 0 0"/>
     </visual>
@@ -136,7 +136,7 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="meshes/visual/link5.obj"/>
+        <mesh filename="meshes/visual/link5.glb"/>
       </geometry>
       <origin rpy="0 0 0" xyz="0 0 0"/>
     </visual>
@@ -163,7 +163,7 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="meshes/visual/link6.obj"/>
+        <mesh filename="meshes/visual/link6.glb"/>
       </geometry>
       <origin rpy="0 0 0" xyz="0 0 0"/>
     </visual>
@@ -190,7 +190,7 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="meshes/visual/link7.obj"/>
+        <mesh filename="meshes/visual/link7.glb"/>
       </geometry>
       <origin rpy="0 0 0" xyz="0 0 0"/>
     </visual>
