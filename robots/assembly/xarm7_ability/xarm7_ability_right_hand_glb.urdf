@@ -9,7 +9,7 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="../../arms/xarm7/meshes/visual/link_base.obj"/>
+        <mesh filename="../../arms/xarm7/meshes/visual/link_base.glb"/>
       </geometry>
       <origin rpy="0 0 0" xyz="0 0 0"/>
     </visual>
@@ -28,7 +28,7 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="../../arms/xarm7/meshes/visual/link1.obj"/>
+        <mesh filename="../../arms/xarm7/meshes/visual/link1.glb"/>
       </geometry>
       <origin rpy="0 0 0" xyz="0 0 0"/>
     </visual>
@@ -55,7 +55,7 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="../../arms/xarm7/meshes/visual/link2.obj"/>
+        <mesh filename="../../arms/xarm7/meshes/visual/link2.glb"/>
       </geometry>
       <origin rpy="0 0 0" xyz="0 0 0"/>
     </visual>
@@ -82,7 +82,7 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="../../arms/xarm7/meshes/visual/link3.obj"/>
+        <mesh filename="../../arms/xarm7/meshes/visual/link3.glb"/>
       </geometry>
       <origin rpy="0 0 0" xyz="0 0 0"/>
     </visual>
@@ -109,7 +109,7 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="../../arms/xarm7/meshes/visual/link4.obj"/>
+        <mesh filename="../../arms/xarm7/meshes/visual/link4.glb"/>
       </geometry>
       <origin rpy="0 0 0" xyz="0 0 0"/>
     </visual>
@@ -136,7 +136,7 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="../../arms/xarm7/meshes/visual/link5.obj"/>
+        <mesh filename="../../arms/xarm7/meshes/visual/link5.glb"/>
       </geometry>
       <origin rpy="0 0 0" xyz="0 0 0"/>
     </visual>
@@ -163,7 +163,7 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="../../arms/xarm7/meshes/visual/link6.obj"/>
+        <mesh filename="../../arms/xarm7/meshes/visual/link6.glb"/>
       </geometry>
       <origin rpy="0 0 0" xyz="0 0 0"/>
     </visual>
@@ -190,7 +190,7 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="../../arms/xarm7/meshes/visual/link7.obj"/>
+        <mesh filename="../../arms/xarm7/meshes/visual/link7.glb"/>
       </geometry>
       <origin rpy="0 0 0" xyz="0 0 0"/>
     </visual>
@@ -230,7 +230,7 @@
     <visual name="wrist_mesh">
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="../../hands/ability_hand/meshes/visual/wristmesh.obj"/>
+        <mesh filename="../../hands/ability_hand/meshes/visual/wristmesh.glb"/>
       </geometry>
     </visual>
     <collision>
@@ -257,7 +257,7 @@
   <joint name="wrist2thumb" type="fixed">
     <parent link="base"/>
     <child link="thumb_base"/>
-    <origin xyz="24.0476665e-3 3.78124745e-3 32.32964923e-3" rpy="3.14148426 0.08848813 3.14036612"/>
+    <origin xyz="-24.0476665e-3 3.78124745e-3 32.32964923e-3" rpy="3.14148426 -0.08848813 -3.14036612"/>
   </joint>
   <link name="thumb_base">
     <inertial>
@@ -268,13 +268,13 @@
     <visual name="palm_mesh">
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="../../hands/ability_hand/meshes/visual/FB_palm_ref.obj"/>
+        <mesh filename="../../hands/ability_hand/meshes/visual/FB_palm_ref_MIR.glb"/>
       </geometry>
     </visual>
     <collision>                                  <!-- thumb_base -->
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="../../hands/ability_hand/meshes/collision/FB_palm_ref.obj"/>
+        <mesh filename="../../hands/ability_hand/meshes/collision/FB_palm_ref_MIR.obj"/>
       </geometry>
     </collision>
   </link>
@@ -285,15 +285,15 @@
       <origin rpy="0 0 0" xyz="14.606e-3 -1.890854e-3 -3.1155356e-3"/>
     </inertial>
     <visual name="thumb_mesh_1">
-      <origin xyz="27.8283501e-3 0 -14.7507000e-3" rpy="4.450589592585541 0 0"/>
+      <origin xyz=" 27.8283501e-3 1.7436510745838653e-19 14.7507e-3 " rpy=" 1.832595714594045 -0.0 5.366520605522463e-18 "/>
       <geometry>
-        <mesh filename="../../hands/ability_hand/meshes/visual/thumb-F1.obj"/>
+        <mesh filename="../../hands/ability_hand/meshes/visual/thumb-F1-MIR.glb"/>
       </geometry>
     </visual>
     <collision>                            <!-- thumb_L1 -->
-      <origin xyz="27.8283501e-3 0 -14.7507000e-3" rpy="4.450589592585541 0 0"/>
+      <origin xyz="27.8283501e-3 1.7436510745838653e-19 14.7507e-3" rpy="1.832595714594045 -0.0 5.366520605522463e-18"/>
       <geometry>
-        <mesh filename="../../hands/ability_hand/meshes/collision/thumb-F1_C.obj"/>
+        <mesh filename="../../hands/ability_hand/meshes/collision/thumb-F1-MIR_C.obj"/>
       </geometry>
     </collision>
   </link>
@@ -306,7 +306,7 @@
     <visual name="thumb_mesh_2">
       <origin xyz="65.18669e-3 23.34021e-3 3.93483e-3" rpy="-3.141592 0 0.343830"/>
       <geometry>
-        <mesh filename="../../hands/ability_hand/meshes/visual/thumb-F2.obj"/>
+        <mesh filename="../../hands/ability_hand/meshes/visual/thumb-F2.glb"/>
       </geometry>
     </visual>
     <collision>                            <!-- thumb_L2 -->
@@ -319,7 +319,7 @@
   <joint name="thumb_q1" type="revolute">
     <parent link="thumb_base"/>
     <child link="thumb_L1"/>
-    <origin xyz="0 0 0" rpy="0 0 3.330437"/>
+    <origin xyz=" 0.0 0.0 0.0 " rpy=" 3.141592653589793 -0.0 -0.18884434641020664 "/>
     <axis xyz="0 0 1"/>
     <limit lower="-2.0943951" upper="0" effort="1.2" velocity="40.338888721"/>    <!-- angles in rad, efforts in N-m, velocity in rad/s -->
     <dynamics damping="0.001" friction="0.001"/>  <!-- Friction coefficient is not from quantitative measurement -->
@@ -327,7 +327,7 @@
   <joint name="thumb_q2" type="revolute">
     <parent link="thumb_L1"/>
     <child link="thumb_L2"/>
-    <origin xyz="27.8283501e-3 0 -14.7507000e-3" rpy="4.450589592585541 0 0"/>
+    <origin xyz="27.8283501e-3 0 14.7507e-3 " rpy="1.832595714594045 -0.0 5.366520605522463e-18 "/>
     <axis xyz="0 0 1"/>
     <limit lower="0" upper="2.0943951" effort="6.0" velocity="8.0677777442"/>    <!-- angles in rad, efforts in N-m, velocity in rad/s -->
     <dynamics damping="0.001" friction="0.001"/>  <!-- Friction coefficient is not from quantitative measurement -->
@@ -347,7 +347,7 @@
     <visual name="index_mesh_1">
       <origin xyz="38.472723e-3 3.257695e-3 0.000000" rpy="0 0 0.084474"/>
       <geometry>
-        <mesh filename="../../hands/ability_hand/meshes/visual/idx-F1.obj"/>
+        <mesh filename="../../hands/ability_hand/meshes/visual/idx-F1.glb"/>
       </geometry>
     </visual>
     <collision>                                  <!-- index_L1 -->
@@ -390,7 +390,7 @@
     <visual name="index_mesh_2">
       <origin rpy="0 0 0" xyz="9.1241e-3 0 0"/>
       <geometry>
-        <mesh filename="../../hands/ability_hand/meshes/visual/idx-F2.obj"/>
+        <mesh filename="../../hands/ability_hand/meshes/visual/idx-F2.glb"/>
       </geometry>
     </visual>
     <collision>                            <!-- index_L2 -->
@@ -409,7 +409,7 @@
   <joint name="index_q1" type="revolute">
     <parent link="thumb_base"/>
     <child link="index_L1"/>
-    <origin xyz="-9.49e-3 -13.04e-3 -62.95e-3" rpy="-1.982050 1.284473 -2.090591"/>
+    <origin xyz="9.49e-3 -13.04e-3 -62.95e-3 " rpy=" -1.1595426535897932 1.284473 -1.0510016535897932 "/>
     <axis xyz="0 0 1"/>
     <limit lower="0" upper="2.0943951" effort="6.0" velocity="8.0677777442"/>    <!-- angles in rad, efforts in N-m, velocity in rad/s -->
     <dynamics damping="0.001" friction="0.001"/>  <!-- Friction coefficient is not from quantitative measurement -->
@@ -437,7 +437,7 @@
     <visual name="middle_mesh_1">
       <origin xyz="38.472723e-3 3.257695e-3 0.000000" rpy="0 0 0.084474"/>
       <geometry>
-        <mesh filename="../../hands/ability_hand/meshes/visual/idx-F1.obj"/>
+        <mesh filename="../../hands/ability_hand/meshes/visual/idx-F1.glb"/>
       </geometry>
     </visual>
     <collision>                                  <!-- middle_L1 -->
@@ -480,7 +480,7 @@
     <visual name="middle_mesh_2">
       <origin rpy="0 0 0" xyz="9.1241e-3 0 0"/>
       <geometry>
-        <mesh filename="../../hands/ability_hand/meshes/visual/idx-F2.obj"/>
+        <mesh filename="../../hands/ability_hand/meshes/visual/idx-F2.glb"/>
       </geometry>
     </visual>
     <collision>                            <!-- middle_L2 -->
@@ -499,7 +499,7 @@
   <joint name="middle_q1" type="revolute">
     <parent link="thumb_base"/>
     <child link="middle_L1"/>
-    <origin xyz="9.653191e-3 -15.310271e-3 -67.853949e-3" rpy="-1.860531 1.308458 -1.896217"/>
+    <origin xyz="-9.653191e-3 -15.310271e-3 -67.853949e-3 " rpy=" -1.2810616535897934 1.308458 -1.2453756535897933 "/>
     <limit lower="0" upper="2.0943951" effort="6.0" velocity="8.0677777442"/>    <!-- angles in rad, efforts in N-m, velocity in rad/s -->
     <dynamics damping="0.001" friction="0.001"/>  <!-- Friction coefficient is not from quantitative measurement -->
     <axis xyz="0 0 1"/>
@@ -527,7 +527,7 @@
     <visual name="ring_mesh_1">
       <origin xyz="38.472723e-3 3.257695e-3 0.000000" rpy="0 0 0.084474"/>
       <geometry>
-        <mesh filename="../../hands/ability_hand/meshes/visual/idx-F1.obj"/>
+        <mesh filename="../../hands/ability_hand/meshes/visual/idx-F1.glb"/>
       </geometry>
     </visual>
     <collision>                                  <!-- ring_L1 -->
@@ -570,7 +570,7 @@
     <visual name="ring_mesh_2">
       <origin rpy="0 0 0" xyz="9.1241e-3 0 0"/>
       <geometry>
-        <mesh filename="../../hands/ability_hand/meshes/visual/idx-F2.obj"/>
+        <mesh filename="../../hands/ability_hand/meshes/visual/idx-F2.glb"/>
       </geometry>
     </visual>
     <collision>                            <!-- ring_L2 -->
@@ -589,7 +589,7 @@
   <joint name="ring_q1" type="revolute">
     <parent link="thumb_base"/>
     <child link="ring_L1"/>
-    <origin xyz="29.954260e-3 -14.212492e-3 -67.286105e-3" rpy="-1.716598 1.321452 -1.675862"/>
+    <origin xyz="-29.95426e-3 -14.212492e-3 -67.286105e-3 " rpy=" -1.424994653589793 1.321452 -1.4657306535897934 "/>
     <limit lower="0" upper="2.0943951" effort="6.0" velocity="8.0677777442"/>    <!-- angles in rad, efforts in N-m, velocity in rad/s -->
     <dynamics damping="0.001" friction="0.001"/>  <!-- Friction coefficient is not from quantitative measurement -->
     <axis xyz="0 0 1"/>
@@ -617,7 +617,7 @@
     <visual name="pinky_mesh_1">
       <origin xyz="38.472723e-3 3.257695e-3 0.000000" rpy="0 0 0.084474"/>
       <geometry>
-        <mesh filename="../../hands/ability_hand/meshes/visual/idx-F1.obj"/>
+        <mesh filename="../../hands/ability_hand/meshes/visual/idx-F1.glb"/>
       </geometry>
     </visual>
     <collision>                                  <!-- pinky_L1 -->
@@ -660,7 +660,7 @@
     <visual name="pinky_mesh_2">
       <origin rpy="0 0 0" xyz="9.1241e-3 0 0"/>
       <geometry>
-        <mesh filename="../../hands/ability_hand/meshes/visual/idx-F2.obj"/>
+        <mesh filename="../../hands/ability_hand/meshes/visual/idx-F2.glb"/>
       </geometry>
     </visual>
     <collision>                            <!-- pinky_L2 -->
@@ -679,7 +679,7 @@
   <joint name="pinky_q1" type="revolute">
     <parent link="thumb_base"/>
     <child link="pinky_L1"/>
-    <origin xyz="49.521293e-3 -11.004583e-3 -63.029065e-3" rpy="-1.765110 1.322220 -1.658383"/>
+    <origin xyz="-49.521293e-3 -11.004583e-3 -63.029065e-3 " rpy=" -1.3764826535897934 1.32222 -1.4832096535897932 "/>
     <limit lower="0" upper="2.0943951" effort="6.0" velocity="8.0677777442"/>    <!-- angles in rad, efforts in N-m, velocity in rad/s -->
     <dynamics damping="0.001" friction="0.001"/>  <!-- Friction coefficient is not from quantitative measurement -->
     <axis xyz="0 0 1"/>
