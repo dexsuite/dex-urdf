@@ -886,7 +886,7 @@
       <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
     </inertial>
   </link>
-  <joint name="thtip" type="fixed">
+  <joint name="THtip" type="fixed">
     <parent link="thdistal"/>
     <child link="thtip"/>
     <origin rpy="0 0 0" xyz="0 0 0.0275"/>
