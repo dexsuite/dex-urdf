@@ -191,6 +191,7 @@
     <axis xyz="0 0 1"/>
     <limit lower="0.0" upper="2.6586" effort="6.0" velocity="8.0677777442"/>    <!-- angles in rad, efforts in N-m, velocity in rad/s -->
     <dynamics damping="0.001" friction="0.001"/>  <!-- Friction coefficient is not from quantitative measurement -->
+    <mimic joint="index_q1" multiplier="1.05851325" offset="0.72349796"/>
   </joint>
   <link name="index_tip"/>
   <joint name="index_tip_joint" type="fixed">
@@ -281,6 +282,7 @@
     <axis xyz="0 0 1"/>
     <limit lower="0.0" upper="2.6586" effort="6.0" velocity="8.0677777442"/>    <!-- angles in rad, efforts in N-m, velocity in rad/s -->
     <dynamics damping="0.001" friction="0.001"/>  <!-- Friction coefficient is not from quantitative measurement -->
+    <mimic joint="middle_q1" multiplier="1.05851325" offset="0.72349796"/>
   </joint>
   <link name="middle_tip"/>
   <joint name="middle_tip_joint" type="fixed">
@@ -371,6 +373,7 @@
     <axis xyz="0 0 1"/>
     <limit lower="0.0" upper="2.6586" effort="6.0" velocity="8.0677777442"/>    <!-- angles in rad, efforts in N-m, velocity in rad/s -->
     <dynamics damping="0.001" friction="0.001"/>  <!-- Friction coefficient is not from quantitative measurement -->
+    <mimic joint="ring_q1" multiplier="1.05851325" offset="0.72349796"/>
   </joint>
   <link name="ring_tip"/>
   <joint name="ring_tip_joint" type="fixed">
@@ -461,6 +464,7 @@
     <limit lower="0.0" upper="2.6586" effort="6.0" velocity="8.0677777442"/>    <!-- angles in rad, efforts in N-m, velocity in rad/s -->
     <dynamics damping="0.001" friction="0.001"/>  <!-- Friction coefficient is not from quantitative measurement -->
     <axis xyz="0 0 1"/>
+    <mimic joint="pinky_q1" multiplier="1.05851325" offset="0.72349796"/>
   </joint>
   <link name="pinky_tip"/>
   <joint name="pinky_tip_joint" type="fixed">
