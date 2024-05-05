@@ -16,6 +16,8 @@ if not IS_EXPORT:
         else:
             bpy.ops.wm.collada_import(filepath=str(file))
 
+        # bpy.ops.import_scene.gltf(filepath=str(file))
+
 
 else:
     # After modeling the visual material for each mesh in the scene
@@ -24,6 +26,6 @@ else:
     for name, obj in scene.objects.items():
         obj.select_set(True)
         print(name)
-        bpy.ops.export_scene.obj(filepath=str(root_dir / f"{name}.obj"), use_selection=True)
+        bpy.ops.wm.obj_export(filepath=str(root_dir / f"{name}.obj"), export_selected_objects=True)
         bpy.ops.export_scene.gltf(filepath=str(root_dir / f"{name}.glb"), use_selection=True, check_existing=False)
         obj.select_set(False)
