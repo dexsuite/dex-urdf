@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+authors:
+  - family-names: "Qin"
+    given-names: "Yuzhe"
+  - family-names: "Jia"
+    given-names: "Chengzhe"
+date-released: 2023-7-29
+title: "dex-urdf"
+message: "Thanks for using dex-urdf. If you use this software, please cite it as below."
+url: "https://github.com/dexsuite/dex-urdf"
