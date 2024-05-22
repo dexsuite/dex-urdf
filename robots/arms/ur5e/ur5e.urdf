@@ -248,19 +248,11 @@
     <child link="base"/>
   </joint>
   <!-- ROS-Industrial 'flange' frame: attachment point for EEF models -->
-  <link name="flange"/>
+  <link name="ee_link"/>
   <joint name="wrist_3-flange" type="fixed">
     <parent link="wrist_3_link"/>
-    <child link="flange"/>
+    <child link="ee_link"/>
     <origin rpy="0 -1.57079632679 -1.57079632679" xyz="0 0 0"/>
-  </joint>
-  <!-- ROS-Industrial 'tool0' frame: all-zeros tool frame -->
-  <link name="tool0"/>
-  <joint name="flange-tool0" type="fixed">
-    <!-- default toolframe: X+ left, Y+ up, Z+ front -->
-    <origin rpy="1.57079632679 0 1.57079632679" xyz="0 0 0"/>
-    <parent link="flange"/>
-    <child link="tool0"/>
   </joint>
 </robot>
 
