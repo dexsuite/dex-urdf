@@ -33,7 +33,7 @@ def parse_args():
 
 
 class ContactViewer(Viewer):
-    def __init__(self, renderer: sapien.render.SapienRenderer, shader_dir="", resolutions=(1024, 768)):
+    def __init__(self, renderer: sapien.render.SapienRenderer = None, shader_dir="", resolutions=(1024, 768)):
         super().__init__(renderer, shader_dir, resolutions)
 
         # Contact arrow
@@ -240,13 +240,8 @@ def visualize_urdf(use_rt, urdf_file, simulate, disable_self_collision, fix_root
         sapien.render.set_ray_tracing_denoiser("oidn")
 
     # Setup
-    engine = sapien.Engine()
-    renderer = sapien.render.SapienRenderer(offscreen_only=False)
-    engine.set_renderer(renderer)
-    config = sapien.SceneConfig()
-    config.enable_tgs = True
-    config.gravity = np.array([0, 0, 0])
-    scene = engine.create_scene(config=config)
+    scene = sapien.Scene()
+    sapien.physx.set_scene_config(enable_tgs=True)
     scene.set_timestep(1 / 125)
 
     # Ground
@@ -255,7 +250,7 @@ def visualize_urdf(use_rt, urdf_file, simulate, disable_self_collision, fix_root
     render_mat.metallic = 0.0
     render_mat.roughness = 0.9
     render_mat.specular = 0.8
-    scene.add_ground(-1, render_material=render_mat)
+    scene.add_ground(-1.5, render_material=render_mat, render_half_size=[1000000, 1000000])
 
     # Lighting
     scene.set_ambient_light(np.array([0.6, 0.6, 0.6]))
@@ -265,7 +260,7 @@ def visualize_urdf(use_rt, urdf_file, simulate, disable_self_collision, fix_root
     scene.add_point_light(np.array([2, -2, 2]), np.array([1, 1, 1]), shadow=False)
 
     # Viewer
-    viewer = ContactViewer(renderer)
+    viewer = ContactViewer()
     viewer.set_scene(scene)
     viewer.control_window.set_camera_xyz(0.5, 0, 0.5)
     viewer.control_window.set_camera_rpy(0, -0.8, 3.14)
@@ -280,6 +275,10 @@ def visualize_urdf(use_rt, urdf_file, simulate, disable_self_collision, fix_root
         for link_builder in robot_builder.get_link_builders():
             link_builder.set_collision_groups(1, 1, 17, 0)
     robot: sapien.physx.PhysxArticulation = robot_builder.build(fix_root_link=fix_root)
+    for link in robot.get_links():
+        link.disable_gravity = True
+        for shape in link.get_collision_shapes():
+            shape.set_collision_groups([1, 1, 17, 0])
 
     # Robot motion
     loop_steps = 600
@@ -291,6 +290,9 @@ def visualize_urdf(use_rt, urdf_file, simulate, disable_self_collision, fix_root
 
     robot.set_qpos(np.zeros([robot.dof]))
     scene.step()
+
+    cam = scene.add_camera(name="Cheese!", width=1080, height=1080, fovy=1.2, near=0.1, far=10)
+    cam.set_local_pose(sapien.Pose([0.307479, 0.0254082, 0.115112], [-0.0016765, 0.176569, -0.000300482, -0.984287]))
 
     step = 0
     while not viewer.closed:

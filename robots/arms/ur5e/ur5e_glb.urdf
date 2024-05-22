@@ -121,7 +121,6 @@
   </link>
   <link name="wrist_1_link">
     <visual>
-      <!-- TODO: Move this to a parameter -->
       <origin rpy="1.57079632679 0 0" xyz="0 0 -0.127"/>
       <geometry>
         <mesh filename="meshes/visual/wrist1.glb"/>
