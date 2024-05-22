@@ -26,6 +26,15 @@ else:
     for name, obj in scene.objects.items():
         obj.select_set(True)
         print(name)
-        bpy.ops.wm.obj_export(filepath=str(root_dir / f"{name}.obj"), export_selected_objects=True)
-        bpy.ops.export_scene.gltf(filepath=str(root_dir / f"{name}.glb"), use_selection=True, check_existing=False)
+        bpy.ops.wm.obj_export(
+            filepath=str(root_dir / f"{name}.obj"), export_selected_objects=True, forward_axis="Y", up_axis="Z"
+        )
+        bpy.ops.export_scene.gltf(
+            filepath=str(root_dir / f"{name}.glb"),
+            use_selection=True,
+            check_existing=False,
+            export_yup=False,
+            export_animations=False,
+            export_morph=False,
+        )
         obj.select_set(False)

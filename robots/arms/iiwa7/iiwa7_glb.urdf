@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<robot name="iiwa7">
+  <link name="link_0">
+    <inertial>
+      <origin rpy="0 0 0" xyz="-0.012857 0.0 0.069964"/>
+      <mass value="4.855658"/>
+      <inertia ixx="0.017839" ixy="0.0" ixz="0.000781" iyy="0.022294" iyz="0.0" izz="0.021334"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="meshes/visual/link_0.glb"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="meshes/collision/link_0.obj"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="A1" type="revolute">
+    <origin rpy="0 0 0" xyz="0.0 0.0 0.1475"/>
+    <parent link="link_0"/>
+    <child link="link_1"/>
+    <axis xyz="0.0 0.0 1.0"/>
+    <limit effort="200" lower="-2.96705972839" upper="2.96705972839" velocity="1.71042266695"/>
+    <dynamics damping="10.0" friction="0.1"/>
+  </joint>
+  <link name="link_1">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.0 -0.034819 0.123299"/>
+      <mass value="3.394011"/>
+      <inertia ixx="0.021383" ixy="0.0" ixz="0.0" iyy="0.020403" iyz="0.003797" izz="0.007563"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0.0 0.0 -0.1475"/>
+      <geometry>
+        <mesh filename="meshes/visual/link_1.glb"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0.0 0.0 -0.1475"/>
+      <geometry>
+        <mesh filename="meshes/collision/link_1.obj"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="A2" type="revolute">
+    <origin rpy="0 0 0" xyz="0.0 -0.0105 0.1925"/>
+    <parent link="link_1"/>
+    <child link="link_2"/>
+    <axis xyz="0.0 1.0 0.0"/>
+    <limit effort="200" lower="-2.09439510239" upper="2.09439510239" velocity="1.71042266695"/>
+    <dynamics damping="10.0" friction="0.1"/>
+  </joint>
+  <link name="link_2">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.0 0.039793 0.086944"/>
+      <mass value="4.031991"/>
+      <inertia ixx="0.031697" ixy="0.0" ixz="0.0" iyy="0.03008" iyz="0.005889" izz="0.009666"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0.0 0.0105 -0.34"/>
+      <geometry>
+        <mesh filename="meshes/visual/link_2.glb"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0.0 0.0105 -0.34"/>
+      <geometry>
+        <mesh filename="meshes/collision/link_2.obj"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="A3" type="revolute">
+    <origin rpy="0 0 0" xyz="0.0 0.0105 0.2075"/>
+    <parent link="link_2"/>
+    <child link="link_3"/>
+    <axis xyz="0.0 0.0 1.0"/>
+    <limit effort="200" lower="-2.96705972839" upper="2.96705972839" velocity="1.74532925199"/>
+    <dynamics damping="10.0" friction="0.1"/>
+  </joint>
+  <link name="link_3">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.0 0.034819 0.123299"/>
+      <mass value="3.394011"/>
+      <inertia ixx="0.021383" ixy="0.0" ixz="0.0" iyy="0.020403" iyz="-0.003797" izz="0.007563"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0.0 0.0 -0.5475"/>
+      <geometry>
+        <mesh filename="meshes/visual/link_3.glb"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0.0 0.0 -0.5475"/>
+      <geometry>
+        <mesh filename="meshes/collision/link_3.obj"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="A4" type="revolute">
+    <origin rpy="0 0 0" xyz="0.0 0.0105 0.1925"/>
+    <parent link="link_3"/>
+    <child link="link_4"/>
+    <axis xyz="0.0 -1.0 0.0"/>
+    <limit effort="200" lower="-2.09439510239" upper="2.09439510239" velocity="2.26892802759"/>
+    <dynamics damping="10.0" friction="0.1"/>
+  </joint>
+  <link name="link_4">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.0 -0.039793 0.086944"/>
+      <mass value="4.031989"/>
+      <inertia ixx="0.031695" ixy="0.0" ixz="0.0" iyy="0.030079" iyz="-0.005889" izz="0.009665"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0.0 -0.0105 -0.74"/>
+      <geometry>
+        <mesh filename="meshes/visual/link_4.glb"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0.0 -0.0105 -0.74"/>
+      <geometry>
+        <mesh filename="meshes/collision/link_4.obj"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="A5" type="revolute">
+    <origin rpy="0 0 0" xyz="0.0 -0.0105 0.2075"/>
+    <parent link="link_4"/>
+    <child link="link_5"/>
+    <axis xyz="0.0 0.0 1.0"/>
+    <limit effort="200" lower="-2.96705972839" upper="2.96705972839" velocity="2.44346095279"/>
+    <dynamics damping="10.0" friction="0.1"/>
+  </joint>
+  <link name="link_5">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.0 -0.029824 0.076267"/>
+      <mass value="1.529239"/>
+      <inertia ixx="0.008485" ixy="0.0" ixz="0.0" iyy="0.007136" iyz="0.002806" izz="0.003848"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0.0 0.0 -0.9475"/>
+      <geometry>
+        <mesh filename="meshes/visual/link_5.glb"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0.0 0.0 -0.9475"/>
+      <geometry>
+        <mesh filename="meshes/collision/link_5.obj"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="A6" type="revolute">
+    <origin rpy="0 0 0" xyz="0.0 -0.0707 0.1925"/>
+    <parent link="link_5"/>
+    <child link="link_6"/>
+    <axis xyz="0.0 1.0 0.0"/>
+    <limit effort="200" lower="-2.09439510239" upper="2.09439510239" velocity="3.14159265359"/>
+    <dynamics damping="10.0" friction="0.1"/>
+  </joint>
+  <link name="link_6">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.0 0.07102 0.00495"/>
+      <mass value="2.403626"/>
+      <inertia ixx="0.007067" ixy="0.0" ixz="0.0" iyy="0.006804" iyz="0.000311" izz="0.004629"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0.0 0.0707 -1.14"/>
+      <geometry>
+        <mesh filename="meshes/visual/link_6.glb"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0.0 0.0707 -1.14"/>
+      <geometry>
+        <mesh filename="meshes/collision/link_6.obj"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="A7" type="revolute">
+    <origin rpy="0 0 0" xyz="0.0 0.0707 0.091"/>
+    <parent link="link_6"/>
+    <child link="link_7"/>
+    <axis xyz="0.0 0.0 1.0"/>
+    <limit effort="200" lower="-3.05432619099" upper="3.05432619099" velocity="3.14159265359"/>
+    <dynamics damping="10.0" friction="0.1"/>
+  </joint>
+  <link name="link_7">
+    <inertial>
+      <origin rpy="0 0 0" xyz="3.0000e-06 -2.0000e-06 1.3782e-02"/>
+      <mass value="0.259474"/>
+      <inertia ixx="0.000171" ixy="0.0" ixz="0.0" iyy="0.000171" iyz="0.0" izz="0.000299"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0.0 0.0 -1.231"/>
+      <geometry>
+        <mesh filename="meshes/visual/link_7.glb"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0.0 0.0 -1.231"/>
+      <geometry>
+        <mesh filename="meshes/collision/link_7.obj"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="joint_ee" type="fixed">
+    <parent link="link_7"/>
+    <child link="ee_link"/>
+    <origin rpy="0 -1.57079 0" xyz="0 0 0.035"/>
+  </joint>
+  <link name="ee_link"/>
+</robot>
