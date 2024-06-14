@@ -6,6 +6,7 @@
     <child link="palm_lower"/>
     <origin xyz="0 0.038 0.098" rpy="0 -1.57079 0"/>
   </joint>
+
   <link name="palm_lower">
     <visual>
       <origin xyz="-0.0200 0.02575 -0.0347" rpy="0 0 0"/>
@@ -227,6 +228,7 @@
       <inertia ixx="0.000003368" ixy="0.000000115" ixz="0" iyy="0.000001556" iyz="0" izz="0.000002863"/>
     </inertial>
   </link>
+
   <joint name="0" type="revolute">
     <origin xyz="-0.0122 0.03810 0.01450" rpy="-1.57079 0 1.57079"/>
     <parent link="mcp_joint"/>
@@ -619,7 +621,7 @@
     <limit effort="0.95" velocity="8.48" lower="-0.366" upper="2.042"/>
     <joint_properties friction="0.0"/>
   </joint>
-  <link name="pip_4">
+  <link name="thumb_temp_base">
     <visual>
       <origin xyz="-0.0053 0.0003 0.00078" rpy="-1.57079 -1.57079 0"/>
       <geometry>
@@ -752,14 +754,14 @@
   <joint name="12" type="revolute">
     <origin xyz="-0.0693 -0.0012 -0.0216" rpy="0 1.57079 0"/>
     <parent link="palm_lower"/>
-    <child link="pip_4"/>
+    <child link="thumb_temp_base"/>
     <axis xyz="0 0 -1"/>
     <limit effort="0.95" velocity="8.48" lower="-0.349" upper="2.094"/>
     <joint_properties friction="0.0"/>
   </joint>
   <joint name="13" type="revolute">
     <origin xyz="0 0.0143 -0.013" rpy="1.57079 -1.57079 0"/>
-    <parent link="pip_4"/>
+    <parent link="thumb_temp_base"/>
     <child link="thumb_pip"/>
     <axis xyz="0 0 -1"/>
     <limit effort="0.95" velocity="8.48" lower="-0.47" upper="2.443"/>
