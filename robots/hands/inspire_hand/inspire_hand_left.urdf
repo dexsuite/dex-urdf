@@ -386,20 +386,34 @@
     <mimic joint="pinky_proximal_joint" multiplier="1" offset="0"/>
   </joint>
 
-<!--  <link name='link_LFTip2'>-->
-<!--    <visual>-->
-<!--      <origin xyz="0 0 0" rpy="0 0 0"/>-->
-<!--      <geometry>-->
-<!--        <sphere radius="0.004"/>-->
-<!--      </geometry>-->
-<!--      <material name="">-->
-<!--        <color rgba="1 0 0 1"/>-->
-<!--      </material>-->
-<!--    </visual>-->
-<!--  </link>-->
-<!--  <joint name="joint_LFTip2" type="fixed">-->
-<!--    <origin xyz="-0.0008 -0.041 -0.005" rpy="0 0 0"/>-->
-<!--    <parent link="Link16"/>-->
-<!--    <child link="link_LFTip2"/>-->
-<!--  </joint>-->
+  <link name='thumb_tip'/>
+  <joint name="thumb_tip_joint" type="fixed">
+    <origin xyz="0.0202 -0.0140 -0.006" rpy="0 0 0"/>
+    <parent link="thumb_distal"/>
+    <child link="thumb_tip"/>
+  </joint>
+  <link name='index_tip'/>
+  <joint name="index_tip_joint" type="fixed">
+    <origin xyz="-0.0008 -0.045 -0.005" rpy="0 0 0"/>
+    <parent link="index_intermediate"/>
+    <child link="index_tip"/>
+  </joint>
+  <link name='middle_tip'/>
+  <joint name="middle_tip_joint" type="fixed">
+    <origin xyz="-0.001 -0.048 -0.005" rpy="0 0 0"/>
+    <parent link="middle_intermediate"/>
+    <child link="middle_tip"/>
+  </joint>
+  <link name='ring_tip'/>
+  <joint name="ring_tip_joint" type="fixed">
+    <origin xyz="-0.0008 -0.045 -0.005" rpy="0 0 0"/>
+    <parent link="ring_intermediate"/>
+    <child link="ring_tip"/>
+  </joint>
+  <link name='pinky_tip'/>
+  <joint name="pinky_tip_joint" type="fixed">
+    <origin xyz="-0.0008 -0.037 -0.005" rpy="0 0 0"/>
+    <parent link="pinky_intermediate"/>
+    <child link="pinky_tip"/>
+  </joint>
 </robot>
