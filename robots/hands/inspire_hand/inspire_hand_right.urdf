@@ -91,7 +91,7 @@
     <parent link="hand_base_link"/>
     <child link="thumb_proximal_base"/>
     <axis xyz="0 0 -1"/>
-    <limit lower="0.0" upper="1.3" effort="1" velocity="0.5"/>
+    <limit lower="0.0" upper="1.308" effort="1" velocity="0.5"/>
   </joint>
   <link name="thumb_proximal">
     <inertial>
@@ -197,7 +197,7 @@
     <parent link="hand_base_link"/>
     <child link="index_proximal"/>
     <axis xyz="0 0 1"/>
-    <limit lower="0" upper="1.45" effort="1" velocity="0.5"/>
+    <limit lower="0" upper="1.47" effort="1" velocity="0.5"/>
   </joint>
   <link name="index_intermediate">
     <inertial>
@@ -223,8 +223,8 @@
     <parent link="index_proximal"/>
     <child link="index_intermediate"/>
     <axis xyz="0 0 1"/>
-    <limit lower="0" upper="1.6" effort="1" velocity="0.5"/>
-    <mimic joint="index_proximal_joint" multiplier="1" offset="0"/>
+    <limit lower="-0.04545" upper="1.56" effort="1" velocity="0.5"/>
+    <mimic joint="index_proximal_joint" multiplier="1.06399" offset="-0.04545"/>
   </joint>
   <link name="middle_proximal">
     <inertial>
@@ -250,7 +250,7 @@
     <parent link="hand_base_link"/>
     <child link="middle_proximal"/>
     <axis xyz="0 0 1"/>
-    <limit lower="0" upper="1.45" effort="1" velocity="0.5"/>
+    <limit lower="0" upper="1.47" effort="1" velocity="0.5"/>
   </joint>
   <link name="middle_intermediate">
     <inertial>
@@ -276,8 +276,8 @@
     <parent link="middle_proximal"/>
     <child link="middle_intermediate"/>
     <axis xyz="0 0 1"/>
-    <limit lower="0" upper="1.6" effort="1" velocity="0.5"/>
-    <mimic joint="middle_proximal_joint" multiplier="1" offset="0"/>
+    <limit lower="-0.04545" upper="1.56" effort="1" velocity="0.5"/>
+    <mimic joint="middle_proximal_joint" multiplier="1.06399" offset="-0.04545"/>
   </joint>
   <link name="ring_proximal">
     <inertial>
@@ -303,7 +303,7 @@
     <parent link="hand_base_link"/>
     <child link="ring_proximal"/>
     <axis xyz="0 0 1"/>
-    <limit lower="0" upper="1.45" effort="1" velocity="0.5"/>
+    <limit lower="0" upper="1.47" effort="1" velocity="0.5"/>
   </joint>
   <link name="ring_intermediate">
     <inertial>
@@ -329,8 +329,8 @@
     <parent link="ring_proximal"/>
     <child link="ring_intermediate"/>
     <axis xyz="0 0 1"/>
-    <limit lower="0" upper="1.6" effort="1" velocity="0.5"/>
-    <mimic joint="ring_proximal_joint" multiplier="1" offset="0"/>
+    <limit lower="-0.04545" upper="1.56" effort="1" velocity="0.5"/>
+    <mimic joint="ring_proximal_joint" multiplier="1.06399" offset="-0.04545"/>
   </joint>
   <link name="pinky_proximal">
     <inertial>
@@ -356,7 +356,7 @@
     <parent link="hand_base_link"/>
     <child link="pinky_proximal"/>
     <axis xyz="0 0 1"/>
-    <limit lower="0" upper="1.45" effort="1" velocity="0.5"/>
+    <limit lower="0" upper="1.47" effort="1" velocity="0.5"/>
   </joint>
   <link name="pinky_intermediate">
     <inertial>
@@ -382,8 +382,8 @@
     <parent link="pinky_proximal"/>
     <child link="pinky_intermediate"/>
     <axis xyz="0 0 1"/>
-    <limit lower="0" upper="1.6" effort="1" velocity="0.5"/>
-    <mimic joint="pinky_proximal_joint" multiplier="1" offset="0"/>
+    <limit lower="-0.04545" upper="1.56" effort="1" velocity="0.5"/>
+    <mimic joint="pinky_proximal_joint" multiplier="1.06399" offset="-0.04545"/>
   </joint>
 
   <link name='thumb_tip'/>
