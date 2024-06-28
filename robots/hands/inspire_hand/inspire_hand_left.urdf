@@ -16,7 +16,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="meshes/L_hand_base_link.STL"/>
+        <mesh filename="meshes/visual/left_base_link.glb"/>
       </geometry>
     </visual>
     <collision>
@@ -77,7 +77,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="meshes/Link11_L.STL"/>
+        <mesh filename="meshes/visual/left_thumb_proximal_base.glb"/>
       </geometry>
     </visual>
     <collision>
@@ -103,7 +103,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="meshes/Link12_L.STL"/>
+        <mesh filename="meshes/visual/left_thumb_proximal.glb"/>
       </geometry>
     </visual>
     <collision>
@@ -129,7 +129,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="meshes/Link13_L.STL"/>
+        <mesh filename="meshes/visual/left_thumb_intermediate.glb"/>
       </geometry>
     </visual>
     <collision>
@@ -156,7 +156,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="meshes/Link14_L.STL"/>
+        <mesh filename="meshes/visual/left_thumb_distal.glb"/>
       </geometry>
     </visual>
     <collision>
@@ -183,7 +183,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="meshes/Link15_L.STL"/>
+        <mesh filename="meshes/visual/left_index_proximal.glb"/>
       </geometry>
     </visual>
     <collision>
@@ -209,7 +209,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="meshes/Link16_L.STL"/>
+        <mesh filename="meshes/visual/left_index_intermediate.glb"/>
       </geometry>
     </visual>
     <collision>
@@ -236,7 +236,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="meshes/Link17_L.STL"/>
+        <mesh filename="meshes/visual/left_index_proximal.glb"/>
       </geometry>
     </visual>
     <collision>
@@ -262,7 +262,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="meshes/Link18_L.STL"/>
+        <mesh filename="meshes/visual/left_middle_intermediate.glb"/>
       </geometry>
     </visual>
     <collision>
@@ -289,7 +289,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="meshes/Link19_L.STL"/>
+        <mesh filename="meshes/visual/left_index_proximal.glb"/>
       </geometry>
     </visual>
     <collision>
@@ -315,7 +315,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="meshes/Link20_L.STL"/>
+        <mesh filename="meshes/visual/left_index_intermediate.glb"/>
       </geometry>
     </visual>
     <collision>
@@ -342,7 +342,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="meshes/Link21_L.STL"/>
+        <mesh filename="meshes/visual/left_index_proximal.glb"/>
       </geometry>
     </visual>
     <collision>
@@ -368,7 +368,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="meshes/Link22_L.STL"/>
+        <mesh filename="meshes/visual/left_pinky_intermediate.glb"/>
       </geometry>
     </visual>
     <collision>
