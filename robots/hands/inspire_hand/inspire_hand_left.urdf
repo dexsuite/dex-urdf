@@ -1,0 +1,420 @@
+<?xml version="1.0" encoding="utf-8"?>
+<robot name="inspire_hand_left">
+  <!--  joint limit reference: https://en.inspire-robots.com/-->
+  <link name="base"/>
+  <joint name="base_joint" type="fixed">
+    <parent link="base"/>
+    <child link="hand_base_link"/>
+    <origin xyz="0 0 0" rpy="-1.5707963 0 3.14159"/>
+  </joint>
+  <link name="hand_base_link">
+    <inertial>
+      <origin xyz="-0.0025264 -0.066047 -0.0019598" rpy="0 0 0"/>
+      <mass value="0.14143"/>
+      <inertia ixx="0.00012281" ixy="2.1711E-06" ixz="1.7709E-06" iyy="8.3832E-05" iyz="-1.6551E-06" izz="7.6663E-05"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="meshes/visual/left_base_link.glb"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 -0.0136 0" rpy="1.57079 0 0"/>
+      <geometry>
+        <cylinder length="0.0278" radius="0.028"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="-0.0032 -0.038 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.0391 0.0202 0.0574"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="-0.0032 -0.0682 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.0391 0.04 0.0814"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="0 -0.1081 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.0322 0.04 0.0814"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="-0.0016 -0.1340 -0.0309" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.0125 0.0111 0.0089"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="-0.0016 -0.1340 -0.0118" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.0125 0.0111 0.0089"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="-0.0016 -0.1340 0.0070" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.0125 0.0111 0.0089"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="-0.0016 -0.1340 0.0262" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.0125 0.0111 0.0089"/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="thumb_proximal_base">
+    <inertial>
+      <origin xyz="0.0048817 0.0009382 -0.00722" rpy="0 0 0"/>
+      <mass value="0.0018869"/>
+      <inertia ixx="5.816E-08" ixy="-1.4539E-08" ixz="-4.491E-09" iyy="7.9161E-08" iyz="-1.8727E-09" izz="6.7433E-08"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="meshes/visual/left_thumb_proximal_base.glb"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="meshes/collision/left_thumb_proximal_base.obj"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="thumb_proximal_yaw_joint" type="revolute">
+    <origin xyz="-0.01696 -0.0691 0.02045" rpy="1.5708 -1.5708 0"/>
+    <parent link="hand_base_link"/>
+    <child link="thumb_proximal_base"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="0" upper="1.308" effort="1" velocity="0.5"/>
+  </joint>
+  <link name="thumb_proximal">
+    <inertial>
+      <origin xyz="0.021932 -0.012785 -0.0080386" rpy="0 0 0"/>
+      <mass value="0.0066075"/>
+      <inertia ixx="1.5686E-06" ixy="7.8296E-07" ixz="8.9143E-10" iyy="1.7353E-06" iyz="1.0191E-09" izz="2.786E-06"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="meshes/visual/left_thumb_proximal.glb"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="meshes/collision/left_thumb_proximal.obj"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="thumb_proximal_pitch_joint" type="revolute">
+    <origin xyz="0.0099867 0.0098242 -0.0089" rpy="-1.5708 0 0.16939"/>
+    <parent link="thumb_proximal_base"/>
+    <child link="thumb_proximal"/>
+    <axis xyz="0 0 -1"/>
+    <limit lower="0" upper="0.6" effort="1" velocity="0.5"/>
+  </joint>
+  <link name="thumb_intermediate">
+    <inertial>
+      <origin xyz="0.0095544 0.0016282 -0.0071997" rpy="0 0 0"/>
+      <mass value="0.0037847"/>
+      <inertia ixx="3.6981E-07" ixy="9.8581E-08" ixz="-4.7469E-12" iyy="3.2394E-07" iyz="-1.0939E-12" izz="4.6531E-07"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="meshes/visual/left_thumb_intermediate.glb"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="meshes/collision/left_thumb_intermediate.obj"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="thumb_intermediate_joint" type="revolute">
+    <origin xyz="0.04407 -0.034553 -0.0008" rpy="0 0 0"/>
+    <parent link="thumb_proximal"/>
+    <child link="thumb_intermediate"/>
+    <axis xyz="0 0 -1"/>
+    <limit lower="0" upper="0.8" effort="1" velocity="0.5"/>
+    <mimic joint="thumb_proximal_pitch_joint" multiplier="1.334" offset="0"/>
+  </joint>
+  <link name="thumb_distal">
+    <inertial>
+      <origin xyz="0.0092888 -0.0049529 -0.0060033" rpy="0 0 0"/>
+      <mass value="0.0033441"/>
+      <inertia ixx="1.3632E-07" ixy="5.6788E-08" ixz="-9.2764E-11" iyy="1.4052E-07" iyz="1.2283E-10" izz="2.0026E-07"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="meshes/visual/left_thumb_distal.glb"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="meshes/collision/left_thumb_distal.obj" scale="1 1 1"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="thumb_distal_joint" type="revolute">
+    <origin xyz="0.020248 -0.010156 -0.0012" rpy="0 0 0"/>
+    <parent link="thumb_intermediate"/>
+    <child link="thumb_distal"/>
+    <axis xyz="0 0 -1"/>
+    <limit lower="0" upper="0.4" effort="1" velocity="0.5"/>
+    <mimic joint="thumb_proximal_pitch_joint" multiplier="0.667" offset="0"/>
+  </joint>
+  <link name="index_proximal">
+    <inertial>
+      <origin xyz="0.0012259 -0.011942 -0.0060001" rpy="0 0 0"/>
+      <mass value="0.0042403"/>
+      <inertia ixx="6.6232E-07" ixy="1.5775E-08" ixz="1.8515E-12" iyy="2.1146E-07" iyz="5.0828E-12" izz="6.9398E-07"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="meshes/visual/left_index_proximal.glb"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="meshes/collision/left_index_proximal.obj"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="index_proximal_joint" type="revolute">
+    <origin xyz="0.00028533 -0.13653 0.032268" rpy="-0.034907 0 0"/>
+    <parent link="hand_base_link"/>
+    <child link="index_proximal"/>
+    <axis xyz="0 0 -1"/>
+    <limit lower="0" upper="1.47" effort="1" velocity="0.5"/>
+  </joint>
+  <link name="index_intermediate">
+    <inertial>
+      <origin xyz="0.0019697 -0.019589 -0.005" rpy="0 0 0"/>
+      <mass value="0.0045683"/>
+      <inertia ixx="7.6111E-07" ixy="-8.7637E-08" ixz="-3.7751E-13" iyy="9.6076E-08" iyz="-9.9444E-13" izz="7.8179E-07"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="meshes/visual/left_index_intermediate.glb"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="meshes/collision/left_index_intermediate.obj"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="index_intermediate_joint" type="revolute">
+    <origin xyz="-0.0026138 -0.032026 -0.001" rpy="0 0 0"/>
+    <parent link="index_proximal"/>
+    <child link="index_intermediate"/>
+    <axis xyz="0 0 -1"/>
+    <limit lower="-0.04545" upper="1.56" effort="1" velocity="0.5"/>
+    <mimic joint="index_proximal_joint" multiplier="1.06399" offset="-0.04545"/>
+  </joint>
+  <link name="middle_proximal">
+    <inertial>
+      <origin xyz="0.001297 -0.011934 -0.0060001" rpy="0 0 0"/>
+      <mass value="0.0042403"/>
+      <inertia ixx="6.6211E-07" ixy="1.8461E-08" ixz="1.8002E-12" iyy="2.1167E-07" iyz="6.6808E-12" izz="6.9397E-07"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="meshes/visual/left_index_proximal.glb"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="meshes/collision/left_index_proximal.obj"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="middle_proximal_joint" type="revolute">
+    <origin xyz="0.00028533 -0.1371 0.01295" rpy="0 0 0"/>
+    <parent link="hand_base_link"/>
+    <child link="middle_proximal"/>
+    <axis xyz="0 0 -1"/>
+    <limit lower="0" upper="1.47" effort="1" velocity="0.5"/>
+  </joint>
+  <link name="middle_intermediate">
+    <inertial>
+      <origin xyz="0.001921 -0.020796 -0.005" rpy="0 0 0"/>
+      <mass value="0.0050396"/>
+      <inertia ixx="9.5822E-07" ixy="-1.1425E-07" ixz="-2.4791E-12" iyy="1.0646E-07" iyz="-5.9173E-12" izz="9.8384E-07"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="meshes/visual/left_middle_intermediate.glb"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="meshes/collision/left_middle_intermediate.obj"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="middle_intermediate_joint" type="revolute">
+    <origin xyz="-0.0024229 -0.032041 -0.001" rpy="0 0 0"/>
+    <parent link="middle_proximal"/>
+    <child link="middle_intermediate"/>
+    <axis xyz="0 0 -1"/>
+    <limit lower="-0.04545" upper="1.56" effort="1" velocity="0.5"/>
+    <mimic joint="middle_proximal_joint" multiplier="1.06399" offset="-0.04545"/>
+  </joint>
+  <link name="ring_proximal">
+    <inertial>
+      <origin xyz="0.001297 -0.011934 -0.0060002" rpy="0 0 0"/>
+      <mass value="0.0042403"/>
+      <inertia ixx="6.6211E-07" ixy="1.8461E-08" ixz="1.5793E-12" iyy="2.1167E-07" iyz="6.6868E-12" izz="6.9397E-07"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="meshes/visual/left_index_proximal.glb"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="meshes/collision/left_index_proximal.obj"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="ring_proximal_joint" type="revolute">
+    <origin xyz="0.00028533 -0.13691 -0.0062872" rpy="0.05236 0 0"/>
+    <parent link="hand_base_link"/>
+    <child link="ring_proximal"/>
+    <axis xyz="0 0 -1"/>
+    <limit lower="0" upper="1.47" effort="1" velocity="0.5"/>
+  </joint>
+  <link name="ring_intermediate">
+    <inertial>
+      <origin xyz="0.0021753 -0.019567 -0.005" rpy="0 0 0"/>
+      <mass value="0.0045683"/>
+      <inertia ixx="7.6286E-07" ixy="-8.0635E-08" ixz="-6.1562E-13" iyy="9.431E-08" iyz="-5.8619E-13" izz="7.8177E-07"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="meshes/visual/left_index_intermediate.glb"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="meshes/collision/left_index_intermediate.obj"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="ring_intermediate_joint" type="revolute">
+    <origin xyz="-0.0024229 -0.032041 -0.001" rpy="0 0 0"/>
+    <parent link="ring_proximal"/>
+    <child link="ring_intermediate"/>
+    <axis xyz="0 0 -1"/>
+    <limit lower="-0.04545" upper="1.56" effort="1" velocity="0.5"/>
+    <mimic joint="ring_proximal_joint" multiplier="1.06399" offset="-0.04545"/>
+  </joint>
+  <link name="pinky_proximal">
+    <inertial>
+      <origin xyz="0.001297 -0.011934 -0.0060001" rpy="0 0 0"/>
+      <mass value="0.0042403"/>
+      <inertia ixx="6.6211E-07" ixy="1.8461E-08" ixz="1.6907E-12" iyy="2.1167E-07" iyz="6.9334E-12" izz="6.9397E-07"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="meshes/visual/left_index_proximal.glb"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="meshes/collision/left_index_proximal.obj"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="pinky_proximal_joint" type="revolute">
+    <origin xyz="0.00028533 -0.13571 -0.025488" rpy="0.10472 0 0"/>
+    <parent link="hand_base_link"/>
+    <child link="pinky_proximal"/>
+    <axis xyz="0 0 -1"/>
+    <limit lower="0" upper="1.47" effort="1" velocity="0.5"/>
+  </joint>
+  <link name="pinky_intermediate">
+    <inertial>
+      <origin xyz="0.0024748 -0.016203 -0.0050031" rpy="0 0 0"/>
+      <mass value="0.0035996"/>
+      <inertia ixx="4.3913E-07" ixy="-4.1418E-08" ixz="3.7168E-11" iyy="7.0247E-08" iyz="-5.8613E-11" izz="4.4867E-07"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="meshes/visual/left_pinky_intermediate.glb"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="meshes/collision/left_pinky_intermediate.obj"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="pinky_intermediate_joint" type="revolute">
+    <origin xyz="-0.0024229 -0.032041 -0.001" rpy="0 0 0"/>
+    <parent link="pinky_proximal"/>
+    <child link="pinky_intermediate"/>
+    <axis xyz="0 0 -1"/>
+    <limit lower="-0.04545" upper="1.56" effort="1" velocity="0.5"/>
+    <mimic joint="pinky_proximal_joint" multiplier="1.06399" offset="-0.04545"/>
+  </joint>
+
+  <link name='thumb_tip'/>
+  <joint name="thumb_tip_joint" type="fixed">
+    <origin xyz="0.0202 -0.0140 -0.006" rpy="0 0 0"/>
+    <parent link="thumb_distal"/>
+    <child link="thumb_tip"/>
+  </joint>
+  <link name='index_tip'/>
+  <joint name="index_tip_joint" type="fixed">
+    <origin xyz="-0.0008 -0.045 -0.005" rpy="0 0 0"/>
+    <parent link="index_intermediate"/>
+    <child link="index_tip"/>
+  </joint>
+  <link name='middle_tip'/>
+  <joint name="middle_tip_joint" type="fixed">
+    <origin xyz="-0.001 -0.048 -0.005" rpy="0 0 0"/>
+    <parent link="middle_intermediate"/>
+    <child link="middle_tip"/>
+  </joint>
+  <link name='ring_tip'/>
+  <joint name="ring_tip_joint" type="fixed">
+    <origin xyz="-0.0008 -0.045 -0.005" rpy="0 0 0"/>
+    <parent link="ring_intermediate"/>
+    <child link="ring_tip"/>
+  </joint>
+  <link name='pinky_tip'/>
+  <joint name="pinky_tip_joint" type="fixed">
+    <origin xyz="-0.0008 -0.037 -0.005" rpy="0 0 0"/>
+    <parent link="pinky_intermediate"/>
+    <child link="pinky_tip"/>
+  </joint>
+</robot>
