@@ -2,7 +2,7 @@
 <robot name="rm75">
   <link name="world_base"/>
   <joint name="world_joint" type="fixed">
-    <origin xyz="0 0 0" rpy="-1.57079 0 0"/>
+    <origin xyz="0.138497 0 0" rpy="-1.57079 1.57079 0"/>
     <parent link="world_base"/>
     <child link="arm_base"/>
   </joint>
@@ -65,7 +65,7 @@
     <origin xyz="0.01646 -0.102 0.00014365" rpy="0 -0.0087266 0"/>
     <parent link="rm75_link_1"/>
     <child link="rm75_link_2"/>
-    <axis xyz="-1 0 0"/>
+    <axis xyz="1 0 0"/>
     <limit lower="-3.14" upper="3.14" effort="0" velocity="0"/>
   </joint>
   <link name="rm75_link_3">
@@ -115,7 +115,7 @@
     <origin xyz="0.013535 -0.1035 0.00011701" rpy="0 -0.0087266 0"/>
     <parent link="rm75_link_3"/>
     <child link="rm75_link_4"/>
-    <axis xyz="-1 0 0"/>
+    <axis xyz="1 0 0"/>
     <limit lower="-3.14" upper="3.14" effort="0" velocity="0"/>
   </joint>
   <link name="rm75_link_5">
@@ -165,7 +165,7 @@
     <origin xyz="0.012136 -0.0815 0.00010591" rpy="0 -0.0087266 0"/>
     <parent link="rm75_link_5"/>
     <child link="rm75_link_6"/>
-    <axis xyz="-1 0 0"/>
+    <axis xyz="1 0 0"/>
     <limit lower="-3.14" upper="3.14" effort="0" velocity="0"/>
   </joint>
   <link name="rm75_link_7">
@@ -195,7 +195,6 @@
     <axis xyz="0 0 1"/>
     <limit lower="-3.14" upper="3.14" effort="100" velocity="1"/>
   </joint>
-
   <link name="ee_link"/>
   <joint name="ee_joint" type="fixed">
     <parent link="rm75_link_7"/>
