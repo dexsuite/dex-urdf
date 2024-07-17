@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--GLB Source: https://github.com/sapien-sim/xarm7/tree/master/sapien_xarm7/xarm_urdf/xarm_description/meshes-->
-<robot name="xarm7">
+<robot name="xarm7_ability_right">
   <link name="link_base">
     <inertial>
       <origin rpy="0 0 0" xyz="-0.021131 -0.0016302 0.056488"/>

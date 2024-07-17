@@ -46,7 +46,7 @@ def render_urdf(urdf_path, use_rt, simulate, disable_self_collision, fix_root, h
 
     # Setup
     engine = sapien.Engine()
-    renderer = sapien.render.SapienRenderer(offscreen_only=headless)
+    renderer = sapien.render.SapienRenderer()
     engine.set_renderer(renderer)
     config = sapien.SceneConfig()
     config.enable_tgs = True
@@ -89,7 +89,7 @@ def render_urdf(urdf_path, use_rt, simulate, disable_self_collision, fix_root, h
     # Articulation
     loader = scene.create_urdf_loader()
     loader.load_multiple_collisions_from_file = True
-    if "ability" in urdf_path:
+    if "ability" in urdf_path or "inspire" in urdf_path or "bhand" in urdf_path or "svh" in urdf_path:
         loader.scale = 1.5
     elif "dclaw" in urdf_path:
         loader.scale = 1.25
@@ -97,18 +97,14 @@ def render_urdf(urdf_path, use_rt, simulate, disable_self_collision, fix_root, h
         loader.scale = 1.4
     elif "shadow" in urdf_path:
         loader.scale = 1.2
-    elif "bhand" in urdf_path:
-        loader.scale = 1.5
     elif "leap" in urdf_path:
         loader.scale = 1.25
-    elif "svh" in urdf_path:
-        loader.scale = 1.5
 
     robot_builder = loader.load_file_as_articulation_builder(urdf_path)
     if disable_self_collision and not simulate:
         for link_builder in robot_builder.get_link_builders():
             link_builder.set_collision_groups(1, 1, 17, 0)
-    robot = robot_builder.build(fix_root_link=fix_root)
+    robot = robot_builder.build(fix_root_link=fix_root, build_mimic_joints=False)
     if "ability" in urdf_path:
         robot.set_pose(sapien.Pose([0, 0, -0.15]))
     elif "shadow" in urdf_path:
@@ -122,6 +118,8 @@ def render_urdf(urdf_path, use_rt, simulate, disable_self_collision, fix_root, h
     elif "leap" in urdf_path:
         robot.set_pose(sapien.Pose([0, 0, -0.15]))
     elif "svh" in urdf_path:
+        robot.set_pose(sapien.Pose([0, 0, -0.2]))
+    elif "inspire" in urdf_path:
         robot.set_pose(sapien.Pose([0, 0, -0.2]))
 
     # Robot motion
