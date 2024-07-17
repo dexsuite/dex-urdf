@@ -201,6 +201,5 @@
    See the License for the specific language governing permissions and
    limitations under the License.
 
-The model files we obtained from the previously mentioned source underwent
-significant modifications before we could use them. These modifications
-included changes to the meshes and the URDF file itself.
+The model files we obtained from the previously mentioned source underwent significant modifications by dex_urdf authors.
+These modifications included changes to the meshes and the URDF file itself.

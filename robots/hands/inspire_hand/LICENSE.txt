@@ -1,0 +1,6 @@
+Copyright 2024
+
+The source model is derived from the step file provided on the inspire official website: https://www.inspire-robots.com/download/frwz/
+
+The model files we obtained from the previously mentioned source underwent significant modifications by dex_urdf authors before we could use them.
+These modifications included changes to the meshes and the URDF file itself.
