@@ -32,8 +32,9 @@ def build_collision_visual_shape(
             vs = sapien.render.RenderShapeCapsule(collision_shape.radius, collision_shape.half_length, primitive_mat)
 
         elif isinstance(collision_shape, sapien.physx.PhysxCollisionShapeConvexMesh):
+            m = collision_shape.vertices.shape[0]
             vs = sapien.render.RenderShapeTriangleMesh(
-                collision_shape.vertices, collision_shape.triangles, np.zeros((0, 3)), convex_mat
+                collision_shape.vertices, collision_shape.triangles, np.zeros((0, 3)), np.zeros((0, 2)), convex_mat
             )
             vs.scale = collision_shape.scale
 
@@ -70,7 +71,7 @@ def render_urdf(urdf_path, fix_root, disable_self_collision, headless, output_im
 
     # Setup
     engine = sapien.Engine()
-    renderer = sapien.render.SapienRenderer(offscreen_only=headless)
+    renderer = sapien.render.SapienRenderer()
     engine.set_renderer(renderer)
     config = sapien.SceneConfig()
     config.enable_tgs = True
@@ -124,6 +125,8 @@ def render_urdf(urdf_path, fix_root, disable_self_collision, headless, output_im
         loader.scale = 1.25
     elif "svh" in urdf_path:
         loader.scale = 1.5
+    elif "inspire" in urdf_path:
+        loader.scale = 1.5
 
     robot_builder = loader.load_file_as_articulation_builder(urdf_path)
     if disable_self_collision:
@@ -148,6 +151,8 @@ def render_urdf(urdf_path, fix_root, disable_self_collision, headless, output_im
     elif "leap" in urdf_path:
         robot.set_pose(sapien.Pose([0, 0, -0.15]))
     elif "svh" in urdf_path:
+        robot.set_pose(sapien.Pose([0, 0, -0.15]))
+    elif "inspire" in urdf_path:
         robot.set_pose(sapien.Pose([0, 0, -0.15]))
 
     # Robot visual
