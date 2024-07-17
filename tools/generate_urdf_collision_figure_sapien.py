@@ -1,3 +1,4 @@
+import sapien.core as sapien
 from pathlib import Path
 from typing import Optional, List
 
@@ -70,13 +71,11 @@ def render_urdf(urdf_path, fix_root, disable_self_collision, headless, output_im
         sapien.render.set_ray_tracing_path_depth(8)
 
     # Setup
-    engine = sapien.Engine()
-    renderer = sapien.render.SapienRenderer()
-    engine.set_renderer(renderer)
     config = sapien.SceneConfig()
     config.enable_tgs = True
     config.gravity = np.array([0, 0, 0])
-    scene = engine.create_scene(config=config)
+    sapien.physx.set_scene_config(config)
+    scene = sapien.Scene()
     scene.set_timestep(1 / 125)
 
     # Ground
@@ -98,7 +97,7 @@ def render_urdf(urdf_path, fix_root, disable_self_collision, headless, output_im
 
     # Viewer
     if not headless:
-        viewer = Viewer(renderer)
+        viewer = Viewer()
         viewer.set_scene(scene)
         viewer.control_window.show_origin_frame = False
         viewer.control_window.move_speed = 0.01
