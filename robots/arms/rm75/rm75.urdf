@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<robot name="rm75">
+  <link name="world_base"/>
+  <joint name="world_joint" type="fixed">
+    <origin xyz="0.138497 0 0" rpy="-1.57079 1.57079 0"/>
+    <parent link="world_base"/>
+    <child link="arm_base"/>
+  </joint>
+  <link name="arm_base">
+    <visual>
+      <geometry>
+        <mesh filename="meshes/visual/rm75_link_0.obj"/>
+      </geometry>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="meshes/collision/rm75_link_0.obj"/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="rm75_link_1">
+    <inertial>
+      <origin xyz="-0.0211077206294248 -0.0768143023644786 -0.000184059931994218" rpy="0 0 0"/>
+      <mass value="0.593560332787429"/>
+      <inertia ixx="0.00118168579764742" ixy="-0.000211208113035036" ixz="-7.25313887508386E-07"
+               iyy="0.000561349347423681" iyz="-1.83321926915751E-06" izz="0.00126613288987183"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="meshes/visual/rm75_link_1.obj"/>
+      </geometry>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="meshes/collision/rm75_link_1.obj"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="joint_1" type="revolute">
+    <origin xyz="0 0 0" rpy="0 -1.57079 0"/>
+    <parent link="arm_base"/>
+    <child link="rm75_link_1"/>
+    <axis xyz="0 -1 0"/>
+    <limit lower="-3.14" upper="3.14" effort="0" velocity="0"/>
+  </joint>
+  <link name="rm75_link_2">
+    <inertial>
+      <origin xyz="-0.00538333319864128 -0.0761297609224655 -5.85592772051058E-08" rpy="0 0 0"/>
+      <mass value="0.43285067491302"/>
+      <inertia ixx="0.00122245027307076" ixy="-0.000279002266374725" ixz="-6.16288419375421E-09"
+               iyy="0.000317472185553248" iyz="-1.42918067916209E-09" izz="0.00125837852309913"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="meshes/visual/rm75_link_2.obj"/>
+      </geometry>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="meshes/collision/rm75_link_2.obj"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="joint_2" type="revolute">
+    <origin xyz="0.01646 -0.102 0.00014365" rpy="0 -0.0087266 0"/>
+    <parent link="rm75_link_1"/>
+    <child link="rm75_link_2"/>
+    <axis xyz="1 0 0"/>
+    <limit lower="-3.14" upper="3.14" effort="0" velocity="0"/>
+  </joint>
+  <link name="rm75_link_3">
+    <inertial>
+      <origin xyz="-0.0229438462116271 -0.0761527997547926 -0.000202637702619191" rpy="0 0 0"/>
+      <mass value="0.431323256975464"/>
+      <inertia ixx="0.000730375831773939" ixy="-0.000142609868347039" ixz="-5.51348702629857E-07"
+               iyy="0.000315056960779462" iyz="-1.24420805510127E-06" izz="0.000794323182493074"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="meshes/visual/rm75_link_3.obj"/>
+      </geometry>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="meshes/collision/rm75_link_3.obj"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="joint_3" type="revolute">
+    <origin xyz="-0.017061 -0.1525 0" rpy="0 0.0087266 0"/>
+    <parent link="rm75_link_2"/>
+    <child link="rm75_link_3"/>
+    <axis xyz="0 -1 0"/>
+    <limit lower="-3.14" upper="3.14" effort="0" velocity="0"/>
+  </joint>
+  <link name="rm75_link_4">
+    <inertial>
+      <origin xyz="-0.00266694591650199 -0.0595927393682475 -4.43204636102479E-06" rpy="0 0 0"/>
+      <mass value="0.289640633455538"/>
+      <inertia ixx="0.000614175096706907" ixy="-0.000144607251054507" ixz="3.36058890161805E-08"
+               iyy="0.000156487088714941" iyz="5.86786617519025E-08" izz="0.000637363568489521"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="meshes/visual/rm75_link_4.obj"/>
+      </geometry>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="meshes/collision/rm75_link_4.obj"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="joint_4" type="revolute">
+    <origin xyz="0.013535 -0.1035 0.00011701" rpy="0 -0.0087266 0"/>
+    <parent link="rm75_link_3"/>
+    <child link="rm75_link_4"/>
+    <axis xyz="1 0 0"/>
+    <limit lower="-3.14" upper="3.14" effort="0" velocity="0"/>
+  </joint>
+  <link name="rm75_link_5">
+    <inertial>
+      <origin xyz="-0.0180416196430215 -0.0599608557029523 -0.000158546565612205" rpy="0 0 0"/>
+      <mass value="0.2394192926691"/>
+      <inertia ixx="0.000262731128614883" ixy="-4.42355773627576E-05" ixz="-2.04745867573492E-07"
+               iyy="0.000119890319412695" iyz="-3.87391677184994E-07" izz="0.000285939963268203"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="meshes/visual/rm75_link_5.obj"/>
+      </geometry>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="meshes/collision/rm75_link_5.obj"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="joint_5" type="revolute">
+    <origin xyz="-0.013236 -0.1285 0" rpy="0 0.0087266 0"/>
+    <parent link="rm75_link_4"/>
+    <child link="rm75_link_5"/>
+    <axis xyz="0 -1 0"/>
+    <limit lower="-3.14" upper="3.14" effort="0" velocity="0"/>
+  </joint>
+  <link name="rm75_link_6">
+    <inertial>
+      <origin xyz="-0.00506760113925948 -0.0593814209380522 -3.67703718251455E-06" rpy="0 0 0"/>
+      <mass value="0.218795686891305"/>
+      <inertia ixx="0.000334476012884826" ixy="-7.82422122764673E-05" ixz="1.62433433910283E-08"
+               iyy="0.000104927345235043" iyz="2.94094695871064E-08" izz="0.000350535563728772"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="meshes/visual/rm75_link_6.obj"/>
+      </geometry>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="meshes/collision/rm75_link_6.obj"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="joint_6" type="revolute">
+    <origin xyz="0.012136 -0.0815 0.00010591" rpy="0 -0.0087266 0"/>
+    <parent link="rm75_link_5"/>
+    <child link="rm75_link_6"/>
+    <axis xyz="1 0 0"/>
+    <limit lower="-3.14" upper="3.14" effort="0" velocity="0"/>
+  </joint>
+  <link name="rm75_link_7">
+    <inertial>
+      <origin xyz="0.0007182 -0.00039901 -0.012697" rpy="0 0 0"/>
+      <mass value="0.18088"/>
+      <inertia ixx="5.6496E-05" ixy="-3.7101E-06" ixz="-7.5579E-08" iyy="5.2359E-05"
+               iyz="1.1327E-08" izz="8.8503E-05"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy=" 0 0 -1.047197 "/>
+      <geometry>
+        <mesh filename="meshes/visual/rm75_link_7.obj"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy=" 0 0 -1.047197 "/>
+      <geometry>
+        <mesh filename="meshes/collision/rm75_link_7.obj"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="joint_7" type="revolute">
+    <origin xyz="-0.012436 -0.144 0" rpy="1.57059 0 0"/>
+    <parent link="rm75_link_6"/>
+    <child link="rm75_link_7"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-3.14" upper="3.14" effort="100" velocity="1"/>
+  </joint>
+  <link name="ee_link"/>
+  <joint name="ee_joint" type="fixed">
+    <parent link="rm75_link_7"/>
+    <child link="ee_link"/>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+  </joint>
+</robot>

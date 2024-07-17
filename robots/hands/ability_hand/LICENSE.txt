@@ -1,0 +1,6 @@
+Copyright 2024
+
+The source model is from the urdf file provided on the inspire official GitHub repo: https://github.com/psyonicinc/ability-hand-api/tree/master/URDF
+
+The model files we obtained from the previously mentioned source underwent significant modifications by dex_urdf authors.
+These modifications included changes to the meshes and the URDF file itself.
