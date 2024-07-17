@@ -35,3 +35,14 @@ URDF Parser Links:
 |  DClaw Gripper  |     [Robel Benchmark](https://github.com/google-research/robel)     |                                                     N/A                                                     | [D'Claw CAD](https://drive.google.com/drive/folders/1H1xN5BU03-eXjuEyIL_iJ_4XzrdDSnlM) |   Apache-2.0    |
 |  Barrett Hand   |  [Barrett Technology](http://barrett.com/robot/products-hand.html)  |                        [bhand_model](https://github.com/jhu-lcsr-attic/bhand_model)                         |    [BarrettHand CAD](https://github.com/jhu-lcsr-attic/bhand_model/tree/master/cad)    |       BSD       |
 |     DexHand     |                 [DexHand](https://www.dexhand.org/)                 |  [dexhand_description ](https://github.com/iotdesignshop/dexhand_description/blob/main/urdf/dexhand.urdf)   |               [Dexhand](https://github.com/TheRobotStudio/V1.0-Dexhand)                | CC BY-NC-SA 4.0 |
+
+
+## Citation
+```
+@article{bunny-visionpro,
+    title={Bunny-VisionPro: Real-Time Bimanual Dexterous Teleoperation for Imitation Learning},
+    author={Runyu Ding and Yuzhe Qin and Jiyue Zhu and Chengzhe Jia and Shiqi Yang and Ruihan Yang and Xiaojuan Qi and Xiaolong Wang},
+    year={2024},
+    url={https://arxiv.org/abs/2407.03162},
+}
+```
