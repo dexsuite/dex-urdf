@@ -11,6 +11,5 @@ modification, are permitted provided that the following conditions are met:
   this list of conditions and the following disclaimer in the documentation
   and/or other materials provided with the distribution.
 
-The model files we obtained from the previously mentioned source underwent
-significant modifications before we could use them. These modifications
-included changes to the meshes and the URDF file itself.
+The model files we obtained from the previously mentioned source underwent significant modifications by dex_urdf authors.
+These modifications included changes to the meshes and the URDF file itself.
