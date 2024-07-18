@@ -50,9 +50,8 @@ If you use dex_urdf in your work, please use the following citation:
     year={2024},
     url={https://arxiv.org/abs/2407.03162},
 }
-
-This repository contains models derived from open-source contributions by various developers and manufactures. 
-The development of dex_urdf was made possible thanks to the generous work of numerous designers and engineers. 
-We extend our sincere appreciation to all those whose efforts have contributed to this project.
-
 ```
+
+This repository contains models derived from open-source contributions by various developers and manufactures.
+The development of dex_urdf was made possible thanks to the generous work of numerous designers and engineers.
+We extend our sincere appreciation to all those whose efforts have contributed to this project.
