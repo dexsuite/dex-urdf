@@ -4,7 +4,31 @@ authors:
     given-names: "Yuzhe"
   - family-names: "Jia"
     given-names: "Chengzhe"
+  - family-names: "Ding"
+    given-names: "Runyu"
 date-released: 2023-7-29
 title: "dex-urdf"
 message: "Thanks for using dex-urdf. If you use this software, please cite it as below."
 url: "https://github.com/dexsuite/dex-urdf"
+preferred-citation:
+  type: article
+  title: "Bunny-VisionPro: Real-Time Bimanual Dexterous Teleoperation for Imitation Learning"
+  authors:
+    - family-names: "Ding"
+      given-names: "Runyu"
+    - family-names: "Qin"
+      given-names: "Yuzhe"
+    - family-names: "Zhu"
+      given-names: "Jiyue"
+    - family-names: "Jia"
+      given-names: "Chengzhe"
+    - family-names: "Yang"
+      given-names: "Shiqi"
+    - family-names: "Yang"
+      given-names: "Ruihan"
+    - family-names: "Qi"
+      given-names: "Xiaojuan"
+    - family-names: "Wang"
+      given-names: "Xiaolong"
+  year: 2024
+  url: "https://arxiv.org/abs/2407.03162"
