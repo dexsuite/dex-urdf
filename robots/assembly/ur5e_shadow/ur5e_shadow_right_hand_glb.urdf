@@ -211,15 +211,15 @@
     <parent link="wrist_3_link"/>
     <child link="ee_link"/>
     <!-- <origin rpy="0 -1.57079632679 -1.57079632679" xyz="0 0 0"/> -->
-    <origin rpy="1.5707926 0 0" xyz="0 0 0"/>
+    <origin rpy="0 0 1.5707926" xyz="0 0 0"/>
   </joint>
 
   <!--  mount-->
   <joint name="mount_joint" type="fixed">
-    <parent link="ee_link"/>
+    <parent link="wrist_3_link"/>
     <child link="forearm"/>
     <!-- <origin rpy="1.57079 0 1.57079" xyz="-0.01 0.0 0.00"/> -->
-    <origin rpy="-1.5707926 0 0" xyz="0.0 -0.01 0.0"/>
+    <origin rpy="0 0 0" xyz="0.0 0.0 -0.01"/>
   </joint>
   <link name="forearm">
     <inertial>
