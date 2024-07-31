@@ -15,9 +15,63 @@
       </geometry>
     </visual>
     <collision>
-      <origin xyz="-0.095574224938392599027 -0.11704001150113751972 0.02077960705260517571" rpy="1.57079632679489678 1.1239611599647231752e-28 3.1415926535897908956"/>
+      <origin xyz="-0.0848 -0.0996 0.0152" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="meshes/visual/palm_lower_left.obj"/>
+        <box size="0.022 0.026 0.034"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="-0.0848 -0.0546 0.0152" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.022 0.026 0.034"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="-0.0848 -0.0096 0.0152" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.022 0.026 0.034"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="-0.1428 -0.0126 0.0147" rpy="0 0 0.2967"/>
+      <geometry>
+        <box size="0.058 0.02 0.046"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="-0.1058 -0.0555 0.0232" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.02 0.12 0.03"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="-0.1078 -0.0555 0.0002" rpy="0 0.785 0"/>
+      <geometry>
+        <box size="0.01 0.12 0.02"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="-0.1238 -0.0575 0.0147" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.024 0.116 0.046"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="-0.1538 -0.0375 0.0147" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.044 0.052 0.046"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="-0.1738 -0.0815 0.0202" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.004 0.036 0.034"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="-0.1538 -0.0875 0.0362" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.044 0.056 0.004"/>
       </geometry>
     </collision>
     <inertial>
