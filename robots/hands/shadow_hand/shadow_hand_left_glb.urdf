@@ -256,7 +256,7 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry name="ffmiddle_visual">
-        <mesh filename="meshes/visual/f_middle_E3M5.obj" scale="0.001 0.001 0.001"/>
+        <mesh filename="meshes/visual/f_middle_E3M5.glb" scale="0.001 0.001 0.001"/>
       </geometry>
     </visual>
     <collision>
@@ -728,7 +728,7 @@
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry name="lfdistal_collision_geom">
-        <mesh filename="meshes/visual/f_distal_pst.obj" scale="0.001 0.001 0.001"/>
+        <mesh filename="meshes/collision/f_distal_pst.obj" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
