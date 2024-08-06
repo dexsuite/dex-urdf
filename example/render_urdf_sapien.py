@@ -1,3 +1,4 @@
+import sapien.core as sapien
 import argparse
 from typing import List, Dict, Tuple
 
@@ -51,7 +52,7 @@ class ContactViewer(Viewer):
         # Clear contact arrow in the previous step
         for i in range(len(self.contact_nodes)):
             node = self.contact_nodes.pop()
-            self.system._internal_scene.remove_node(node)
+            self.render_scene.remove_node(node)
 
         # Remove previous collision visual shape
         for visual_body in self.highlighted_visual_body:
@@ -102,7 +103,7 @@ class ContactViewer(Viewer):
                 )
                 color = np.array(COLOR_MAP(norm_impulse))
                 contact_list.append((position, np.sum(impulse, axis=0), color))
-                body0, body1 = contact.components[0:2]
+                body0, body1 = contact.bodies[0:2]
                 print(
                     f"Find self collision: {body0.get_name(), body1.get_name()},"
                     f" impulse: {total_impulse}, position: {position}"
@@ -134,7 +135,7 @@ class ContactViewer(Viewer):
         return quat
 
     def draw_contact_arrow(self, pos: np.ndarray, normal: np.ndarray, color: np.ndarray):
-        render_scene: R.Scene = self.system._internal_scene
+        render_scene: R.Scene = self.render_scene
 
         material = self.renderer_context.create_material([1, 0, 0, 0], color, 0, 0.8, 0)
         cone = self.renderer_context.create_model([self.cone], [material])
@@ -180,13 +181,21 @@ class ContactViewer(Viewer):
 
             elif isinstance(collision_shape, sapien.physx.PhysxCollisionShapeConvexMesh):
                 vs = sapien.render.RenderShapeTriangleMesh(
-                    collision_shape.vertices, collision_shape.triangles, np.zeros((0, 3)), self.contact_collision_mat
+                    collision_shape.vertices,
+                    collision_shape.triangles,
+                    np.zeros((0, 3)),
+                    np.zeros((0, 2)),
+                    self.contact_collision_mat,
                 )
                 vs.scale = collision_shape.scale
 
             elif isinstance(collision_shape, sapien.physx.PhysxCollisionShapeTriangleMesh):
                 vs = sapien.render.RenderShapeTriangleMesh(
-                    collision_shape.vertices, collision_shape.triangles, np.zeros((0, 3)), self.contact_collision_mat
+                    collision_shape.vertices,
+                    collision_shape.triangles,
+                    np.zeros((0, 3)),
+                    np.zeros((0, 2)),
+                    self.contact_collision_mat,
                 )
                 vs.scale = collision_shape.scale
 
