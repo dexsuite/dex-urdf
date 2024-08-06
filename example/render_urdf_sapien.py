@@ -271,14 +271,15 @@ def visualize_urdf(use_rt, urdf_file, simulate, disable_self_collision, fix_root
     loader = scene.create_urdf_loader()
     loader.load_multiple_collisions_from_file = True
     robot_builder = loader.load_file_as_articulation_builder(urdf_file)
-    if disable_self_collision and not simulate:
+    if disable_self_collision:
         for link_builder in robot_builder.get_link_builders():
             link_builder.set_collision_groups(1, 1, 17, 0)
     robot: sapien.physx.PhysxArticulation = robot_builder.build(fix_root_link=fix_root)
     for link in robot.get_links():
         link.disable_gravity = True
-        for shape in link.get_collision_shapes():
-            shape.set_collision_groups([1, 1, 17, 0])
+        if disable_self_collision:
+            for shape in link.get_collision_shapes():
+                shape.set_collision_groups([1, 1, 17, 0])
 
     # Robot motion
     loop_steps = 600
@@ -289,7 +290,6 @@ def visualize_urdf(use_rt, urdf_file, simulate, disable_self_collision, fix_root
         trajectory = generate_joint_limit_trajectory(robot, loop_steps=loop_steps)
 
     robot.set_qpos(np.zeros([robot.dof]))
-    scene.step()
 
     cam = scene.add_camera(name="Cheese!", width=1080, height=1080, fovy=1.2, near=0.1, far=10)
     cam.set_local_pose(sapien.Pose([0.307479, 0.0254082, 0.115112], [-0.0016765, 0.176569, -0.000300482, -0.984287]))
