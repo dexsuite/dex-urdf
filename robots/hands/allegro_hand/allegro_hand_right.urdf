@@ -150,11 +150,13 @@
       <inertia ixx="9.68e-07" ixy="0" ixz="0" iyy="9.68e-07" iyz="0" izz="9.68e-07"/>
     </inertial>
     <visual>
+      <origin rpy="0 0 0" xyz="0 0 -0.012"/>
       <geometry>
         <mesh filename="meshes/visual/link_tip.obj"/>
       </geometry>
     </visual>
     <collision>
+      <origin rpy="0 0 0" xyz="0 0 -0.012"/>
       <geometry>
         <mesh filename="meshes/collision/link_tip.obj"/>
       </geometry>
@@ -163,7 +165,7 @@
   <joint name="joint_3.0_tip" type="fixed">
     <parent link="link_3.0"/>
     <child link="link_3.0_tip"/>
-    <origin rpy="0 0 0" xyz="0 0 0.0267"/>
+    <origin rpy="0 0 0" xyz="0 0 0.0387"/>
   </joint>
   <link name="link_4.0">
     <inertial>
@@ -272,11 +274,13 @@
       <inertia ixx="4.701248e-06" ixy="1.255968e-06" ixz="1.2936e-06" iyy="3.649312e-06" iyz="1.7622e-06" izz="4.701248e-06"/>
     </inertial>
     <visual>
+      <origin rpy="0 0 0" xyz="0 0 -0.012"/>
       <geometry>
         <mesh filename="meshes/visual/link_tip.obj"/>
       </geometry>
     </visual>
     <collision>
+      <origin rpy="0 0 0" xyz="0 0 -0.012"/>
       <geometry>
         <mesh filename="meshes/collision/link_tip.obj"/>
       </geometry>
@@ -285,7 +289,7 @@
   <joint name="joint_7.0_tip" type="fixed">
     <parent link="link_7.0"/>
     <child link="link_7.0_tip"/>
-    <origin rpy="0 0 0" xyz="0 0 0.0267"/>
+    <origin rpy="0 0 0" xyz="0 0 0.0387"/>
   </joint>
   <link name="link_8.0">
     <inertial>
@@ -394,11 +398,13 @@
       <inertia ixx="9.68e-07" ixy="0" ixz="0" iyy="9.68e-07" iyz="0" izz="9.68e-07"/>
     </inertial>
     <visual>
+      <origin rpy="0 0 0" xyz="0 0 -0.012"/>
       <geometry>
         <mesh filename="meshes/visual/link_tip.obj"/>
       </geometry>
     </visual>
     <collision>
+      <origin rpy="0 0 0" xyz="0 0 -0.012"/>
       <geometry>
         <mesh filename="meshes/collision/link_tip.obj"/>
       </geometry>
@@ -407,7 +413,7 @@
   <joint name="joint_11.0_tip" type="fixed">
     <parent link="link_11.0"/>
     <child link="link_11.0_tip"/>
-    <origin rpy="0 0 0" xyz="0 0 0.0267"/>
+    <origin rpy="0 0 0" xyz="0 0 0.0387"/>
   </joint> <!-- THUMB -->
   <link name="link_12.0">
     <inertial>
@@ -516,11 +522,13 @@
       <inertia ixx="9.68e-07" ixy="0" ixz="0" iyy="9.68e-07" iyz="0" izz="9.68e-07"/>
     </inertial>
     <visual>
+      <origin rpy="0 0 0" xyz="0 0 -0.012"/>
       <geometry>
         <mesh filename="meshes/visual/link_tip.obj"/>
       </geometry>
     </visual>
     <collision>
+      <origin rpy="0 0 0" xyz="0 0 -0.012"/>
       <geometry>
         <mesh filename="meshes/collision/link_tip.obj"/>
       </geometry>
@@ -529,6 +537,6 @@
   <joint name="joint_15.0_tip" type="fixed">
     <parent link="link_15.0"/>
     <child link="link_15.0_tip"/>
-    <origin rpy="0 0 0" xyz="0 0 0.0423"/>
+    <origin rpy="0 0 0" xyz="0 0 0.0543"/>
   </joint>
 </robot>
